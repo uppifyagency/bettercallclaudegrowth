@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 /*
- * validate-content.js — integrita' dei contenuti del plugin BetterCallClaudeGrowth.
- * Complementa validate-plugin.js (schema + versioni). Qui verifica:
- *   - nessun placeholder template (<NOME>, <TUO-USERNAME>, ...) nei manifest/README/contenuti;
- *   - integrita' referenziale: ogni skill citata nei command e nella routing matrix esiste;
- *   - ogni agent referenziato dai command esiste;
- *   - ogni playbook linkato in playbooks/_index.md esiste; ogni archetipo ha un playbook;
- *   - i selftest degli script deterministici passano;
- *   - coerenza dei conteggi command/agent/skill tra disco e README interno.
- * Nessuna dipendenza esterna. Exit 0 se OK, 1 se trova errori.
+ * validate-content.js — content integrity for the BetterCallClaudeGrowth plugin.
+ * Complements validate-plugin.js (schema + versions). Here it checks:
+ *   - no template placeholders (<NAME>, <YOUR-USERNAME>, ...) in manifests/README/content;
+ *   - referential integrity: every skill cited in commands and in the routing matrix exists;
+ *   - every agent referenced by commands exists;
+ *   - every playbook linked in playbooks/_index.md exists; every archetype has a playbook;
+ *   - the deterministic script selftests pass;
+ *   - command/agent/skill counts are consistent between disk and the inner README.
+ * No external dependencies. Exit 0 if OK, 1 if it finds errors.
  */
 'use strict';
 const fs = require('fs');
@@ -34,9 +34,9 @@ function skillNames() {
     .map((e) => e.name);
 }
 
-// 1. Placeholder template -----------------------------------------------------
-console.log('\n# Placeholder template');
-const PLACEHOLDER = /<[A-Z][A-Z0-9_\- ]*>/; // es. <NOME>, <TUO-USERNAME>; ignora <2.5s>, <https://...>
+// 1. Template placeholders ----------------------------------------------------
+console.log('\n# Template placeholders');
+const PLACEHOLDER = /<[A-Z][A-Z0-9_\- ]*>/; // e.g. <NAME>, <YOUR-USERNAME>; ignores <2.5s>, <https://...>
 const scanForPlaceholders = [
   path.join(ROOT, '.claude-plugin', 'marketplace.json'),
   path.join(ROOT, 'package.json'),
@@ -57,13 +57,13 @@ scanForPlaceholders.forEach((p) => {
     if (m) { fail(`placeholder ${m[0]} in ${path.relative(ROOT, p)}:${i + 1}`); placeholderHits++; }
   });
 });
-if (!placeholderHits) ok('nessun placeholder template residuo');
+if (!placeholderHits) ok('no leftover template placeholders');
 
-// 2. Integrita' referenziale skill <- command --------------------------------
-// Le skill si richiamano PER NOME (auto-attivazione), non via path skills/X/SKILL.md
-// (un path relativo nel body si risolverebbe contro la cwd dell'utente e si romperebbe).
-// Qui verifichiamo che ogni command citi per nome la skill attesa e che la skill esista.
-console.log('\n# Integrita\' referenziale (command -> skill, per nome)');
+// 2. Referential integrity: skill <- command ---------------------------------
+// Skills are invoked BY NAME (auto-activation), not via a skills/X/SKILL.md path
+// (a relative path in the body would resolve against the user's cwd and break).
+// Here we verify each command cites its expected skill by name and that the skill exists.
+console.log('\n# Referential integrity (command -> skill, by name)');
 const skills = skillNames();
 const cmdDir = path.join(PLUGIN_DIR, 'commands');
 const COMMAND_SKILL_MAP = {
@@ -78,104 +78,104 @@ const COMMAND_SKILL_MAP = {
   'gtm-instagram.md': ['instagram-performance-marketing'],
 };
 let refErrors = 0;
-// vietato: path relativo skills/<realname>/SKILL.md nei body di command/agent
-// (si risolve contro la cwd utente e si rompe). Consentito solo come fallback
-// con ${CLAUDE_PLUGIN_ROOT}/skills/... oppure col placeholder <nome>.
+// forbidden: relative skills/<realname>/SKILL.md path in command/agent bodies
+// (resolves against the user's cwd and breaks). Allowed only as a fallback
+// with ${CLAUDE_PLUGIN_ROOT}/skills/... or with the <archetype> placeholder.
 ['commands', 'agents'].forEach((sub) => {
   const d = path.join(PLUGIN_DIR, sub);
   listMd(d).forEach((f) => {
     const stripped = read(path.join(d, f))
-      .replace(/\$\{CLAUDE_PLUGIN_ROOT\}\/skills\/[a-z0-9<>\-]+\/SKILL\.md/g, ''); // togli la forma consentita
+      .replace(/\$\{CLAUDE_PLUGIN_ROOT\}\/skills\/[a-z0-9<>\-]+\/SKILL\.md/g, ''); // remove the allowed form
     if (/skills\/[a-z0-9\-]+\/SKILL\.md/.test(stripped)) {
-      fail(`${sub}/${f}: path relativo skills/<nome>/SKILL.md nel body (usa il nome della skill o \${CLAUDE_PLUGIN_ROOT})`); refErrors++;
+      fail(`${sub}/${f}: relative skills/<name>/SKILL.md path in body (use the skill name or \${CLAUDE_PLUGIN_ROOT})`); refErrors++;
     }
   });
 });
 Object.entries(COMMAND_SKILL_MAP).forEach(([f, expected]) => {
   const fp = path.join(cmdDir, f);
-  if (!fs.existsSync(fp)) { fail(`command atteso mancante: ${f}`); refErrors++; return; }
+  if (!fs.existsSync(fp)) { fail(`expected command missing: ${f}`); refErrors++; return; }
   const txt = read(fp);
   expected.forEach((s) => {
-    if (!skills.includes(s)) { fail(`${f}: skill mappata inesistente su disco: ${s}`); refErrors++; }
-    else if (!new RegExp('`' + s + '`').test(txt)) { fail(`${f}: non cita per nome la skill \`${s}\``); refErrors++; }
+    if (!skills.includes(s)) { fail(`${f}: mapped skill not found on disk: ${s}`); refErrors++; }
+    else if (!new RegExp('`' + s + '`').test(txt)) { fail(`${f}: does not cite the skill \`${s}\` by name`); refErrors++; }
   });
 });
-if (!refErrors) ok(`ogni command cita per nome la sua skill; nessun path skills/.../SKILL.md fragile (${skills.length} skill su disco)`);
+if (!refErrors) ok(`every command cites its skill by name; no fragile skills/.../SKILL.md path (${skills.length} skills on disk)`);
 
-// 3. Agent referenziati esistono ---------------------------------------------
-console.log('\n# Agent referenziati');
+// 3. Referenced agents exist --------------------------------------------------
+console.log('\n# Referenced agents');
 const agentDir = path.join(PLUGIN_DIR, 'agents');
 const agents = listMd(agentDir).map((f) => f.replace(/\.md$/, ''));
 ['gtm-orchestrator', 'gtm-critic', 'gtm-buddy'].forEach((a) => {
-  if (agents.includes(a)) ok(`agent ${a} presente`);
-  else fail(`agent atteso mancante: ${a}`);
+  if (agents.includes(a)) ok(`agent ${a} present`);
+  else fail(`expected agent missing: ${a}`);
 });
-// ogni agent citato nei command/agent/playbook deve esistere
+// every agent cited in commands/agents/playbooks must exist
 let agentRefErrors = 0;
 [cmdDir, agentDir, path.join(PLUGIN_DIR, 'playbooks')].forEach((dir) => {
   listMd(dir).forEach((f) => {
     const txt = read(path.join(dir, f));
     [...txt.matchAll(/`(gtm-[a-z]+)`/g)].map((m) => m[1]).forEach((ref) => {
       if (['gtm-orchestrator', 'gtm-critic', 'gtm-buddy'].includes(ref) && !agents.includes(ref)) {
-        fail(`${f}: cita agent inesistente ${ref}`); agentRefErrors++;
+        fail(`${f}: cites a non-existent agent ${ref}`); agentRefErrors++;
       }
     });
   });
 });
-if (!agentRefErrors) ok('nessun riferimento ad agent inesistenti');
+if (!agentRefErrors) ok('no references to non-existent agents');
 
-// 4. Playbook -----------------------------------------------------------------
-console.log('\n# Playbook & routing matrix');
+// 4. Playbooks ----------------------------------------------------------------
+console.log('\n# Playbooks & routing matrix');
 const pbDir = path.join(PLUGIN_DIR, 'playbooks');
 const indexPath = path.join(pbDir, '_index.md');
 if (!fs.existsSync(indexPath)) {
-  fail('playbooks/_index.md mancante');
+  fail('playbooks/_index.md missing');
 } else {
-  ok('_index.md presente');
+  ok('_index.md present');
   const idx = read(indexPath);
-  // ogni link markdown a un .md nei playbook deve risolvere
+  // every markdown link to a .md in playbooks must resolve
   [...idx.matchAll(/\(([a-z0-9\-]+\.md)\)/g)].map((m) => m[1]).forEach((link) => {
-    if (fs.existsSync(path.join(pbDir, link))) ok(`link playbook risolve: ${link}`);
-    else fail(`link playbook rotto in _index.md: ${link}`);
+    if (fs.existsSync(path.join(pbDir, link))) ok(`playbook link resolves: ${link}`);
+    else fail(`broken playbook link in _index.md: ${link}`);
   });
-  // ogni archetipo deve avere un playbook
+  // every archetype must have a playbook
   const requiredPlaybooks = ['coaching-services', 'b2b-saas', 'b2c-product', 'local-service', 'established-no-marketing', 'micro-launch'];
   requiredPlaybooks.forEach((p) => {
-    if (fs.existsSync(path.join(pbDir, p + '.md'))) ok(`playbook ${p} presente`);
-    else fail(`playbook richiesto mancante: ${p}.md`);
+    if (fs.existsSync(path.join(pbDir, p + '.md'))) ok(`playbook ${p} present`);
+    else fail(`required playbook missing: ${p}.md`);
   });
-  // la routing matrix (sez. 6) deve mappare solo skill esistenti
+  // the routing matrix (section 6) must only map existing skills
   [...idx.matchAll(/`([a-z0-9\-]+)`/g)].map((m) => m[1])
     .filter((t) => skills.includes(t) || /^(christensen-jobs|butcher-productize|doing-content-right|hormozi-offers|hormozi-leads|drew-sucks-framework|advanced-email-marketing|seo-2026-sota|instagram-performance-marketing)$/.test(t))
-    .forEach((t) => { if (!skills.includes(t)) fail(`routing matrix cita skill inesistente: ${t}`); });
+    .forEach((t) => { if (!skills.includes(t)) fail(`routing matrix cites a non-existent skill: ${t}`); });
 }
 
-// 5. Selftest script deterministici ------------------------------------------
-console.log('\n# Selftest script deterministici');
+// 5. Deterministic script selftests -------------------------------------------
+console.log('\n# Deterministic script selftests');
 const scriptsDir = path.join(PLUGIN_DIR, 'scripts');
 ['cfa-calculator.js', 'value-equation-score.js', 'gtm-readiness-score.js', 'gtm-plan-lint.js'].forEach((s) => {
   const sp = path.join(scriptsDir, s);
-  if (!fs.existsSync(sp)) { fail(`script mancante: ${s}`); return; }
+  if (!fs.existsSync(sp)) { fail(`script missing: ${s}`); return; }
   try { execFileSync(process.execPath, [sp, '--selftest'], { stdio: 'pipe' }); ok(`${s}: selftest OK`); }
-  catch (e) { fail(`${s}: selftest FALLITO (${(e.stderr || e.stdout || '').toString().trim()})`); }
+  catch (e) { fail(`${s}: selftest FAILED (${(e.stderr || e.stdout || '').toString().trim()})`); }
 });
 
-// 6. Conteggi coerenti col README interno ------------------------------------
-console.log('\n# Conteggi command/agent/skill');
+// 6. Counts consistent with the inner README ----------------------------------
+console.log('\n# Command/agent/skill counts');
 const nCmd = listMd(cmdDir).length;
 const nAgent = agents.length;
 const nSkill = skills.length;
-ok(`disco: ${nCmd} command, ${nAgent} agent, ${nSkill} skill`);
+ok(`disk: ${nCmd} commands, ${nAgent} agents, ${nSkill} skills`);
 const innerReadme = path.join(PLUGIN_DIR, 'README.md');
 if (fs.existsSync(innerReadme)) {
   const txt = read(innerReadme);
-  // ogni command su disco deve comparire nel README interno
+  // every command on disk must appear in the inner README
   listMd(cmdDir).map((f) => '/' + f.replace(/\.md$/, '')).forEach((slug) => {
-    if (txt.includes(slug)) ok(`README cita ${slug}`);
-    else fail(`README interno non documenta il command ${slug}`);
+    if (txt.includes(slug)) ok(`README cites ${slug}`);
+    else fail(`inner README does not document the command ${slug}`);
   });
 }
 
 console.log('\n' + '='.repeat(40));
-if (errors.length) { console.error(`✗ VALIDAZIONE CONTENUTI FALLITA: ${errors.length} errori`); process.exit(1); }
-console.log('✓ VALIDAZIONE CONTENUTI OK'); process.exit(0);
+if (errors.length) { console.error(`✗ CONTENT VALIDATION FAILED: ${errors.length} errors`); process.exit(1); }
+console.log('✓ CONTENT VALIDATION OK'); process.exit(0);

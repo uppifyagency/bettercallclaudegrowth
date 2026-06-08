@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Validate plugin (schema + allineamento versioni)
+      - name: Validate plugin (schema + version alignment)
         run: node scripts/validate-plugin.js
-      - name: Validate content (integrità referenziale + placeholder + selftest script)
+      - name: Validate content (referential integrity + placeholders + script selftests)
         run: node scripts/validate-content.js
