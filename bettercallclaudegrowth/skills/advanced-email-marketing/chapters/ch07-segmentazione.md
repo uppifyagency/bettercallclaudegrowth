@@ -1,41 +1,41 @@
-# Capitolo 7: Definire le Audience con le segmentazioni
+# Chapter 7: Defining Audiences with Segmentation
 
-## Idea centrale
-Il mix **segmenti + trigger** definisce con esattezza la strategia. Gli stessi segmenti servono anche per l'advertising (remarketing/lookalike). Due motori distinti: scoring CRM (lead gen) e matrice RFM (e-commerce).
+## Core Idea
+The **segments + triggers** mix defines the strategy with precision. The same segments also serve advertising (remarketing/lookalike). Two distinct engines: CRM scoring (lead gen) and RFM matrix (e-commerce).
 
-## Framework introdotti
-- **Segmentazione lead generation (scoring CRM)**: assegna punti alle azioni del contatto.
-  - email aperta **5** · email cliccata **15** · visita sito **20** · call/meet **50** · workflow completato **20** · invio proposta/preventivo **100**.
-  - Soglie: **>100 Prospects · 50-100 Qualified Leads · 20-50 Warm Leads · <20 New/Cold Leads**.
-  - In alternativa allo score: **attributi personalizzati** (sorgente, servizio richiesto, demografia, geografia, dati aziendali B2B, es. brand usato / dimensione flotta veicoli).
-  - **Framework segmenti lead gen** (3 fonti): Email (aperte/cliccate/automation completate) · CRM (attributi/scoring/funneling) · Website/App (visite/interazioni).
-- **Segmentazione e-commerce**:
-  - **Fase Start**: segmenti base — clienti/non clienti, singoli/ricorrenti, alto/basso spending, recenti/storici (Store, Ordini, Spesa, Tempo).
-  - **Fase Growth**: i 3 parametri cardine della **RFM** → **11 cluster**:
-    1. **Champions** (spesso, recente, spesa alta) · 2. **Loyal Customers** (regolare, reattivo a promo) · 3. **Potential Loyalist** (recente, buona spesa, più ordini) · 4. **New Customers** (recente non abituale) · 5. **Promising** (recente, spesa ridotta) · 6. **Needs Attention** (sopra media RFM ma ultimo acquisto non recente) · 7. **About To Sleep** (sotto media, da stimolare) · 8. **At Risk** (spesa/frequenza alte ma tanto tempo fa) · 9. **Can't Lose Them** (spesa max, frequenti, tanto tempo fa) · 10. **Hibernating** (lontani, pochi ordini) · 11. **Lost** (RFM più basso).
-  - Dimensioni extra: **Brand / Category / Product / Context / AOV** (Average Order Value) → utili per up/cross-selling e bundle.
-  - Per intento: chi compra solo in sconti/saldi/BFCM, solo da outlet, con gift card.
-- **Segmenti avanzati**: **Deal Hunter** (prezzo più basso → alert Price Drop, anche SMS) · **Last-Minute Shopper** (rassicurazione consegna, spedizione express) · **VIP** (mix importo/ordini/frequenza → fidelizzare) · **Window Shopper** (guarda ma non checkout → reminder/how-to/assistenza) · **Impulse Buyer** (compra subito al lancio) · **Missed Customers** (ordine annullato/rimborsato → survey + incentivo riacquisto).
+## Frameworks Introduced
+- **Lead generation segmentation (CRM scoring)**: assigns points to contact actions.
+  - email opened **5** · email clicked **15** · site visit **20** · call/meeting **50** · workflow completed **20** · proposal/quote sent **100**.
+  - Thresholds: **>100 Prospects · 50-100 Qualified Leads · 20-50 Warm Leads · <20 New/Cold Leads**.
+  - As an alternative to score: **custom attributes** (source, service requested, demographics, geography, B2B company data, e.g. brand used / vehicle fleet size).
+  - **Lead gen segment framework** (3 sources): Email (opened/clicked/automation completed) · CRM (attributes/scoring/funneling) · Website/App (visits/interactions).
+- **E-commerce segmentation**:
+  - **Start Phase**: basic segments — customers/non-customers, one-time/recurring, high/low spending, recent/historical (Store, Orders, Spend, Time).
+  - **Growth Phase**: the 3 core parameters of **RFM** → **11 clusters**:
+    1. **Champions** (frequent, recent, high spend) · 2. **Loyal Customers** (regular, responsive to promos) · 3. **Potential Loyalist** (recent, good spend, more orders) · 4. **New Customers** (recent non-habitual) · 5. **Promising** (recent, low spend) · 6. **Needs Attention** (above-average RFM but last purchase not recent) · 7. **About To Sleep** (below average, needs stimulation) · 8. **At Risk** (high spend/frequency but a long time ago) · 9. **Can't Lose Them** (max spend, frequent, a long time ago) · 10. **Hibernating** (distant, few orders) · 11. **Lost** (lowest RFM).
+  - Extra dimensions: **Brand / Category / Product / Context / AOV** (Average Order Value) → useful for up/cross-selling and bundles.
+  - By intent: those who only buy during discounts/sales/BFCM, only from outlet, with gift cards.
+- **Advanced segments**: **Deal Hunter** (lowest price → Price Drop alert, also SMS) · **Last-Minute Shopper** (delivery reassurance, express shipping) · **VIP** (mix of amount/orders/frequency → loyalty building) · **Window Shopper** (browses but doesn't checkout → reminder/how-to/support) · **Impulse Buyer** (buys immediately at launch) · **Missed Customers** (cancelled/refunded order → survey + repurchase incentive).
 
-## Concetti chiave
-- **Gamification**: lo scoring classifica gli utenti in stile gioco; ogni azione contribuisce al segmento.
-- **Conversific**: tool di analisi che si integra con e-commerce/DEM per individuare cluster, combinazioni di prodotti e bundle (AOV).
+## Key Concepts
+- **Gamification**: scoring classifies users in a game-like fashion; every action contributes to the segment.
+- **Conversific**: analysis tool that integrates with e-commerce/DEM to identify clusters, product combinations, and bundles (AOV).
 
-## Modelli mentali
-- "Dai segmenti si entra e si esce": orienta i lead sempre in avanti e **escludi** chi non deve stare in certi workflow.
-- "Un contatto evolve continuamente": fai **revisioni periodiche** delle regole/soglie (caso B2B: da 3 corsi/anno a 1 ogni 2 mesi → soglie ricalibrate).
+## Mental Models
+- "Contacts enter and exit segments": always move leads forward and **exclude** those who shouldn't be in certain workflows.
+- "A contact evolves continuously": perform **periodic reviews** of rules/thresholds (B2B example: from 3 courses/year to 1 every 2 months → thresholds recalibrated).
 
-## Anti-pattern
-- **Non aggiornare** strategie e segmenti nel tempo (errore tra i più gravi).
-- Usare tutti gli 11 cluster a forza: scegline alcuni utili al tuo business.
+## Anti-Patterns
+- **Not updating** strategies and segments over time (one of the most serious mistakes).
+- Forcing all 11 clusters: pick only the ones useful to your business.
 
-## Takeaway
-1. Lead gen → scoring CRM con soglie (Prospects/Qualified/Warm/New).
-2. E-commerce → RFM Start→Growth, fino agli 11 cluster + Brand/Category/AOV.
-3. Aggiungi segmenti avanzati comportamentali (Deal Hunter, VIP, Window Shopper…).
-4. Rivedi periodicamente regole e soglie; escludi i segmenti dai flussi non pertinenti.
+## Takeaways
+1. Lead gen → CRM scoring with thresholds (Prospects/Qualified/Warm/New).
+2. E-commerce → RFM Start→Growth, up to 11 clusters + Brand/Category/AOV.
+3. Add advanced behavioral segments (Deal Hunter, VIP, Window Shopper…).
+4. Periodically review rules and thresholds; exclude segments from irrelevant flows.
 
-## Collegamenti
-- **Ch 5**: trigger e RFM/CDP.
-- **Ch 9**: i flussi attivati su questi segmenti.
-- **Ch 10**: i segmenti esportati in advertising (remarketing/lookalike).
+## Connections
+- **Ch 5**: triggers and RFM/CDP.
+- **Ch 9**: flows triggered on these segments.
+- **Ch 10**: segments exported to advertising (remarketing/lookalike).

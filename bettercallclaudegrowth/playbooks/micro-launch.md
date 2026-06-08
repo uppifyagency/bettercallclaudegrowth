@@ -1,34 +1,34 @@
-# Playbook — Micro-lancio / test di validazione (modificatore di stadio)
+# Playbook — Micro-launch / validation test (stage modifier)
 
-**Quando si applica:** idea o MVP, **budget ~0**, **1 persona**, nessun cliente o pochissimi. L'obiettivo non è "scalare", è **validare** che esista domanda e che l'offerta converta — il più velocemente e a costo più basso possibile. Si combina con qualsiasi archetipo merceologico.
+**When it applies:** idea or MVP, **budget ~0**, **1 person**, no customers or very few. The goal isn't to "scale," it's to **validate** that demand exists and that the offer converts — as fast and as cheaply as possible. It combines with any product archetype.
 
-> Principio guida: **un solo canale, a costo zero, time-to-first-win < 14 giorni.** Niente pipeline da 7 fasi: serve la versione corta.
+> Guiding principle: **a single channel, at zero cost, time-to-first-win < 14 days.** No 7-phase pipeline: you need the short version.
 
-## Sequenza GTM consigliata (corta)
-`gtm-jobs` → `gtm-offerta` → **un solo canale organico** → misura → (itera)
+## Recommended GTM sequence (short)
+`gtm-jobs` → `gtm-offer` → **a single organic channel** → measurement → (iterate)
 
-1. **Jobs (rapido):** definisci il/i lavoro/i e la circostanza-trigger. Senza domanda reale, ogni altra cosa è prematura. È anche il modo per validare *parlando con persone*, non costruendo.
-2. **Offerta minima irresistibile:** una Grand Slam Offer essenziale (promessa + garanzia forte + prezzo). Non serve il catalogo: serve **una** offerta che qualcuno paghi.
-3. **Un canale organico a costo zero** in base all'archetipo:
-   - coaching/B2B → **warm outreach** alla tua rete (il primo "sì" è qui) + 1 contenuto.
-   - B2C → **1 canale social organico** con 2-3 creative.
-   - local → **GBP + passaparola attivato**.
-4. **Misura il segnale, non la vanity:** conta **conversazioni → intenti d'acquisto → primi paganti/preordini**, non like/impression.
-5. **Itera o pivota** sull'offerta/job in base ai "no".
+1. **Jobs (quick):** define the job(s) and the trigger circumstance. Without real demand, everything else is premature. It's also the way to validate *by talking to people*, not by building.
+2. **Minimal irresistible offer:** a bare-bones Grand Slam Offer (promise + strong guarantee + price). You don't need the full catalog: you need **one** offer that someone will pay for.
+3. **One organic channel at zero cost** based on the archetype:
+   - coaching/B2B → **warm outreach** to your network (the first "yes" is here) + 1 piece of content.
+   - B2C → **1 organic social channel** with 2-3 creatives.
+   - local → **GBP + activated word-of-mouth**.
+4. **Measure the signal, not vanity:** count **conversations → purchase intents → first payers/preorders**, not likes/impressions.
+5. **Iterate or pivot** on the offer/job based on the "no"s.
 
-## Cosa SALTARE in micro-lancio (deliberatamente)
-- Paid ads (brucia budget che non hai su un'offerta non validata).
-- Content engine ampio, programmatic SEO, automation email complesse.
-- Posizionamento perfetto: basta "abbastanza chiaro per vendere", lo affini dopo i primi sì.
+## What to SKIP in a micro-launch (deliberately)
+- Paid ads (they burn budget you don't have on an unvalidated offer).
+- Broad content engine, programmatic SEO, complex email automation.
+- Perfect positioning: "clear enough to sell" is all you need; you refine it after the first yeses.
 
-## Checkpoint critic
-**Uno solo, sull'offerta** (la cosa che deve reggere). Il funnel completo non esiste ancora: non red-teamare ciò che non c'è.
+## Critic checkpoint
+**Just one, on the offer** (the thing that has to hold up). The full funnel doesn't exist yet: don't red-team what isn't there.
 
-## KPI nord + guardrail
-- Nord: **primi N paganti / preordini / impegni reali** (es. 3-5-10). Il "win" è la prova di domanda.
-- Guardrail: **time-to-first-win**. Se dopo 2 settimane zero segnale, il problema è offerta o job, non il canale: torna al passo 1-2.
+## North-star KPI + guardrail
+- North star: **first N payers / preorders / real commitments** (e.g. 3-5-10). The "win" is proof of demand.
+- Guardrail: **time-to-first-win**. If after 2 weeks there's zero signal, the problem is the offer or the job, not the channel: go back to step 1-2.
 
-## Trappole comuni
-- Costruire il prodotto perfetto prima di aver venduto nulla.
-- Aprire 4 canali insieme da soli: dispersione garantita.
-- Misurare like invece di intenti d'acquisto.
+## Common traps
+- Building the perfect product before having sold anything.
+- Opening 4 channels at once on your own: guaranteed dispersion.
+- Measuring likes instead of purchase intents.

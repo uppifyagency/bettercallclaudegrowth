@@ -1,43 +1,43 @@
 # Capitolo 6: La grammatica del workflow & i tipi di flusso
 
-## Idea centrale
-Per costruire automazioni che funzionano servono due cose (Elisa De Portu): **dati corretti** e **conoscere la sintassi** dei software (low-code/no-code, drag&drop). Il workflow è "l'apostrofo tra ipotesi e risultato".
+## Core idea
+Building automations that work requires two things (Elisa De Portu): **correct data** and **knowing the syntax** of the software (low-code/no-code, drag&drop). The workflow is "the apostrophe between hypothesis and result."
 
-## Framework introdotti
-- **I 6 elementi del workflow (grammatica del workflow)** — da mettere su carta prima di disegnare:
-  1. **Obiettivo + KPI**: come lo misuri e — fondamentale — chi **ESCLUDERE** (chi ha già completato il flusso).
-  2. **Segmento**: chi è coinvolto (comportamenti, zero-party data, demografici, RFM). Verifica che sia **abbastanza corposo**: a ogni step si assottiglia.
-  3. **Trigger / Criterio di Enrollment**: la condizione che fa scattare; combina con i booleani **AND / OR / NOT**.
-  4. **Delay**: tempo d'attesa tra azioni (relativo all'ultima azione, o un momento preciso del giorno/mese/anno).
-  5. **If/then**: i percorsi si diramano su condizioni *se…allora*.
-  6. **Tempo**: always-on o solo in finestre/occasioni; un utente può entrare una volta sola o più volte?
-- **Aree in cui dividere la marketing automation**: newsletter, spin-off, onboarding, CRM/CDP, e-commerce behavior.
-- **Tipi di flusso**:
-  - **Newsletter**: piano editoriale con contenuti non solo promozionali — tipi: novità, promo, education, eventi, brand/storytelling, surveys. Dai un *nome* alla newsletter (es. "Always-On!") + landing dedicata → un A/B test reale ha trasformato "Iscriviti alla newsletter" (≈0 iscritti) in "Iscriviti ora a Always-On!" (flusso costante). **Ricicla le evergreen**: le newsletter sono retroattive; rimanda le sempreverdi ai nuovi iscritti via automation.
-  - **Spin-off**: campagne one-shot temporanee (compleanni, ricorrenze, newsletter automatiche da feed RSS del blog — caso CucinoSano®).
-  - **Onboarding**: *welcome series* (benvenuto + flusso) vs *drip campaign* (lead gen/servizi → nurturing verso conversione). Tecnica **Soap Opera Sequence (SOS)**: storytelling con spoiler verso l'email successiva, come una serie TV.
-  - **CRM/CDP**: assegnazione lead/task al team commerciale, attributi lungo il funnel (lead→prospect→cliente); lato CDP: clienti da recuperare/premiare/potenziare.
-  - **E-commerce behavior**: checkout iniziati, carrelli abbandonati, post-acquisto (recensioni, assistenza, how-to, up/cross-selling, sconti, loyalty/gamification).
+## Frameworks introduced
+- **The 6 elements of a workflow (workflow grammar)** — put these on paper before drawing anything:
+  1. **Objective + KPI**: how you measure it and — critically — who to **EXCLUDE** (those who have already completed the flow).
+  2. **Segment**: who is involved (behaviors, zero-party data, demographics, RFM). Verify it is **large enough**: it narrows at every step.
+  3. **Trigger / Enrollment Criterion**: the condition that fires; combine with the booleans **AND / OR / NOT**.
+  4. **Delay**: wait time between actions (relative to the last action, or a specific moment of the day/month/year).
+  5. **If/then**: paths branch on *if…then* conditions.
+  6. **Time**: always-on or only within windows/occasions; can a user enter once only or multiple times?
+- **Areas to divide marketing automation into**: newsletter, spin-off, onboarding, CRM/CDP, e-commerce behavior.
+- **Flow types**:
+  - **Newsletter**: editorial plan with not only promotional content — types: news, promos, education, events, brand/storytelling, surveys. Give your newsletter a *name* (e.g. "Always-On!") + a dedicated landing page → a real A/B test transformed "Subscribe to the newsletter" (≈0 subscribers) into "Subscribe to Always-On! now" (steady stream). **Recycle evergreens**: newsletters are retroactive; send evergreen editions to new subscribers via automation.
+  - **Spin-off**: temporary one-shot campaigns (birthdays, anniversaries, automated newsletters from blog RSS feed — CucinoSano® case study).
+  - **Onboarding**: *welcome series* (welcome + flow) vs *drip campaign* (lead gen/services → nurturing toward conversion). **Soap Opera Sequence (SOS)** technique: storytelling with cliffhangers pointing to the next email, like a TV series.
+  - **CRM/CDP**: lead/task assignment to the sales team, attributes along the funnel (lead→prospect→customer); on the CDP side: customers to re-engage, reward, or upsell.
+  - **E-commerce behavior**: initiated checkouts, abandoned carts, post-purchase (reviews, support, how-tos, up/cross-selling, discounts, loyalty/gamification).
 
-## Concetti chiave
-- **Over-automation**: utente in più percorsi contemporaneamente → mappa i progetti per segmento e documenta ogni workflow.
-- **Sovrapposizione di email**: la lezione delle welcome series — un nuovo iscritto non deve ricevere le newsletter tradizionali finché è in onboarding. Usa **Smart Sending** o un segmento "iscritti esclusi quelli in onboarding".
+## Key concepts
+- **Over-automation**: user in multiple journeys simultaneously → map projects by segment and document every workflow.
+- **Email overlap**: the welcome series lesson — a new subscriber must not receive regular newsletters while still in onboarding. Use **Smart Sending** or a segment "subscribers excluding those in onboarding."
 
-## Modelli mentali
-- L'onboarding come "corsia di accelerazione dell'autostrada": un ingresso che porta nella strada principale (le newsletter).
-- "Testa un poco alla volta": troppe variabili insieme = impossibile ottimizzare.
+## Mental models
+- Onboarding as the "highway on-ramp": an entry point that leads onto the main road (the newsletters).
+- "Test a little at a time": too many variables at once = impossible to optimize.
 
-## Anti-pattern
-- Non definire come misurare il processo o cosa lo fa scattare → perdi il controllo della strategia.
-- Costruire su un segmento troppo piccolo → "un castello sulla sabbia".
-- Contenuti scadenti: una buona automazione con contenuti non pertinenti non funziona.
+## Anti-patterns
+- Not defining how to measure the process or what triggers it → you lose control of the strategy.
+- Building on a segment that is too small → "a castle on sand."
+- Poor content: a well-built automation with irrelevant content does not work.
 
-## Takeaway
-1. Compila i 6 elementi (Obiettivo/Segmento/Trigger/Delay/If-then/Tempo) prima di disegnare.
-2. Dividi la MA in aree (newsletter/spin-off/onboarding/CRM-CDP/e-commerce).
-3. Dai un nome alla newsletter e ricicla le evergreen per i nuovi iscritti.
-4. Welcome vs drip; usa la SOS; previeni la sovrapposizione con Smart Sending.
+## Takeaways
+1. Fill in the 6 elements (Objective/Segment/Trigger/Delay/If-then/Time) before drawing.
+2. Divide MA into areas (newsletter/spin-off/onboarding/CRM-CDP/e-commerce).
+3. Give the newsletter a name and recycle evergreens for new subscribers.
+4. Welcome vs drip; use the SOS; prevent overlap with Smart Sending.
 
-## Collegamenti
-- **Ch 5**: gli 8 trigger che alimentano i workflow.
-- **Ch 9**: i framework di automation completi per scenario.
+## Connections
+- **Ch 5**: the 8 triggers that feed the workflows.
+- **Ch 9**: complete automation frameworks by scenario.

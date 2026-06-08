@@ -1,40 +1,40 @@
 # Capitolo 17: Tool ufficiali Google
 
 ## Core Idea
-I tool ufficiali sono interfacce web (UI) sopra le API/motori già documentati. L'UI serve per audit puntuali; per produzione e CI/CD si usano le API equivalenti.
+Official tools are web UIs (UI) built on top of the APIs/engines already documented. The UI is for one-off audits; for production and CI/CD, use the equivalent APIs.
 
 ## Frameworks Introdotti
-- **PageSpeed Insights (PSI)**: UI sopra l'API `runPagespeed`. 4 sezioni: CWV Assessment Pass/Fail (CrUX), dettaglio CrUX, diagnose performance (Lighthouse lab), diagnostics+passed audits. **Caveat 2026**: Google prevede di rimuovere i dati CrUX dal payload PSI → migrare a CrUX API/History API per i field; Lighthouse resta.
-- **Rich Results Test**: verifica se una URL/snippet genererà rich results; testa SOLO i tipi supportati da Google; crawler default = smartphone.
-- **Schema Markup Validator** (validator.schema.org): valida TUTTI i tipi schema.org, non solo quelli con rich result.
-- **Pattern CI/CD canonico structured data**: (1) validazione locale JSON-LD con schema-dts + AJV; (2) Schema Markup Validator come check sintattico; (3) Rich Results Test come gate manuale pre-produzione su URL canonica di staging.
+- **PageSpeed Insights (PSI)**: UI on top of the `runPagespeed` API. 4 sections: CWV Assessment Pass/Fail (CrUX), CrUX detail, performance diagnosis (Lighthouse lab), diagnostics + passed audits. **2026 Caveat**: Google plans to remove CrUX data from the PSI payload → migrate to the CrUX API/History API for field data; Lighthouse remains.
+- **Rich Results Test**: checks whether a URL/snippet will generate rich results; tests ONLY the types supported by Google; default crawler = smartphone.
+- **Schema Markup Validator** (validator.schema.org): validates ALL schema.org types, not just those with a rich result.
+- **Canonical CI/CD pattern for structured data**: (1) local JSON-LD validation with schema-dts + AJV; (2) Schema Markup Validator as a syntactic check; (3) Rich Results Test as a manual pre-production gate on the canonical staging URL.
 
-## Key Concepts — Google Search Console, novità 2026
-- AI-Powered Configuration nel Performance report (query in linguaggio naturale, feb 2026).
-- Branded queries filter stabile (nov 2025).
-- Weekly/Monthly aggregation toggle (dic 2025).
-- Custom annotations sui chart (nov 2025).
+## Key Concepts — Google Search Console, 2026 updates
+- AI-Powered Configuration in the Performance report (natural-language queries, Feb 2026).
+- Branded queries filter stable (Nov 2025).
+- Weekly/Monthly aggregation toggle (Dec 2025).
+- Custom annotations on charts (Nov 2025).
 - Pilot Social Channel Insights (2026).
-- **Limiti**: 1.000 righe/UI; 16 mesi storico; URL Inspection ~10-12/giorno UI, 2.000/giorno API.
+- **Limits**: 1,000 rows/UI; 16 months of history; URL Inspection ~10–12/day UI, 2,000/day API.
 
-## Reference Table — quale tool per cosa
-| Tool | URL | Uso |
+## Reference Table — which tool for what
+| Tool | URL | Use |
 |---|---|---|
-| PageSpeed Insights | pagespeed.web.dev | Audit performance (lab+field) |
-| Rich Results Test | search.google.com/test/rich-results | Eleggibilità rich result Google |
-| Schema Markup Validator | validator.schema.org | Validazione formale schema.org |
-| Search Console | search.google.com/search-console | Monitoraggio proprietà |
+| PageSpeed Insights | pagespeed.web.dev | Performance audit (lab + field) |
+| Rich Results Test | search.google.com/test/rich-results | Google rich result eligibility |
+| Schema Markup Validator | validator.schema.org | Formal schema.org validation |
+| Search Console | search.google.com/search-console | Property monitoring |
 
 ## Anti-patterns
-- Affidarsi ai dati CrUX nel payload PSI per il lungo termine (in dismissione): usa la CrUX API come fonte autoritativa.
-- Usare il Rich Results Test per validare tipi schema NON supportati da Google → usa lo Schema Markup Validator.
+- Relying on CrUX data in the PSI payload for the long term (being deprecated): use the CrUX API as the authoritative source.
+- Using the Rich Results Test to validate schema types NOT supported by Google → use the Schema Markup Validator instead.
 
 ## Key Takeaways
-1. UI per audit one-shot, API per produzione/CI.
-2. Due validatori complementari: Rich Results Test (eleggibilità Google) + Schema Markup Validator (correttezza schema.org).
-3. Conosci i limiti operativi di GSC prima di pianificare export/automazioni.
-4. Per audit di stack: sapere cosa è deprecato conta quanto sapere cosa è attivo.
+1. UI for one-shot audits, API for production/CI.
+2. Two complementary validators: Rich Results Test (Google eligibility) + Schema Markup Validator (schema.org correctness).
+3. Know GSC's operational limits before planning exports/automations.
+4. For stack audits: knowing what is deprecated matters as much as knowing what is active.
 
 ## Connects To
-- **Ch 18** (Exec): le API dietro questi tool.
-- **Ch 13/14** (SEO): validazione schema e monitoraggio GSC in pratica.
+- **Ch 18** (Exec): the APIs behind these tools.
+- **Ch 13/14** (SEO): schema validation and GSC monitoring in practice.

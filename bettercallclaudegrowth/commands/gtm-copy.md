@@ -1,30 +1,30 @@
 ---
-description: Scrive copy pronto all'uso (email, landing o post) applicando il framework SUCKS al tuo input e settore.
-argument-hint: formato (email|landing|post) + brief, offerta o bozza da trasformare. Es. "landing: software gestionale officine"
+description: Writes ready-to-use copy (email, landing, or post) by applying the SUCKS framework to your input and industry.
+argument-hint: format (email|landing|post) + brief, offer, or draft to transform. E.g. "landing: workshop management software"
 ---
 
-# /gtm-copy - Copy che SUCKS (nel senso buono): Specific, Useful, Clear, Kept simple, Structured
+# /gtm-copy - Copy that SUCKS (in the good way): Specific, Useful, Clear, Kept simple, Structured
 
-Questo comando applica la skill **drew-sucks-framework**. Rispetta `userConfig.output_language` (IT default), `userConfig.settore`, `userConfig.brand_voice` e, se il formato non e' esplicitato, `userConfig.default_channel`.
+This command applies the **drew-sucks-framework** skill. It respects `userConfig.output_language` (IT default), `userConfig.industry`, `userConfig.brand_voice` and, if the format is not specified, `userConfig.default_channel`.
 
-## Passi
+## Steps
 
-1. **Carica la skill.** Richiama per nome la skill `drew-sucks-framework` (si attiva dalla sua description; non usare path di file): usa la cheatsheet per il run-through pre-pubblicazione e approfondisci patterns e capitoli (proof, curiosita', struttura) quando servono. NON riassumere la teoria all'utente: applicala.
+1. **Load the skill.** Invoke the `drew-sucks-framework` skill by name (it activates from its description; do not use file paths): use the cheatsheet for the pre-publication run-through and dig into patterns and chapters (proof, curiosity, structure) when needed. Do NOT summarize the theory to the user: apply it.
 
-2. **Inquadra l'input.** Da `$ARGUMENTS` ricava il formato richiesto (email / landing / post) e il brief. Se il formato manca, deducilo dal brief; in mancanza, mappa `userConfig.default_channel` (email→email, instagram→post, seo→landing; `auto`→deduci dal contesto). Identifica One True Fan, un problema, una soluzione (Rule of One) calati nel `settore`.
+2. **Frame the input.** From `$ARGUMENTS` derive the requested format (email / landing / post) and the brief. If the format is missing, infer it from the brief; failing that, map `userConfig.default_channel` (email→email, instagram→post, seo→landing; `auto`→infer from context). Identify One True Fan, one problem, one solution (Rule of One) grounded in the `industry`.
 
-3. **Applica SUCKS a `$ARGUMENTS`:**
-   - **S — Specific**: Rule of One + numeri non tondi e dettagli concreti del settore.
-   - **U — Useful / Unique / Undeniable**: payoff chiaro per il lettore-eroe, angolo "How-I" + meccanismo con nome, e Persuasion Proof Stack (associazione → tuoi risultati → risultati cliente).
-   - **C — Clear / Curious / Conversational**: frasi pulite, i 4 trigger di curiosita' negli hook, tono nel `brand_voice` ("lo direi di persona?").
-   - **K — Kept simple**: parole piccole, regola di 1/3, leggibilita' bassa.
-   - **S — Structured**: formattazione skimmabile e slippery slope verso la CTA.
+3. **Apply SUCKS to `$ARGUMENTS`:**
+   - **S — Specific**: Rule of One + non-round numbers and concrete industry details.
+   - **U — Useful / Unique / Undeniable**: clear payoff for the reader-hero, "How-I" angle + named mechanism, and Persuasion Proof Stack (association → your results → client results).
+   - **C — Clear / Curious / Conversational**: clean sentences, the 4 curiosity triggers in the hooks, tone in the `brand_voice` ("would I say it in person?").
+   - **K — Kept simple**: small words, rule of 1/3, low readability.
+   - **S — Structured**: skimmable formatting and a slippery slope toward the CTA.
 
-4. **Produci il copy finale** gia' nel formato richiesto:
-   - **email**: oggetto + 2-3 varianti di hook, corpo, CTA.
-   - **landing**: hero (headline + sub), sezioni con sottotitoli, proof, CTA.
-   - **post**: hook, sviluppo skimmabile, chiusura/CTA per il canale.
+4. **Produce the final copy** already in the requested format:
+   - **email**: subject + 2-3 hook variants, body, CTA.
+   - **landing**: hero (headline + sub), sections with subheadings, proof, CTA.
+   - **post**: hook, skimmable development, closing/CTA for the channel.
 
-5. **Chiudi con la checklist SUCKS** (S/U/C/K/S spuntati) e 1-2 note su cosa rafforzare se l'utente fornira' piu' proof o dati.
+5. **Close with the SUCKS checklist** (S/U/C/K/S checked off) and 1-2 notes on what to strengthen if the user provides more proof or data.
 
-> **Red-team (opzionale).** Oltre alla self-checklist, invoca l'agent `gtm-critic` per un audit SUCKS avversariale del copy (Specific/Undeniable/Clear/Structured: dove manca la Rule of One, il Persuasion Proof Stack, l'hook?), poi integra i fix.
+> **Red-team (optional).** Beyond the self-checklist, invoke the `gtm-critic` agent for an adversarial SUCKS audit of the copy (Specific/Undeniable/Clear/Structured: where is the Rule of One, the Persuasion Proof Stack, the hook missing?), then integrate the fixes.

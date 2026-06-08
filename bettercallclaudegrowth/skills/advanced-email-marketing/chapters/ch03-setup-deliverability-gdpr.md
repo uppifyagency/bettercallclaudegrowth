@@ -1,43 +1,43 @@
-# Capitolo 3: Setup iniziale, Deliverability & GDPR
+# Chapter 3: Initial Setup, Deliverability & GDPR
 
-## Idea centrale
-Prima di inviare qualsiasi email, metti a punto la piattaforma: autenticazione del dominio (deliverability), template, organizzazione delle liste, link di sistema e conformità GDPR. Sono fondamenta che evitano lo spam e abilitano la segmentazione.
+## Core Idea
+Before sending any email, fine-tune your platform: domain authentication (deliverability), templates, list organization, system links, and GDPR compliance. These are the foundations that prevent spam and enable segmentation.
 
-## Framework introdotti
-- **Setup mittente & dominio**: verifica l'email di invio + autentica via **parametri DNS** (reputation/deliverability). Usa **mittenti diversi** per separare comunicazioni personali e aziendali — il mittente, insieme a oggetto e preview text, è complice del tasso di apertura.
-  - Aziendale: "Nome Azienda", o per reparto (Staff, Billing, Ordini, Abbonamenti).
-  - Personale (per newsletter): "Jacopo di Studio Samo", "Jacopo from Studio Samo" → tassi di apertura più alti e flussi separabili per sender.
-- **Template a taglie (S/M/L)**: prepara il template più completo e togli sezioni per crearne varianti.
-  - **S**: titolo + creatività + box testo + CTA finale. **M**: + sezione cross-content. **L**: + sezione info aggiuntive.
-  - **Skin stagionali**: Natale, Halloween, **Black Friday (BFCM)** — riadatta font/colori del modello principale (es. versione total dark per il BF).
-  - **Plain-text**: email di puro testo come scritte di pugno → riduce il rischio spam; ottima combinata con email HTML.
-- **GDPR (avv. Vercelloni)** — due criteri essenziali: rispetto dei principi sul trattamento + **consenso** dell'interessato.
-  - Principi (art. 5): **minimizzazione** (solo dati necessari: per la newsletter bastano nome + email), **integrità e riservatezza**, **limitazione delle finalità**.
-  - Pilastri: **privacy by design** e **privacy by default**.
-  - Il consenso marketing dev'essere libero, esplicito (non tacito), separato per finalità, informato, preventivo, revocabile facilmente — e **va salvato/registrato** (onere del titolare).
+## Frameworks Introduced
+- **Sender & domain setup**: verify your sending email address + authenticate via **DNS records** (reputation/deliverability). Use **different senders** to separate personal and company communications — the sender, together with subject line and preview text, contributes to open rates.
+  - Company: "Company Name", or by department (Staff, Billing, Orders, Subscriptions).
+  - Personal (for newsletters): "Jacopo di Studio Samo", "Jacopo from Studio Samo" → higher open rates and flows that can be separated by sender.
+- **Sized templates (S/M/L)**: build the most complete template and remove sections to create variants.
+  - **S**: title + creative + text box + final CTA. **M**: + cross-content section. **L**: + additional info section.
+  - **Seasonal skins**: Christmas, Halloween, **Black Friday (BFCM)** — adapt fonts/colors of the main template (e.g., total dark version for BF).
+  - **Plain-text**: pure-text emails as if written by hand → reduces spam risk; works great combined with HTML emails.
+- **GDPR (lawyer Vercelloni)** — two essential criteria: compliance with processing principles + **consent** from the data subject.
+  - Principles (art. 5): **data minimization** (only necessary data: for a newsletter name + email are enough), **integrity and confidentiality**, **purpose limitation**.
+  - Pillars: **privacy by design** and **privacy by default**.
+  - Marketing consent must be free, explicit (not tacit), separate per purpose, informed, given in advance, easily revocable — and **must be saved/recorded** (burden on the data controller).
 
-## Concetti chiave
-- **Soft spam**: eccezione al consenso → invio promozionale a chi ha **già acquistato** prodotti/servizi **analoghi**, purché a monte fosse offerta chiaramente l'opzione marketing.
-- **Form contatti vs form newsletter**: nei form contatti serve un **secondo checkbox separato e facoltativo** per il marketing (mai obbligatorio).
-- **Double opt-in**: link/email di conferma iscrizione.
-- **Organizzazione liste**: poche liste + **attributi/tag** per segmenti dinamici "as you go" (vs liste separate per mercato/lingua o b2b/b2c/fornitori/partner).
-- **Link di sistema**: personalizza pagine di modifica dati, disiscrizione, conferma; in unsubscribe offri un **piano B** (ridurre frequenza, scegliere argomenti) per frenare le cancellazioni.
+## Key Concepts
+- **Soft spam**: exception to consent → promotional sending to those who have **already purchased** **similar** products/services, provided that the marketing opt-in was clearly offered upfront.
+- **Contact forms vs newsletter forms**: contact forms require a **second separate and optional checkbox** for marketing (never mandatory).
+- **Double opt-in**: confirmation link/email upon subscription.
+- **List organization**: few lists + **attributes/tags** for dynamic segments "as you go" (vs separate lists for market/language or b2b/b2c/suppliers/partners).
+- **System links**: customize data-edit, unsubscribe, and confirmation pages; in the unsubscribe page offer a **plan B** (reduce frequency, choose topics) to curb cancellations.
 
-## Modelli mentali
-- "Il GDPR è un'opportunità, non solo un vincolo" (Mazzanti): spinge sulla Customer Retention e sul valore dei dati di prima parte.
-- Pensa la lista come infrastruttura per i **segmenti dinamici** (interazioni, automazioni completate, sito/app, attributi/tag, date, CRM/CDP, consensi, geo, comportamenti d'acquisto).
+## Mental Models
+- "GDPR is an opportunity, not just a constraint" (Mazzanti): it drives Customer Retention and the value of first-party data.
+- Think of the list as infrastructure for **dynamic segments** (interactions, completed automations, site/app, attributes/tags, dates, CRM/CDP, consents, geo, purchase behaviors).
 
-## Anti-pattern
-- Inviare senza autenticare il dominio → finire in spam.
-- Checkbox marketing obbligatorio o consenso non salvato → violazione.
-- Liste disordinate → segmentazioni impossibili.
+## Anti-Patterns
+- Sending without authenticating your domain → ending up in spam.
+- Mandatory marketing checkbox or unsaved consent → violation.
+- Disorganized lists → impossible segmentation.
 
-## Takeaway
-1. Autentica dominio (DNS) e diversifica i mittenti prima del primo invio.
-2. Costruisci template S/M/L + skin stagionali + una variante plain-text.
-3. Consenso marketing separato, esplicito, salvato; minimizza i dati raccolti.
-4. Organizza le liste su attributi/tag per abilitare segmenti dinamici.
+## Takeaways
+1. Authenticate domain (DNS) and diversify senders before the first send.
+2. Build S/M/L templates + seasonal skins + one plain-text variant.
+3. Marketing consent: separate, explicit, saved; minimize data collected.
+4. Organize lists on attributes/tags to enable dynamic segments.
 
-## Collegamenti
-- **Ch 4**: oggetto/preview/mittente per il tasso di apertura.
-- **Ch 7**: gli attributi/tag diventano segmenti.
+## Connections
+- **Ch 4**: subject line/preview/sender for open rate.
+- **Ch 7**: attributes/tags become segments.

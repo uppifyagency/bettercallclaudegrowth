@@ -1,33 +1,33 @@
-# Playbook — Azienda avviata senza reparto marketing
+# Playbook — Established company without a marketing team
 
-**Quando si applica:** l'azienda **ha già fatturato, clienti e un prodotto/servizio che funziona**, ma è cresciuta per passaparola/relazioni e **non ha un processo o reparto marketing**. Non parte da zero: parte dal **disordine**. Spesso il sottostante è b2b-saas, local-service o b2c — leggi *anche* quel playbook.
+**When it applies:** the company **already has revenue, customers, and a product/service that works**, but it grew through word-of-mouth/relationships and **has no marketing process or department**. It doesn't start from zero: it starts from **disorder**. Often the underlying type is b2b-saas, local-service, or b2c — read *that* playbook too.
 
-> Principio guida: **non reinventare ciò che già genera ricavi. Prima metti ordine, poi amplifica.** L'errore tipico è buttare via l'asset esistente per una strategia "nuova e bella".
+> Guiding principle: **don't reinvent what already generates revenue. First put order, then amplify.** The typical mistake is throwing away the existing asset for a "new and shiny" strategy.
 
-## Sequenza GTM consigliata
-**Audit → sistematizza → amplifica.**
+## Recommended GTM sequence
+**Audit → systematize → amplify.**
 
-`gtm-buddy (audit)` → `gtm-posizionamento` → `gtm-offerta` → `gtm-leads` → *canale dell'archetipo merceologico* → `gtm-email` → misura
+`gtm-buddy (audit)` → `gtm-positioning` → `gtm-offer` → `gtm-leads` → *the underlying product archetype's channel* → `gtm-email` → measurement
 
-1. **Audit (gtm-buddy):** prima di generare, interroga lo stato attuale:
-   - Chi sono i **migliori clienti attuali** e perché hanno comprato? (è il tuo ICP già validato, gratis)
-   - Da dove arrivano oggi i clienti? (il canale che già funziona, da sistematizzare)
-   - Qual è l'offerta che vendete di più e a che margine?
-   - Cosa dicono le recensioni/feedback? (la Value Equation reale, in parole dei clienti)
-2. **Posizionamento:** estrai il Personal Monopoly/angolo **dai clienti che già amano l'azienda**, non da un brainstorming astratto.
-3. **Offerta:** formalizza e impacchetta ciò che già vendete (naming, garanzia, bonus) — spesso il valore c'è ma non è "confezionato".
-4. **Lead engine:** sistematizza il passaparola (referral con ask sistematico, `hormozi-leads`) **prima** di aprire canali nuovi: è il ROI più rapido.
-5. **Canale:** apri/struttura il canale primario dell'archetipo merceologico (vedi il suo playbook).
-6. **Email/CRM:** metti a sistema il database clienti esistente (riattivazione, upsell, recensioni). Spesso è oro non sfruttato.
+1. **Audit (gtm-buddy):** before generating anything, interrogate the current state:
+   - Who are your **best current customers** and why did they buy? (this is your already-validated ICP, for free)
+   - Where do customers come from today? (the channel that already works, to be systematized)
+   - Which offer do you sell the most, and at what margin?
+   - What do reviews/feedback say? (the real Value Equation, in the customers' own words)
+2. **Positioning:** extract the Personal Monopoly/angle **from the customers who already love the company**, not from an abstract brainstorm.
+3. **Offer:** formalize and package what you already sell (naming, guarantee, bonuses) — the value is often there but not "packaged."
+4. **Lead engine:** systematize word-of-mouth (referrals with a systematic ask, `hormozi-leads`) **before** opening new channels: it's the fastest ROI.
+5. **Channel:** open/structure the primary channel of the underlying product archetype (see its playbook).
+6. **Email/CRM:** put the existing customer database to work (reactivation, upsell, reviews). It's often untapped gold.
 
-## Canale primario
-**Auto** — dipende dal merceologico sottostante. La prima mossa è quasi sempre **sistematizzare il referral + il database esistente**, non un canale nuovo.
+## Primary channel
+**Auto** — it depends on the underlying type. The first move is almost always to **systematize referrals + the existing database**, not a new channel.
 
-## KPI nord + guardrail
-- Nord: **% di ricavi da canali ripetibili/misurabili** (vs passaparola opaco), **referral attivati**, **riattivazione clienti dormienti**.
-- Guardrail: introdurre **una cosa nuova alla volta** e misurarla; un'azienda senza marketing non ha banda per 5 esperimenti in parallelo.
+## North-star KPIs + guardrails
+- North star: **% of revenue from repeatable/measurable channels** (vs opaque word-of-mouth), **referrals activated**, **reactivation of dormant customers**.
+- Guardrail: introduce **one new thing at a time** and measure it; a company without marketing doesn't have the bandwidth for 5 parallel experiments.
 
-## Trappole comuni
-- "Rifare tutto da capo": butta via ICP e canale già validati.
-- Partire dai paid ads ignorando il database e il referral (quick win più economici).
-- Strategia da enterprise per un team che non ha un marketer dedicato: serve **un percorso eseguibile da 1 persona non-specialista**.
+## Common traps
+- "Redo everything from scratch": throws away an already-validated ICP and channel.
+- Starting with paid ads while ignoring the database and referrals (the cheapest quick wins).
+- An enterprise-grade strategy for a team that has no dedicated marketer: you need **a path executable by 1 non-specialist person**.

@@ -1,109 +1,109 @@
 # Glossario — AEMA
 
-Tutti i termini chiave del libro, in ordine alfabetico. Formato: **Termine** — definizione (→ chN).
+All key terms from the book, in alphabetical order. Format: **Term** — definition (→ chN).
 
 ---
 
-**A/B Test** — confronto tra due varianti (A vs B) di un'email o elemento; vince chi ottiene più aperture/clic/conversioni nel periodo di test. → ch04, ch10
+**A/B Test** — comparison between two variants (A vs B) of an email or element; the winner is the one that achieves more opens/clicks/conversions during the test period. → ch04, ch10
 
-**Acquisizione lead** — primo trigger: l'iscrizione di un nuovo contatto scatena il welcome/onboarding flow. → ch02, ch05
+**Lead acquisition** — first trigger: the subscription of a new contact fires the welcome/onboarding flow. → ch02, ch05
 
-**Always-On** — strategia/flusso attivo continuamente (non stagionale o one-shot). → ch06
+**Always-On** — strategy/flow that runs continuously (not seasonal or one-shot). → ch06
 
-**AOV (Average Order Value)** — valore medio dell'ordine; usato come dimensione di segmentazione per up/cross-selling. → ch07
+**AOV (Average Order Value)** — average order value; used as a segmentation dimension for up/cross-selling. → ch07
 
-**Asset intangibili** — brand, lista email, comunità, fiducia: i veri asset strategici del business digitale (Silvestrini). → ch01
+**Intangible assets** — brand, email list, community, trust: the real strategic assets of a digital business (Silvestrini). → ch01
 
-**ATT (App Tracking Transparency)** — framework Apple (iOS 14/15+) che richiede consenso esplicito per il tracking cross-app; ha ridotto drasticamente la tracciabilità su Meta Ads. → ch10
+**ATT (App Tracking Transparency)** — Apple framework (iOS 14/15+) requiring explicit consent for cross-app tracking; has drastically reduced trackability on Meta Ads. → ch10
 
-**Bait & Hook** — tecnica per raccogliere una data mancante (es. compleanno) promettendo un vantaggio futuro; il contatto compila il dato e il flusso si attiva alla data. → ch05
+**Bait & Hook** — technique for collecting a missing data point (e.g. birthday) by promising a future benefit; the contact fills in the data and the flow activates on that date. → ch05
 
-**Browse Abandonment** — flusso attivato quando un utente visita pagine prodotto ma non aggiunge al carrello né acquista. → ch09
+**Browse Abandonment** — flow triggered when a user visits product pages but does not add to cart or purchase. → ch09
 
-**CAPI (Conversions API)** — API Meta per inviare eventi di conversione lato server, indipendentemente dai cookie del browser. → ch10
+**CAPI (Conversions API)** — Meta API for sending conversion events server-side, independently of browser cookies. → ch10
 
-**CDP (Customer Data Platform)** — piattaforma che unifica i dati cliente da più fonti (email, e-commerce, CRM, web) per segmentazione avanzata e trigger basati su ordini/importi/comportamenti. → ch01, ch05
+**CDP (Customer Data Platform)** — platform that unifies customer data from multiple sources (email, e-commerce, CRM, web) for advanced segmentation and triggers based on orders/amounts/behaviors. → ch01, ch05
 
-**Churn** — abbandono: ex-clienti che smettono di acquistare. Contrasto con flow Winback. → ch05, ch09
+**Churn** — abandonment: former customers who stop buying. Countered with a Winback flow. → ch05, ch09
 
-**Cookieless world** — scenario in cui i cookie di terze parti vengono dismessi; richiede first-party data e tracciamento server-side. → ch08, ch10
+**Cookieless world** — scenario in which third-party cookies are phased out; requires first-party data and server-side tracking. → ch08, ch10
 
-**Conversific** — tool di analisi per e-commerce che individua cluster RFM, combinazioni prodotto e opportunità di bundle. → ch07
+**Conversific** — e-commerce analytics tool that identifies RFM clusters, product combinations, and bundle opportunities. → ch07
 
-**CRM (Customer Relationship Management)** — sistema per gestire le relazioni con i clienti; nella MA: segmentazione lead gen, scoring, task commerciali. → ch01, ch05
+**CRM (Customer Relationship Management)** — system for managing customer relationships; in MA: lead gen segmentation, scoring, sales tasks. → ch01, ch05
 
-**Coupon dinamico/unico** — codice sconto personalizzato per contatto (non condivisibile) + countdown temporizzato; superiore ai codici statici nei flussi personalizzati. → ch09
+**Dynamic/unique coupon** — personalized discount code per contact (non-shareable) + timed countdown; superior to static codes in personalized flows. → ch09
 
-**Customer journey** — percorso del cliente dalla scoperta all'acquisto ripetuto; base da cui si progettano trigger e flussi. → ch05
+**Customer journey** — the customer's path from discovery to repeat purchase; the foundation from which triggers and flows are designed. → ch05
 
-**Delay** — attesa tra azioni in un workflow (relativa o assoluta). → ch06
+**Delay** — wait time between actions in a workflow (relative or absolute). → ch06
 
-**Deal Hunter** — segmento avanzato: acquista solo ai prezzi più bassi; attivare con Price Drop alert. → ch07
+**Deal Hunter** — advanced segment: buys only at the lowest prices; activate with Price Drop alerts. → ch07
 
-**Deliverability** — capacità delle email di arrivare in inbox (non spam); dipende da autenticazione dominio, reputazione mittente, pulizia lista. → ch03
+**Deliverability** — the ability of emails to reach the inbox (not spam); depends on domain authentication, sender reputation, and list hygiene. → ch03
 
-**Double opt-in** — conferma dell'iscrizione via email; aumenta qualità lista e conformità GDPR. → ch03
+**Double opt-in** — subscription confirmation via email; increases list quality and GDPR compliance. → ch03
 
-**Drip campaign** — sequenza di email programmata nel tempo per nutrire il lead verso la conversione (vs. welcome series, più relazionale). → ch06, ch09
+**Drip campaign** — email sequence scheduled over time to nurture the lead toward conversion (vs. welcome series, which is more relational). → ch06, ch09
 
-**Enhanced Conversions** — analogo Google del CAPI: invia dati hashati per attribuzione server-side. → ch10
+**Enhanced Conversions** — Google's equivalent of CAPI: sends hashed data for server-side attribution. → ch10
 
-**Expected Date Of Next Order** — data predetta (ML) del prossimo acquisto; usata come trigger per Replenishment. → ch05
+**Expected Date Of Next Order** — ML-predicted date of next purchase; used as a trigger for Replenishment. → ch05
 
-**First-party data** — dati raccolti direttamente dal proprio sito/app/email (visite, acquisti, aperture). → ch10
+**First-party data** — data collected directly from one's own site/app/email (visits, purchases, opens). → ch10
 
-**Funneling Flow** — flusso che dopo N email obbligate prosegue solo sui contatti che hanno aperto/cliccato; l'open rate risale. → ch09
+**Funneling Flow** — flow that after N mandatory emails continues only with contacts who opened/clicked; open rate rises again. → ch09
 
-**GDPR** — Regolamento europeo sulla protezione dei dati; in email marketing: consenso libero/esplicito/separato/salvato, double opt-in, minimizzazione. → ch03
+**GDPR** — European data protection regulation; in email marketing: free/explicit/separate/saved consent, double opt-in, minimization. → ch03
 
-**Hard bounce** — email non consegnata per indirizzo inesistente o disattivato; rimuovere subito dalla lista. → ch03
+**Hard bounce** — undelivered email due to a non-existent or deactivated address; remove immediately from the list. → ch03
 
-**If/then** — ramificazione condizionale in un workflow (se condizione → percorso A, altrimenti → percorso B). → ch06
+**If/then** — conditional branching in a workflow (if condition → path A, otherwise → path B). → ch06
 
-**Impulse Buyer** — segmento: compra subito al lancio; attivare con early access/nuovi arrivi. → ch07
+**Impulse Buyer** — segment: buys immediately at launch; activate with early access/new arrivals. → ch07
 
-**Last-Minute Shopper** — segmento: decide all'ultimo; priorità alla rassicurazione sulla consegna e spedizione express. → ch07
+**Last-Minute Shopper** — segment: decides at the last moment; priority on delivery reassurance and express shipping. → ch07
 
-**Lead magnet** — contenuto gratuito (ebook, checklist, tool, webinar) offerto in cambio dell'iscrizione. → ch02
+**Lead magnet** — free content (ebook, checklist, tool, webinar) offered in exchange for a subscription. → ch02
 
-**Lookalike audience** — audience costruita dalla piattaforma adv (Meta/Google) a partire da un "seed" di clienti esistenti ad alto LTV. → ch10
+**Lookalike audience** — audience built by the ad platform (Meta/Google) from a "seed" of existing high-LTV customers. → ch10
 
-**LTV (LifeTime Value)** — valore totale che un cliente genera nel tempo; usato per prioritizzare segmenti e campagne. → ch05
+**LTV (LifeTime Value)** — total value a customer generates over time; used to prioritize segments and campaigns. → ch05
 
-**Minimizzazione** — principio GDPR: raccogliere solo i dati strettamente necessari (nome + email bastano per iniziare). → ch03
+**Minimization** — GDPR principle: collect only strictly necessary data (name + email is enough to start). → ch03
 
-**Onboarding (Welcome series)** — sequenza di email post-iscrizione per introdurre il brand e avviare la relazione. → ch06
+**Onboarding (Welcome series)** — post-subscription email sequence to introduce the brand and start the relationship. → ch06
 
-**Over-automation** — utente inserito in troppi flussi contemporaneamente; si previene mappando i workflow per segmento. → ch06
+**Over-automation** — user enrolled in too many flows simultaneously; prevented by mapping workflows per segment. → ch06
 
-**Replenishment** — flusso che anticipa il riacquisto di un prodotto consumabile, inviato prima della fine della scorta. → ch05, ch09
+**Replenishment** — flow that anticipates the repurchase of a consumable product, sent before the supply runs out. → ch05, ch09
 
-**RFM (Recency, Frequency, Monetary)** — modello di segmentazione e-commerce su tre assi: quando ha acquistato, quante volte, quanto ha speso. → ch05, ch07
+**RFM (Recency, Frequency, Monetary)** — e-commerce segmentation model on three axes: when they last purchased, how many times, how much they spent. → ch05, ch07
 
-**Scoring CRM** — sistema a punti per classificare i lead (email aperta 5pt, cliccata 15, visita sito 20, call 50, preventivo 100). → ch07
+**CRM Scoring** — point-based system to classify leads (email opened 5pt, clicked 15, site visit 20, call 50, quote 100). → ch07
 
-**Segmento** — gruppo di contatti con caratteristiche/comportamenti comuni; base di trigger ed enrollment. → ch06, ch07
+**Segment** — group of contacts with common characteristics/behaviors; the basis for triggers and enrollment. → ch06, ch07
 
-**Send Time Optimization (STO)** — funzione che invia l'email nell'orario in cui ogni singolo contatto ha maggiore probabilità di aprirla (ML per contatto). → ch04
+**Send Time Optimization (STO)** — feature that sends the email at the time each individual contact is most likely to open it (ML per contact). → ch04
 
-**Smart Sending** — regola che impedisce di inviare più email dello stesso workflow nello stesso arco temporale (es. max 1/giorno). → ch04, ch06
+**Smart Sending** — rule that prevents sending more emails from the same workflow within the same time window (e.g. max 1/day). → ch04, ch06
 
-**Soap Opera Sequence (SOS)** — tecnica di storytelling nell'onboarding: ogni email finisce con uno "spoiler" per invogliare all'apertura della successiva. → ch06
+**Soap Opera Sequence (SOS)** — storytelling technique in onboarding: each email ends with a "teaser" to encourage opening the next one. → ch06
 
-**Soft spam** — eccezione GDPR che consente comunicazioni commerciali a clienti esistenti per prodotti analoghi a quelli acquistati, senza consenso esplicito marketing. → ch03
+**Soft spam** — GDPR exception allowing commercial communications to existing customers for products similar to those purchased, without explicit marketing consent. → ch03
 
-**Spin-off** — campagna one-shot temporanea (evento, ricorrenza, RSS blog). → ch06
+**Spin-off** — temporary one-shot campaign (event, recurring occasion, blog RSS). → ch06
 
-**Sunset Flow** — flusso finale che archivia i contatti inattivi; migliora le metriche di apertura e abbassa i costi del piano. → ch09
+**Sunset Flow** — final flow that archives inactive contacts; improves open rate metrics and lowers plan costs. → ch09
 
-**Trigger** — condizione che avvia un workflow (iscrizione, apertura email, acquisto, compleanno, score soglia, ecc.). → ch05, ch06
+**Trigger** — condition that starts a workflow (subscription, email open, purchase, birthday, score threshold, etc.). → ch05, ch06
 
-**VIP** — segmento avanzato: clienti ad alto importo/frequenza/fidelizzazione; priorità retention e accesso esclusivo. → ch07
+**VIP** — advanced segment: customers with high spend/frequency/loyalty; priority retention and exclusive access. → ch07
 
-**WIIFM (What's In It For Me)** — domanda guida per il contenuto in ogni fase del funnel (Neha Divanji). → ch05
+**WIIFM (What's In It For Me)** — guiding question for content at every stage of the funnel (Neha Divanji). → ch05
 
-**Window Shopper** — segmento: sfoglia ma non compra; attivare con reminder, how-to e assistenza. → ch07
+**Window Shopper** — segment: browses but does not buy; activate with reminders, how-tos, and support. → ch07
 
-**Winback** — flusso (tipicamente 2 email) per recuperare clienti inattivi prima che diventino Lost. → ch09
+**Winback** — flow (typically 2 emails) to recover inactive customers before they become Lost. → ch09
 
-**Zero-party data** — dati forniti intenzionalmente dall'utente (preferenze, quiz, form profilati). → ch02, ch05, ch10
+**Zero-party data** — data intentionally provided by the user (preferences, quizzes, profiling forms). → ch02, ch05, ch10

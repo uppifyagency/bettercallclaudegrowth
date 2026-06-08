@@ -1,25 +1,25 @@
 # Capitolo 9: Architettura del sito — URL, directory tematiche, canonicalizzazione
 
 ## Core Idea
-Organizzare il sito in modo logico (URL parlanti, directory per tema, un solo URL canonico per contenuto) aiuta crawler e utenti. Diventa cruciale su siti grandi o in redesign.
+Organizing the site logically (descriptive URLs, topic-based directories, a single canonical URL per piece of content) helps crawlers and users alike. This becomes critical on large sites or during redesigns.
 
 ## Frameworks Introdotti
-- **URL descrittivi — regole 2026**: <75 caratteri; separatore trattino `-` (mai `_`); solo lowercase ASCII/numeri/trattino/slash; URL stabili (se cambi, 301); minimizza parametri (3+ → duplicazione); niente date in URL evergreen.
-- **Hub & spoke (topical clusters)**: pillar → spoke → sub-spoke. Google riconosce l'"autorità di un sito su un argomento" come segnale. Le directory aiutano Google a capire la frequenza di cambiamento per sezione.
-- **Strategie di canonicalizzazione** (in ordine di forza del segnale):
-  1. **Redirect 301** — il più forte; quando non serve mantenere le varianti.
-  2. **rel="canonical"** — standard quando devi mantenere varianti (es. UTM).
-  3. **Hreflang** — versioni localizzate (chiarisce relazioni, non canonicalizza).
-  4. **Sitemap XML** — solo URL canonici (segnale debole).
-  5. **Consistenza internal link** — linka sempre la canonica.
+- **Descriptive URLs — 2026 rules**: <75 characters; hyphen `-` as separator (never `_`); lowercase ASCII/numbers/hyphens/slashes only; stable URLs (if you change them, use 301); minimize parameters (3+ → duplication risk); no dates in evergreen URLs.
+- **Hub & spoke (topical clusters)**: pillar → spoke → sub-spoke. Google recognizes "a site's authority on a topic" as a ranking signal. Directories help Google understand the update frequency per section.
+- **Canonicalization strategies** (ranked by signal strength):
+  1. **301 redirect** — the strongest; use when variants don't need to be kept.
+  2. **rel="canonical"** — standard when you must keep variants (e.g., UTM parameters).
+  3. **Hreflang** — localized versions (clarifies relationships, does not canonicalize).
+  4. **XML Sitemap** — canonical URLs only (weak signal).
+  5. **Internal link consistency** — always link to the canonical version.
 
 ## Code Examples
 ```html
-<!-- Canonical auto-referenziale (consigliato su ogni pagina) -->
+<!-- Self-referential canonical (recommended on every page) -->
 <link rel="canonical" href="https://www.example.com/prodotti/scarpe-running">
 ```
 ```http
-# Canonical via header HTTP (per PDF, JSON)
+# Canonical via HTTP header (for PDF, JSON)
 Link: <https://www.example.com/manuale.pdf>; rel="canonical"
 ```
 ```
@@ -32,22 +32,22 @@ Link: <https://www.example.com/manuale.pdf>; rel="canonical"
 ```
 
 ## Key Concepts
-- **Cause tipiche di duplicazione**: HTTP/HTTPS o www/non-www, parametri tracking (utm, gclid), ordinamento/filtro/paginazione, versioni stampabili, trailing slash, maiuscole/minuscole.
-- **rel="canonical" è un suggerimento, non una direttiva**: Google può ignorarlo se incoerente con redirect/hreflang/sitemap/internal linking. Verifica la canonica scelta in GSC → Controllo URL.
+- **Typical causes of duplication**: HTTP/HTTPS or www/non-www, tracking parameters (utm, gclid), sorting/filtering/pagination, print-friendly versions, trailing slash, uppercase/lowercase variations.
+- **rel="canonical" is a hint, not a directive**: Google can ignore it if it conflicts with redirects/hreflang/sitemap/internal linking. Verify which canonical Google has chosen in GSC → URL Inspection.
 
 ## Anti-patterns
-- **"Penalità" per duplicati**: non esiste azione manuale per duplicati interni — è inefficiente (spreco crawl budget, diluizione segnali) ma non penalizzato. Diverso il furto di contenuti altrui (può scattare antispam).
-- Canonical incoerente con gli altri segnali → Google sceglie un'altra canonica.
+- **"Penalty" for duplicates**: there is no manual action for internal duplicates — it is inefficient (wasted crawl budget, signal dilution) but not penalized. Stealing third-party content is different (may trigger anti-spam action).
+- Canonical inconsistent with other signals → Google selects a different canonical.
 
 ## SOTA 2026 — Topical authority > domain authority
-Studi sul Core Update marzo 2026: siti che "possiedono" un cluster (copertura completa, profondità, internal linking denso) superano siti più grandi e generalisti su query nicchia. Conta la coerenza semantica + qualità dei link interni verso il pillar, non il numero di backlink.
+Studies on the Core Update March 2026: sites that "own" a cluster (full coverage, depth, dense internal linking) outrank larger, more generalist sites on niche queries. What matters is semantic coherence + quality of internal links pointing to the pillar, not the number of backlinks.
 
 ## Key Takeaways
-1. Canonical auto-referenziale su tutte le pagine come baseline.
-2. Sottodirectory consolidano autorità; sottodomini per oggetti semanticamente distinti.
-3. Le directory tematiche segnalano a Google la frequenza di update per sezione.
+1. Self-referential canonical on every page as a baseline.
+2. Subdirectories consolidate authority; subdomains for semantically distinct entities.
+3. Thematic directories signal to Google the update frequency for each section.
 
 ## Connects To
-- **Ch 6** (GEO): cluster GEO-friendly (più stretti).
-- **Ch 13/14**: canonical scelto da Google in Search Console.
-- **Ch 19** (Exec): RFC 8288 Web Linking (header Link: per canonical).
+- **Ch 6** (GEO): GEO-friendly clusters (narrower scope).
+- **Ch 13/14**: canonical chosen by Google in Search Console.
+- **Ch 19** (Exec): RFC 8288 Web Linking (Link: header for canonical).

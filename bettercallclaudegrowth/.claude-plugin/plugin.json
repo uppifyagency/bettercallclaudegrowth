@@ -1,7 +1,7 @@
 {
   "name": "bettercallclaudegrowth",
   "version": "0.3.0",
-  "description": "Consulente Go-To-Market: router gtm-buddy + pipeline adattiva jobs -> posizionamento -> offerta -> lead -> contenuti/copy -> canali -> email -> misura, calibrata per archetipo di business (coaching, B2B SaaS, B2C/e-commerce, servizio locale, azienda avviata senza marketing) e stadio (micro-lancio/test vs scaling). Basata su 9 framework di marketing (Christensen Jobs to Be Done, Hormozi Offers & Leads, Drew SUCKS, Butcher Productize, Frangioni AEMA, SEO/GEO 2026, Instagram Performance, Doing Content Right), con scoring di GTM readiness e revisione avversariale.",
+  "description": "Go-To-Market consultant for Claude Code: gtm-buddy router + adaptive pipeline jobs -> positioning -> offer -> leads -> content/copy -> channels -> email -> measurement, calibrated by business archetype (coaching, B2B SaaS, B2C/e-commerce, local service, established company without marketing) and stage (micro-launch/test vs scaling). Built on 9 marketing frameworks (Christensen Jobs to Be Done, Hormozi Offers & Leads, Drew SUCKS, Butcher Productize, Frangioni AEMA, SEO/GEO 2026, Instagram Performance, Doing Content Right), with a GTM readiness score and adversarial review.",
   "author": {
     "name": "Uppify Agency",
     "email": "email.vlad.vrinceanu@gmail.com",
@@ -22,7 +22,7 @@
     "content-strategy",
     "seo",
     "geo",
-    "email-automation",
+    "email-marketing",
     "instagram-ads",
     "b2b-saas",
     "b2c",
@@ -36,43 +36,43 @@
   "userConfig": {
     "output_language": {
       "type": "string",
-      "title": "Lingua output",
-      "description": "Lingua preferita per gli output. Valori: IT, EN.",
-      "default": "IT",
+      "title": "Output language",
+      "description": "Preferred language for outputs. Values: EN, IT.",
+      "default": "EN",
       "sensitive": false
     },
-    "archetipo": {
+    "archetype": {
       "type": "string",
-      "title": "Archetipo di business",
-      "description": "Archetipo di default: coaching | b2b-saas | b2c | ecommerce | local-service | established-no-marketing | auto. 'auto' lascia che gtm-buddy/orchestrator lo deducano dall'input.",
+      "title": "Business archetype",
+      "description": "Default archetype: coaching | b2b-saas | b2c | ecommerce | local-service | established-no-marketing | auto. 'auto' lets gtm-buddy/orchestrator infer it from your input.",
       "default": "auto",
       "sensitive": false
     },
-    "stadio": {
+    "stage": {
       "type": "string",
-      "title": "Stadio del business",
-      "description": "Stadio di default: micro-launch (test/validazione) | scaling (crescita) | established (azienda avviata) | auto.",
+      "title": "Business stage",
+      "description": "Default stage: micro-launch (test/validation) | scaling (growth) | established (mature company) | auto.",
       "default": "auto",
       "sensitive": false
     },
-    "settore": {
+    "industry": {
       "type": "string",
-      "title": "Settore / mercato",
-      "description": "Settore di default del business (es. B2B SaaS HR, e-commerce moda, servizi locali, automotive ricambi). Ancora le risposte al contesto.",
+      "title": "Industry / market",
+      "description": "Default industry/vertical (e.g. B2B SaaS HR, fashion e-commerce, local services, automotive parts). Anchors answers to your context.",
       "default": "",
       "sensitive": false
     },
     "default_channel": {
       "type": "string",
-      "title": "Canale primario",
-      "description": "Canale di distribuzione preferito su cui approfondire: seo | instagram | email | auto. 'auto' lascia che l'archetipo determini il canale primario.",
+      "title": "Primary channel",
+      "description": "Preferred distribution channel: seo | instagram | email | auto. 'auto' lets the archetype decide the primary channel.",
       "default": "auto",
       "sensitive": false
     },
     "brand_voice": {
       "type": "string",
-      "title": "Tono di voce",
-      "description": "Tono del brand per copy e contenuti (es. diretto, autorevole, ironico).",
+      "title": "Tone of voice",
+      "description": "Brand tone for copy and content (e.g. direct, authoritative, witty).",
       "default": "",
       "sensitive": false
     }

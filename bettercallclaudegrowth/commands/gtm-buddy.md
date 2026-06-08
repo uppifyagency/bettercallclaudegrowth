@@ -1,27 +1,27 @@
 ---
-description: Concierge GTM. Descrivi la tua situazione e ti dice da dove partire: la singola skill giusta o la sequenza ordinata di command da eseguire, calibrata sul tuo archetipo (coaching, B2B SaaS, B2C, locale, azienda avviata) e stadio (micro-lancio, scaling, established). Punto d'ingresso consigliato se non sai da dove iniziare.
-argument-hint: descrivi la tua situazione (es. "lancio un coaching di nutrizione, parto da zero" oppure "ho un SaaS B2B HR, 50 trial/mese, voglio crescere")
+description: GTM concierge. Describe your situation and it tells you where to start: the single right skill or the ordered sequence of commands to run, calibrated to your archetype (coaching, B2B SaaS, B2C, local, established business) and stage (micro-launch, scaling, established). Recommended entry point if you don't know where to begin.
+argument-hint: describe your situation (e.g. "I'm launching a nutrition coaching business, starting from scratch" or "I have a B2B HR SaaS, 50 trials/month, I want to grow")
 ---
 
-# /gtm-buddy — da dove parto?
+# /gtm-buddy — where do I start?
 
-Il punto d'ingresso del plugin quando **non sai quale command usare**. Descrivi la tua situazione e ricevi un percorso su misura: una skill singola o la sequenza giusta.
+The plugin's entry point when you **don't know which command to use**. Describe your situation and get a tailored path: a single skill or the right sequence.
 
-Input utente: $ARGUMENTS
+User input: $ARGUMENTS
 
-## Cosa fare
+## What to do
 
-1. **Classifica e instrada.** Lancia l'agent **gtm-buddy** passandogli `$ARGUMENTS` e l'intera `userConfig`. L'agent legge `playbooks/_index.md` + il playbook dell'archetipo, classifica **archetipo × stadio** (facendo al massimo 1 domanda di disambiguazione se serve) e restituisce la raccomandazione nel formato: Situazione · Cosa fai adesso (skill singola o sequenza ordinata) · Perché · Canale primario + enfasi/cosa saltare · Prima azione.
+1. **Classify and route.** Launch the **gtm-buddy** agent, passing it `$ARGUMENTS` and the entire `userConfig`. The agent reads `playbooks/_index.md` + the archetype playbook, classifies **archetype × stage** (asking at most 1 disambiguation question if needed), and returns the recommendation in the format: Situation · What you do now (single skill or ordered sequence) · Why · Primary channel + emphasis/what to skip · First action.
 
-2. **Presenta la raccomandazione** all'utente così com'è, e chiudi con la scelta:
-   - **«Eseguo io la sequenza in automatico»**, oppure
-   - **«Lancio un singolo passo»**, oppure
-   - **«Pipeline completa orchestrata»** (`/gtm`).
+2. **Present the recommendation** to the user as-is, and close with the choice:
+   - **"I'll run the sequence automatically"**, or
+   - **"Run a single step"**, or
+   - **"Full orchestrated pipeline"** (`/gtm`).
 
-3. **Esecuzione** — la fa il **thread principale**, non l'agent `gtm-buddy` (che è un router read-only e non scrive deliverable). Tre vie:
-   - **Auto-esecuzione completa / «fai tutto tu»** → delega a **`/gtm $ARGUMENTS`**. L'agent `gtm-orchestrator` (che ha Write e Bash) esegue le fasi con contesto cumulativo, i checkpoint `gtm-critic`, il **GTM Readiness Score** calcolato con gli script deterministici, e scrive `gtm-plan.md`. È la via consigliata per l'esecuzione automatica end-to-end.
-   - **Sottosequenza su misura** (non l'intera pipeline, es. solo `gtm-jobs → gtm-offerta → gtm-copy`) → il thread principale lancia in ordine i singoli `/gtm-*` raccomandati, portando avanti il contesto di passo in passo e invocando `gtm-critic` ai checkpoint del playbook. Per lo score di una sottosequenza usa `node "${CLAUDE_PLUGIN_ROOT}/scripts/gtm-readiness-score.js" …`.
-   - **Un solo passo** → conferma il command singolo (es. `/gtm-offerta …`) e fermati.
+3. **Execution** — handled by the **main thread**, not the `gtm-buddy` agent (which is a read-only router and does not write deliverables). Three paths:
+   - **Full auto-execution / "do everything for me"** → delegate to **`/gtm $ARGUMENTS`**. The `gtm-orchestrator` agent (which has Write and Bash) runs the phases with cumulative context, the `gtm-critic` checkpoints, the **GTM Readiness Score** computed with the deterministic scripts, and writes `gtm-plan.md`. This is the recommended path for end-to-end automatic execution.
+   - **Tailored sub-sequence** (not the full pipeline, e.g. only `gtm-jobs → gtm-offer → gtm-copy`) → the main thread launches the recommended individual `/gtm-*` commands in order, carrying the context forward step by step and invoking `gtm-critic` at the playbook checkpoints. For the score of a sub-sequence use `node "${CLAUDE_PLUGIN_ROOT}/scripts/gtm-readiness-score.js" …`.
+   - **A single step** → confirm the single command (e.g. `/gtm-offer …`) and stop.
 
-## Principio
-gtm-buddy **non sostituisce** i command specialisti né l'orchestratore: li **coordina**. Per situazioni a 0 o disordinate è il modo più affidabile per non sbagliare percorso. Non imporre mai la pipeline da 7 fasi a chi è in micro-lancio: dai il percorso più corto che funziona.
+## Principle
+gtm-buddy **does not replace** the specialist commands or the orchestrator: it **coordinates** them. For zero-state or messy situations it is the most reliable way to avoid taking the wrong path. Never impose the 7-phase pipeline on someone in micro-launch: give the shortest path that works.

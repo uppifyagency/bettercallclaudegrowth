@@ -1,53 +1,53 @@
-# Glossario SEO / GEO / SOTA 2026
+# SEO / GEO / SOTA 2026 Glossary
 
-**AI Mode** — Modalità di ricerca conversazionale Google (Gemini, 2025), multi-turn con citazioni (Ch13, Ch15, Ch20).
-**AI Overview (AIO)** — Sintesi generativa inline in SERP con link alle fonti, alimentata da Gemini, dal 2024 (Ch13, Ch20).
-**AI Visibility Prompt / Prompt-target** — La domanda conversazionale sotto cui vuoi essere citato da un LLM; più verbosa della keyword Google (Ch1, Ch2).
-**Anchor text** — Testo cliccabile di un link; segnala il contenuto della pagina linkata (Ch10).
-**Back button hijacking** — Policy antispam aggiunta apr 2026: interferire con la navigazione back (Ch15).
-**BoFu (Bottom-of-Funnel)** — Contenuto per utenti pronti all'acquisto: listicoli, comparative, alternative, guide alla scelta (Ch1).
-**Canonical URL** — URL rappresentativo di un gruppo di duplicati; via rel=canonical, 301, sitemap, internal linking. È un suggerimento, non una direttiva (Ch9).
-**CLS — Cumulative Layout Shift** — CWV di instabilità visiva. Buono ≤0,1 (Ch13, Ch16).
-**Crawl budget** — Numero di pagine che Googlebot scansiona in un periodo; limitato per siti grandi/lenti (Ch8).
-**CrUX — Chrome User Experience Report** — Dataset pubblico di CWV reali (Chrome opted-in), rolling 28gg, p75. API/History/BigQuery (Ch16, Ch18).
-**E-E-A-T** — Experience, Expertise, Authoritativeness, Trustworthiness. Framework SQRG; Experience dominante dal mar 2026 (Ch12, Ch13, Ch20).
-**Entità** — Concetto univoco nel Knowledge Graph; ottimizzare per entità = coprire proprietà e relazioni (Ch10).
-**FAQPage** — Schema FAQ; rich result rimosso da SERP da mag 2026, ancora utile per AI Mode (Ch13).
-**Featured snippet** — "Position zero": risposta estratta mostrata in evidenza (Ch13).
-**GEO** — Generative Engine Optimization: visibilità nei motori generativi e interfacce AI (Ch1).
-**Glue** — Sistema interno Google (antitrust): controparte di NavBoost per le universal features (Ch20).
-**Googlebot** — Crawler principale; varianti Image/Video/News/AdsBot/Storebot (Ch7).
-**Google-Extended** — User-agent per opt-out training generativo; bloccarlo NON influisce su Search (Ch20).
-**Heading-as-question** — H2/H3 formulati come domande reali con risposta concisa 1-2 righe sotto; pattern estratto dagli LLM (Ch2, Ch13).
-**Helpful Content System (HCU)** — Classificatore di utilità sito-wide (ago 2022), integrato nel core (mar 2024/2026) (Ch13).
-**hreflang** — Attributo che dichiara lingua/regione di una pagina; richiede bidirezionalità e auto-referenza (Ch13).
-**Hub & spoke** — Architettura pillar→spoke→sub-spoke per topical authority (Ch9, Ch6).
-**IndexNow** — Protocollo push (Bing/Yandex/Naver/Seznam — non Google) per notificare URL (Ch13).
-**INP — Interaction to Next Paint** — CWV di reattività; ha sostituito FID (12 mar 2024); più severo. Buono ≤200ms (Ch13, Ch16).
-**JSON-LD** — Formato raccomandato per dati strutturati, in `<script type="application/ld+json">` (Ch13, Ch19).
-**LCP — Largest Contentful Paint** — CWV di rendering dell'elemento above-the-fold più grande. Buono ≤2,5s (Ch13, Ch16).
-**Lighthouse** — Motore di audit open source dietro DevTools/PSI/Lighthouse CI (Ch16, Ch19).
-**LLM referral traffic** — Click da chatgpt.com, claude.ai, perplexity.ai, gemini.google.com (Ch2).
-**Mobile-first indexing** — Google indicizza la versione mobile (dal 2019) (Ch14).
-**NavBoost** — Re-ranking su dati di click, rolling 13 mesi; un Twiddler. Confermato sotto giuramento (Ch20).
-**Needs Met** — Meccanismo SQRG di valutazione del soddisfacimento dell'intent (Ch20).
-**Noindex** — Direttiva (meta/X-Robots-Tag) che esclude dall'indice ma permette la scansione (Ch8).
-**NSR (Normalized Site Rank)** — Punteggio normalizzato per sito (leak 2024), complementare al PageRank (Ch20).
-**PageRank** — Algoritmo originale sui link (1998); uno tra centinaia di segnali (Ch12).
-**Parasite SEO / Site reputation abuse** — Abusare della reputazione di un dominio host con contenuti third-party non correlati (Ch13, Ch15).
-**Rich result / Rich snippet** — Risultato arricchito (stelle, prezzo, immagini) da dati strutturati (Ch13).
-**Robots.txt** — File alla root che controlla il crawling (non l'indicizzazione); standard RFC 9309 (Ch8, Ch19).
-**RFC 9309** — Robots Exclusion Protocol (IETF set 2022; co-author Illyes/Sassman) (Ch19).
-**RFC 8288** — Web Linking; header HTTP Link: per canonical su asset non-HTML (Ch19).
-**Schema.org** — Vocabolario standard per entità; co-sponsor Google/Microsoft/Yahoo/Yandex (Ch13, Ch19).
+**AI Mode** — Google's conversational search mode (Gemini, 2025), multi-turn with citations (Ch13, Ch15, Ch20).
+**AI Overview (AIO)** — Generative inline summary in the SERP with links to sources, powered by Gemini, since 2024 (Ch13, Ch20).
+**AI Visibility Prompt / Prompt-target** — The conversational query under which you want to be cited by an LLM; more verbose than a Google keyword (Ch1, Ch2).
+**Anchor text** — Clickable text of a link; signals the content of the linked page (Ch10).
+**Back button hijacking** — Anti-spam policy added Apr 2026: interfering with back navigation (Ch15).
+**BoFu (Bottom-of-Funnel)** — Content for purchase-ready users: listicles, comparisons, alternatives, buying guides (Ch1).
+**Canonical URL** — Representative URL for a group of duplicates; via rel=canonical, 301, sitemap, internal linking. A hint, not a directive (Ch9).
+**CLS — Cumulative Layout Shift** — CWV for visual instability. Good ≤0.1 (Ch13, Ch16).
+**Crawl budget** — Number of pages Googlebot crawls in a period; limited for large/slow sites (Ch8).
+**CrUX — Chrome User Experience Report** — Public dataset of real-world CWV (Chrome opted-in), rolling 28 days, p75. API/History/BigQuery (Ch16, Ch18).
+**E-E-A-T** — Experience, Expertise, Authoritativeness, Trustworthiness. SQRG framework; Experience dominant since Mar 2026 (Ch12, Ch13, Ch20).
+**Entity** — Unique concept in the Knowledge Graph; optimising for entities means covering properties and relationships (Ch10).
+**FAQPage** — FAQ schema; rich result removed from SERP since May 2026, still useful for AI Mode (Ch13).
+**Featured snippet** — "Position zero": extracted answer shown prominently (Ch13).
+**GEO** — Generative Engine Optimization: visibility in generative engines and AI interfaces (Ch1).
+**Glue** — Google internal system (antitrust): counterpart to NavBoost for universal features (Ch20).
+**Googlebot** — Main crawler; variants Image/Video/News/AdsBot/Storebot (Ch7).
+**Google-Extended** — User-agent for opting out of generative training; blocking it does NOT affect Search (Ch20).
+**Heading-as-question** — H2/H3 headings worded as real questions with a concise 1-2 line answer below; pattern extracted by LLMs (Ch2, Ch13).
+**Helpful Content System (HCU)** — Site-wide usefulness classifier (Aug 2022), integrated into core (Mar 2024/2026) (Ch13).
+**hreflang** — Attribute declaring the language/region of a page; requires bidirectionality and self-reference (Ch13).
+**Hub & spoke** — Pillar→spoke→sub-spoke architecture for topical authority (Ch9, Ch6).
+**IndexNow** — Push protocol (Bing/Yandex/Naver/Seznam — not Google) to notify URLs (Ch13).
+**INP — Interaction to Next Paint** — CWV for responsiveness; replaced FID (12 Mar 2024); stricter. Good ≤200ms (Ch13, Ch16).
+**JSON-LD** — Recommended format for structured data, in `<script type="application/ld+json">` (Ch13, Ch19).
+**LCP — Largest Contentful Paint** — CWV for rendering the largest above-the-fold element. Good ≤2.5s (Ch13, Ch16).
+**Lighthouse** — Open-source audit engine behind DevTools/PSI/Lighthouse CI (Ch16, Ch19).
+**LLM referral traffic** — Clicks from chatgpt.com, claude.ai, perplexity.ai, gemini.google.com (Ch2).
+**Mobile-first indexing** — Google indexes the mobile version (since 2019) (Ch14).
+**NavBoost** — Re-ranking on click data, rolling 13 months; a Twiddler. Confirmed under oath (Ch20).
+**Needs Met** — SQRG mechanism for evaluating intent satisfaction (Ch20).
+**Noindex** — Directive (meta/X-Robots-Tag) that excludes from the index but allows crawling (Ch8).
+**NSR (Normalized Site Rank)** — Normalised per-site score (2024 leak), complementary to PageRank (Ch20).
+**PageRank** — Original link-based algorithm (1998); one of hundreds of signals (Ch12).
+**Parasite SEO / Site reputation abuse** — Exploiting a host domain's reputation with unrelated third-party content (Ch13, Ch15).
+**Rich result / Rich snippet** — Enhanced result (stars, price, images) from structured data (Ch13).
+**Robots.txt** — Root file controlling crawling (not indexing); RFC 9309 standard (Ch8, Ch19).
+**RFC 9309** — Robots Exclusion Protocol (IETF Sep 2022; co-author Illyes/Sassman) (Ch19).
+**RFC 8288** — Web Linking; HTTP Link: header for canonical on non-HTML assets (Ch19).
+**Schema.org** — Standard vocabulary for entities; co-sponsored by Google/Microsoft/Yahoo/Yandex (Ch13, Ch19).
 **SERP** — Search Engine Results Page (Ch7).
-**Sitemap XML** — Elenco di URL importanti; 50.000 URL / 50MB per file (Ch8, Ch19).
-**SiteAuthority** — Metrica di autorità a livello sito (leak 2024); Google ha sempre negato una "domain authority" (Ch20).
-**SQRG — Search Quality Rater Guidelines** — Manuale per i rater umani (~182 pagine); alimenta il training (Ch20).
-**SSR / SSG / CSR / ISR / Islands** — Strategie di rendering; CSR sconsigliata per SEO (Ch8).
-**Tangram (ex Tetris)** — Assemblatore finale della SERP dopo NavBoost+Glue (Ch20).
-**Topical authority** — Autorevolezza su un argomento (ampiezza+profondità+coerenza); segnale di ranking (Ch6, Ch9).
-**Transfer di fiducia** — Una raccomandazione LLM è processata come consiglio, non pubblicità (Ch1).
-**Twiddler** — Architettura di re-ranking post-retrieval; NavBoost è un Twiddler (Ch20).
-**YMYL — Your Money or Your Life** — Pagine che impattano salute/finanze/sicurezza; standard E-E-A-T più rigidi (Ch20, Ch13).
-**Zero-click search** — Ricerca risolta nell'interfaccia senza click (AIO, Knowledge Panel, snippet) (Ch1).
+**Sitemap XML** — List of important URLs; 50,000 URLs / 50MB per file (Ch8, Ch19).
+**SiteAuthority** — Site-level authority metric (2024 leak); Google has always denied a "domain authority" (Ch20).
+**SQRG — Search Quality Rater Guidelines** — Manual for human raters (~182 pages); feeds training (Ch20).
+**SSR / SSG / CSR / ISR / Islands** — Rendering strategies; CSR discouraged for SEO (Ch8).
+**Tangram (formerly Tetris)** — Final SERP assembler after NavBoost+Glue (Ch20).
+**Topical authority** — Authority on a topic (breadth+depth+consistency); ranking signal (Ch6, Ch9).
+**Trust transfer** — An LLM recommendation is processed as advice, not advertising (Ch1).
+**Twiddler** — Post-retrieval re-ranking architecture; NavBoost is a Twiddler (Ch20).
+**YMYL — Your Money or Your Life** — Pages impacting health/finances/safety; stricter E-E-A-T standards (Ch20, Ch13).
+**Zero-click search** — Query resolved within the interface without a click (AIO, Knowledge Panel, snippet) (Ch1).

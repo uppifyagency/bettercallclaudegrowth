@@ -1,49 +1,49 @@
 # bettercallclaudegrowth (plugin)
 
-Plugin Claude Code per il **go-to-market**. Vedi il [README del repo](../README.md) per la panoramica completa e l'installazione.
+Claude Code plugin for **go-to-market**. See the [repo README](../README.md) for the full overview and installation.
 
-## Da dove partire
+## Where to start
 
-Se non sai quale command usare, parti da **`/gtm-buddy <descrivi la tua situazione>`**: classifica il tuo caso (archetipo × stadio) e ti instrada verso la skill giusta o la sequenza giusta, e può anche eseguirla per te.
+If you don't know which command to use, start with **`/gtm-buddy <describe your situation>`**: it classifies your case (archetype × stage) and routes you to the right skill or the right sequence, and it can even run it for you.
 
-## Comandi
+## Commands
 
-| Comando | Cosa fa | Skill |
+| Command | What it does | Skill |
 |---|---|---|
-| `/gtm-buddy` | Router/concierge: dalla tua situazione consiglia skill singola o sequenza, e può eseguirla | (router, legge `playbooks/`) |
-| `/gtm` | Pipeline GTM adattiva (Fase 0 archetipo/stadio + 7 fasi) → `gtm-plan.md` con GTM Readiness Score | tutte, via `gtm-orchestrator` |
-| `/gtm-jobs` | Jobs to Be Done: lavoro, forze del progresso, Big/Little Hire | christensen-jobs |
-| `/gtm-posizionamento` | ICP + posizionamento + Personal Monopoly | butcher-productize, doing-content-right |
-| `/gtm-offerta` | Grand Slam Offer (Value Equation) | hormozi-offers |
-| `/gtm-leads` | Piano lead gen (Core Four) + lead magnet | hormozi-leads |
-| `/gtm-contenuti` | Strategia contenuti + calendario | doing-content-right |
-| `/gtm-copy` | Copy persuasivo (SUCKS) | drew-sucks-framework |
-| `/gtm-email` | Workflow di email automation | advanced-email-marketing |
-| `/gtm-seo` | Piano SEO/GEO 2026 | seo-2026-sota |
-| `/gtm-instagram` | Setup campagne Meta/Instagram | instagram-performance-marketing |
+| `/gtm-buddy` | Router/concierge: from your situation it recommends a single skill or a sequence, and can run it | (router, reads `playbooks/`) |
+| `/gtm` | Adaptive GTM pipeline (Phase 0 archetype/stage + 7 phases) → `gtm-plan.md` with GTM Readiness Score | all, via `gtm-orchestrator` |
+| `/gtm-jobs` | Jobs to Be Done: job, forces of progress, Big/Little Hire | christensen-jobs |
+| `/gtm-positioning` | ICP + positioning + Personal Monopoly | butcher-productize, doing-content-right |
+| `/gtm-offer` | Grand Slam Offer (Value Equation) | hormozi-offers |
+| `/gtm-leads` | Lead gen plan (Core Four) + lead magnet | hormozi-leads |
+| `/gtm-content` | Content strategy + calendar | doing-content-right |
+| `/gtm-copy` | Persuasive copy (SUCKS) | drew-sucks-framework |
+| `/gtm-email` | Email automation workflow | advanced-email-marketing |
+| `/gtm-seo` | SEO/GEO 2026 plan | seo-2026-sota |
+| `/gtm-instagram` | Meta/Instagram campaign setup | instagram-performance-marketing |
 
-Ogni specialista chiude con un **red-team opzionale** via `gtm-critic`.
+Each specialist closes with an **optional red-team** via `gtm-critic`.
 
-## Agent
+## Agents
 
-- **`gtm-buddy`** — concierge/router: classifica archetipo (coaching, B2B SaaS, B2C/e-commerce, locale, azienda avviata senza marketing) × stadio (micro-lancio, scaling, established) e instrada verso la skill o la sequenza giusta. Read-only.
-- **`gtm-orchestrator`** — esegue la pipeline adattiva: Fase 0 di classificazione, 7 fasi calibrate sul playbook, contesto cumulativo, sintesi PERCEIVE-ANALYZE-VALIDATE-ACT con falsificabilità, **GTM Readiness Score 0-100**; produce `gtm-plan.md`. Invoca `gtm-critic` ai checkpoint.
-- **`gtm-critic`** — revisore avversariale: red-teama offerta (Value Equation al contrario), funnel, posizionamento e copy (audit SUCKS). Restituisce debolezze classificate + fix, in `output_language`.
+- **`gtm-buddy`** — concierge/router: classifies archetype (coaching, B2B SaaS, B2C/e-commerce, local, established business with no marketing) × stage (micro-launch, scaling, established) and routes to the right skill or sequence. Read-only.
+- **`gtm-orchestrator`** — runs the adaptive pipeline: Phase 0 classification, 7 phases calibrated on the playbook, cumulative context, PERCEIVE-ANALYZE-VALIDATE-ACT synthesis with falsifiability, **GTM Readiness Score 0-100**; produces `gtm-plan.md`. Invokes `gtm-critic` at checkpoints.
+- **`gtm-critic`** — adversarial reviewer: red-teams the offer (Value Equation in reverse), funnel, positioning and copy (SUCKS audit). Returns classified weaknesses + fixes, in `output_language`.
 
-## Playbook (`playbooks/`)
+## Playbooks (`playbooks/`)
 
-Routing matrix + playbook per archetipo e stadio: `_index.md` (la logica di scelta letta da gtm-buddy e gtm-orchestrator), `coaching-services.md`, `b2b-saas.md`, `b2c-product.md`, `local-service.md`, `established-no-marketing.md`, `micro-launch.md`. Definiscono sequenza, canale primario, enfasi, cosa saltare e KPI nord per ogni caso.
+Routing matrix + playbooks by archetype and stage: `_index.md` (the selection logic read by gtm-buddy and gtm-orchestrator), `coaching-services.md`, `b2b-saas.md`, `b2c-product.md`, `local-service.md`, `established-no-marketing.md`, `micro-launch.md`. They define the sequence, primary channel, emphasis, what to skip and north-star KPIs for each case.
 
-## Script deterministici (`scripts/`)
+## Deterministic scripts (`scripts/`)
 
-Strumenti Node zero-dipendenze per i conti che non vanno lasciati all'intuito:
-- `cfa-calculator.js` — LTGP:CAC, payback e Client-Financed Acquisition (Hormozi).
-- `value-equation-score.js` — score 0-100 dell'offerta + leva più debole.
-- `gtm-readiness-score.js` — GTM Readiness Score 0-100 dalle 7 (o n) fasi.
-- `gtm-plan-lint.js` — verifica che un `gtm-plan.md` abbia tutte le sezioni attese.
+Zero-dependency Node tools for the calculations that shouldn't be left to guesswork:
+- `cfa-calculator.js` — LTGP:CAC, payback and Client-Financed Acquisition (Hormozi).
+- `value-equation-score.js` — 0-100 offer score + weakest lever.
+- `gtm-readiness-score.js` — GTM Readiness Score 0-100 from the 7 (or n) phases.
+- `gtm-plan-lint.js` — checks that a `gtm-plan.md` has all the expected sections.
 
-Ognuno ha `--selftest` (eseguito in CI da `validate-content.js`).
+Each one has `--selftest` (run in CI by `validate-content.js`).
 
-## Skill
+## Skills
 
-Ogni skill è una knowledge base autocontenuta (`SKILL.md` + `cheatsheet.md` + `glossary.md` + `patterns.md` + `chapters/`). I comandi le richiamano **per nome** (auto-attivazione via `description`), non con path di file — la conoscenza vive solo qui, i comandi sono orchestrazione sottile.
+Each skill is a self-contained knowledge base (`SKILL.md` + `cheatsheet.md` + `glossary.md` + `patterns.md` + `chapters/`). The commands call them **by name** (auto-activation via `description`), not by file path — the knowledge lives only here, the commands are thin orchestration.

@@ -1,13 +1,13 @@
 # Capitolo 11: Aspetto nella Ricerca — title, snippet, immagini, video
 
 ## Core Idea
-Title link, snippet, immagini e video sono gli elementi visivi che puoi influenzare per aiutare l'utente a decidere se cliccare. Title e snippet sono spesso riscritti da Google in funzione della query.
+Title link, snippet, images, and video are the visual elements you can influence to help users decide whether to click. Title and snippet are often rewritten by Google based on the query.
 
 ## Frameworks Introdotti
-- **Title efficace**: unico, chiaro, conciso; informazione importante nei primi 50 caratteri. Google lo genera da `<title>`, H1/heading, anchor text in entrata, contenuto. Troncamento ~580px desktop (≈55-60 char) / 920px mobile (basato su pixel, non caratteri).
-- **Meta description**: 150-160 char; unica per pagina; aggiunge informazione (non duplica il title); CTA naturale; per i prodotti prezzo/disponibilità/USP. È un fallback — Google estrae spesso lo snippet dinamicamente dal corpo.
-- **Alt text descrittivo**: spiega la relazione immagine-contenuto; immagini nitide vicino al testo pertinente; alt vuoto per immagini decorative.
-- **Video**: pagine autonome, titolo/descrizione descrittivi, trascrizione/sottotitoli .vtt indicizzati, VideoObject schema, video sitemap.
+- **Effective title**: unique, clear, concise; important information in the first 50 characters. Google generates it from `<title>`, H1/heading, inbound anchor text, and content. Truncation ~580px desktop (≈55-60 chars) / 920px mobile (pixel-based, not character-based).
+- **Meta description**: 150-160 chars; unique per page; adds information (does not duplicate the title); natural CTA; for products include price/availability/USP. It is a fallback — Google often extracts the snippet dynamically from the body.
+- **Descriptive alt text**: explains the image-content relationship; sharp images near relevant text; empty alt for decorative images.
+- **Video**: standalone pages, descriptive title/description, indexed transcription/subtitles .vtt, VideoObject schema, video sitemap.
 
 ## Code Examples
 ```html
@@ -15,43 +15,43 @@ Title link, snippet, immagini e video sono gli elementi visivi che puoi influenz
 <meta name="description" content="Catalogo scarpe running uomo: Asics, Nike, Hoka. Spedizione gratis sopra 50€, reso 30 giorni.">
 ```
 ```html
-<!-- Immagini responsive moderne -->
+<!-- Modern responsive images -->
 <picture>
   <source srcset="foto.avif" type="image/avif">
   <source srcset="foto.webp" type="image/webp">
   <img src="foto.jpg" srcset="foto-400.jpg 400w, foto-800.jpg 800w"
        sizes="(max-width:600px) 400px, 800px"
        width="1600" height="900" loading="lazy" decoding="async"
-       alt="Descrizione dettagliata in contesto">
+       alt="Detailed description in context">
 </picture>
 ```
 ```html
-<!-- Controllo snippet -->
+<!-- Snippet control -->
 <span data-nosnippet>spoiler!</span>
 <meta name="robots" content="max-snippet:160">
 ```
 
 ## Anti-patterns
-- **Title generico ("Home")**, keyword stuffing, title identico su molte pagine, mismatch title/H1 → Google riscrive il title nel 60-80% dei casi (da ago 2021).
-- **Alt keyword-stuffed** o generico ("crostata").
-- **Immagine LCP con `loading="lazy"`**: l'immagine above-the-fold più grande va caricata con priorità (`fetchpriority="high"` + preload), MAI lazy.
+- **Generic title ("Home")**, keyword stuffing, identical title across many pages, title/H1 mismatch → Google rewrites the title in 60-80% of cases (since Aug 2021).
+- **Keyword-stuffed** or generic alt text ("crostata").
+- **LCP image with `loading="lazy"`**: the largest above-the-fold image must be loaded with priority (`fetchpriority="high"` + preload), NEVER lazy.
 
-## SOTA 2026 — Snippet dinamici
-Google ignora spesso la meta description quando trova nel corpo passaggi più pertinenti alla query. Strategia: scrivi una meta solida come fallback ma struttura ogni sezione (H2/H3 + breve sommario) perché funzioni come snippet autonomo.
+## SOTA 2026 — Dynamic Snippets
+Google often ignores the meta description when it finds more query-relevant passages in the body. Strategy: write a solid meta as a fallback, but structure every section (H2/H3 + brief summary) so it works as a standalone snippet.
 
-## Reference Table — Formati immagine 2026
-| Formato | Supporto | Note |
+## Reference Table — Image Formats 2026
+| Format | Support | Notes |
 |---|---|---|
-| WebP | 98%+ | Default web |
-| AVIF | 90%+ | Qualità superiore a parità di peso |
-| JPEG/PNG | universale | Fallback validi |
+| WebP | 98%+ | Web default |
+| AVIF | 90%+ | Superior quality at the same file size |
+| JPEG/PNG | universal | Valid fallbacks |
 
 ## Key Takeaways
-1. Title: parola chiave principale a sinistra, info nei primi 50 caratteri.
-2. Ogni sezione = potenziale snippet → buona per SERP e per AI Overviews.
-3. width/height espliciti su media risolvono gran parte del CLS.
-4. Trascrizione video pubblicata = doppia possibilità di indicizzazione/citazione.
+1. Title: main keyword on the left, key info within the first 50 characters.
+2. Each section = potential snippet → good for SERP and for AI Overviews.
+3. Explicit width/height on media elements resolves most CLS issues.
+4. Published video transcription = double opportunity for indexing/citation.
 
 ## Connects To
-- **Ch 13** (SEO): Core Web Vitals (LCP, CLS) e schema VideoObject.
-- **Ch 3** (GEO): YouTube come quick win per le citazioni AIO.
+- **Ch 13** (SEO): Core Web Vitals (LCP, CLS) and VideoObject schema.
+- **Ch 3** (GEO): YouTube as a quick win for AIO citations.

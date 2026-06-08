@@ -1,33 +1,33 @@
 # Capitolo 5: Ottimizzare per ciascun modello
 
 ## Core Idea
-Trattare "gli LLM" come entità unica è l'errore di prima fase nella GEO. ChatGPT, Claude, Gemini, Perplexity, Grok/Copilot hanno fonti privilegiate, audience e meccaniche diverse. Alloca le 5-10 ore/settimana sui modelli che pesano sul tuo target.
+Treating "LLMs" as a single entity is the first-phase mistake in GEO. ChatGPT, Claude, Gemini, Perplexity, Grok/Copilot have different preferred sources, audiences, and mechanics. Allocate your 5–10 hours/week on the models that matter to your target.
 
-## Frameworks Introdotti — Leve per modello
-- **ChatGPT** (65-87% del traffico LLM, in erosione; audience generalista, B2C massiccio): profili G2/Capterra ricchi (3×); voce Wikipedia se notabile; articoli BoFu su pubblicazioni third-party che ChatGPT cita; Schema Article+Author+Organization completi.
-- **Claude** (quota minore, audience tecnica: dev, PM, ricercatori; valore/visita spesso superiore): documentazione tecnica pulita (Markdown, esempi di codice, schema TechArticle); blog tecnici autorevoli (HN, dev.to); citazione di paper/RFC/spec; GitHub repo con README esaustivo. Citazione più conservativa, predilige fonti tecniche con autore identificato.
-- **Gemini / Google AI Overviews** (da gen 2026 Gemini 3 è default sugli AIO; volume più alto, click tracciabili in GSC): YouTube (29,5% AIO); heading-as-question + risposta nei primi 100 caratteri; schema pulito (FAQPage letto anche senza rich result); recency forte segnale. **Reddit quasi assente (0,1%) — non sovra-investire.**
-- **Perplexity** (audience piccola ma altamente convertente, cerca fonti citate): presenza Reddit autentica (46,7% top-10); articoli third-party che ti citano; aggiornamento frequente (browsing permanente, premia recency).
-- **Grok / Copilot** (niche): Grok ha volume basso fuori da X; Copilot gira su Bing → IndexNow + buon ranking Bing = buona presenza. Deprioritizzare salvo target specifico.
+## Frameworks Introdotti — Levers by model
+- **ChatGPT** (65–87% of LLM traffic, declining; generalist audience, massive B2C): rich G2/Capterra profiles (3×); Wikipedia entry if notable; BoFu articles on third-party publications that ChatGPT cites; complete Schema Article+Author+Organization.
+- **Claude** (smaller share, technical audience: devs, PMs, researchers; often higher value/visit): clean technical documentation (Markdown, code examples, TechArticle schema); authoritative tech blogs (HN, dev.to); citation of papers/RFC/specs; GitHub repo with exhaustive README. More conservative citation style, favors technical sources with identified author.
+- **Gemini / Google AI Overviews** (from Jan 2026 Gemini 3 is the default for AIO; highest volume, clicks trackable in GSC): YouTube (29.5% AIO); heading-as-question + answer within the first 100 characters; clean schema (FAQPage read even without rich result); recency is a strong signal. **Reddit almost absent (0.1%) — do not over-invest.**
+- **Perplexity** (small but highly converting audience, seeks cited sources): authentic Reddit presence (46.7% top-10); third-party articles that cite you; frequent updates (permanent browsing, rewards recency).
+- **Grok / Copilot** (niche): Grok has low volume outside X; Copilot runs on Bing → IndexNow + good Bing ranking = good presence. Deprioritize unless specific target.
 
 ## Mental Models
-- **Ottimizzare per Gemini = ottimizzare per AIO Google** = il canale con volume più alto e beneficio diretto in click che GSC vede (a differenza di ChatGPT/Claude che non passano referral).
-- Claude per prodotti B2B tecnici: poche visite ma alto valore.
+- **Optimizing for Gemini = optimizing for Google AIO** = the channel with the highest volume and direct click benefit visible in GSC (unlike ChatGPT/Claude which do not pass referrals).
+- Claude for technical B2B products: fewer visits but high value.
 
-## Reference Table — Fonte #1 per modello
-| Modello | Fonte #1 | Reddit | YouTube | Implicazione |
+## Reference Table — Source #1 per model
+| Model | Source #1 | Reddit | YouTube | Implication |
 |---|---|---|---|---|
-| ChatGPT | Wikipedia (~8%) | ~10% (post-shift) | media | Wikipedia + Reddit minima |
-| Perplexity | Reddit (~47%) | dominante | alta | Reddit è il canale #1 |
-| Gemini / AIO | YouTube (~30%) | 0,1% | dominante | YouTube + sito solido |
-| Claude | Documenti tecnici | media | media | Contenuti tecnici dev-friendly |
+| ChatGPT | Wikipedia (~8%) | ~10% (post-shift) | medium | Wikipedia + minimal Reddit |
+| Perplexity | Reddit (~47%) | dominant | high | Reddit is channel #1 |
+| Gemini / AIO | YouTube (~30%) | 0.1% | dominant | YouTube + solid site |
+| Claude | Technical documents | medium | medium | Dev-friendly technical content |
 
 ## Key Takeaways
-1. Mappa i tuoi clienti ai modelli, poi i modelli ai canali.
-2. Gemini/AIO è il solo modello con feedback misurabile diretto in GSC.
-3. Claude premia la profondità tecnica; ChatGPT il social proof B2B; Perplexity Reddit.
-4. Grok/Copilot solo con audience specifica (X-heavy o ecosistema Microsoft).
+1. Map your customers to models, then models to channels.
+2. Gemini/AIO is the only model with direct measurable feedback in GSC.
+3. Claude rewards technical depth; ChatGPT rewards B2B social proof; Perplexity rewards Reddit.
+4. Grok/Copilot only with a specific audience (X-heavy or Microsoft ecosystem).
 
 ## Connects To
-- **Ch 3**: i canali di distribuzione richiamati qui.
-- **Ch 6**: topical authority che amplifica la citazione su tutti i modelli.
+- **Ch 3**: the distribution channels referenced here.
+- **Ch 6**: topical authority that amplifies citation across all models.

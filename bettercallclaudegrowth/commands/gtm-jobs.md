@@ -1,34 +1,34 @@
 ---
-description: Scopre i Jobs to Be Done del cliente (progresso + circostanza, dimensioni funzionale/sociale/emotiva), le Forze del Progresso e il rischio Big/Little Hire — la base demand-side che precede posizionamento e offerta.
-argument-hint: prodotto/servizio + cliente e situazione d'uso (es. "guide di viaggio digitali per turisti in Italia")
+description: Uncovers the customer's Jobs to Be Done (progress + circumstance, functional/social/emotional dimensions), the Forces of Progress, and the Big/Little Hire risk — the demand-side foundation that precedes positioning and offer.
+argument-hint: product/service + customer and usage situation (e.g. "digital travel guides for tourists in Italy")
 ---
 
-# /gtm-jobs - Jobs to Be Done in stile Christensen
+# /gtm-jobs - Jobs to Be Done in Christensen style
 
-Questo comando applica la skill `christensen-jobs` (Jobs Theory da *Competing Against Luck*). È il livello **demand-side a monte**: definisce *quale progresso* il cliente cerca, non *cosa vendi*. I suoi output vincolano posizionamento, offerta e copy. Rispetta `userConfig.output_language` (IT di default), `userConfig.settore`, `userConfig.brand_voice` e `userConfig.default_channel`.
+This command applies the `christensen-jobs` skill (Jobs Theory from *Competing Against Luck*). It is the **upstream demand-side layer**: it defines *what progress* the customer is seeking, not *what you sell*. Its outputs constrain positioning, offer, and copy. Respect `userConfig.output_language` (IT by default), `userConfig.industry`, `userConfig.brand_voice`, and `userConfig.default_channel`.
 
-Input utente: $ARGUMENTS
+User input: $ARGUMENTS
 
-## Passi
+## Steps
 
-1. **Carica la skill.** Richiama per nome la skill `christensen-jobs` (si attiva dalla sua description; non usare path di file) e applicane i framework, approfondendo con cheatsheet/patterns quando servono. NON copiare il contenuto del libro: usalo solo come lente operativa.
+1. **Load the skill.** Invoke the `christensen-jobs` skill by name (it activates from its description; do not use file paths) and apply its frameworks, going deeper with cheatsheets/patterns when needed. Do NOT copy the book's content: use it only as an operating lens.
 
-2. **Definisci il/i Job.** Per $ARGUMENTS scrivi il lavoro come frase — *"Quando [circostanza], aiutami a [progresso, verbo], così posso [scopo profondo]"* — usando **verbi e nomi**, mai aggettivi. Verifica il livello di astrazione (abbastanza ampio da vedere il vero set competitivo, abbastanza stretto da guidare il design). Se le circostanze sono diverse, isola **lavori distinti** (il "Milk Shake Dilemma"): stesso prodotto, lavori diversi → messaggi e tier diversi.
+2. **Define the Job(s).** For $ARGUMENTS write the job as a sentence — *"When [circumstance], help me [progress, verb], so I can [deeper purpose]"* — using **verbs and nouns**, never adjectives. Check the level of abstraction (broad enough to see the true competitive set, narrow enough to guide design). If the circumstances differ, isolate **distinct jobs** (the "Milk Shake Dilemma"): same product, different jobs → different messages and tiers.
 
-3. **Mappa le tre dimensioni.** Per ogni lavoro esplicita le componenti **funzionale, sociale ed emotiva**. Segnala dove il sociale/emotivo è sottopesato: di solito è lì che si vince ed è lì che i competitor generici (Google, AI, commodity) non possono seguire.
+3. **Map the three dimensions.** For each job make the **functional, social, and emotional** components explicit. Flag where the social/emotional is underweighted: that is usually where you win and where generic competitors (Google, AI, commodities) cannot follow.
 
-4. **Individua la circostanza e il momento di lotta.** Definisci il **trigger** (evento scatenante) e la finestra temporale. Questo è ciò che il targeting e i form devono leggere — non il demografico.
+4. **Pinpoint the circumstance and the struggling moment.** Define the **trigger** (precipitating event) and the time window. This is what targeting and forms must read — not demographics.
 
-5. **Inquadra il campo competitivo reale.** Includi sempre la **nonconsumption** ("competere con nulla" / il fai-da-te) e i **workaround/compensating behaviors**. Cosa "licenzia" il cliente per "assumere" la tua soluzione?
+5. **Frame the real competitive field.** Always include **nonconsumption** ("competing with nothing" / the DIY route) and **workarounds/compensating behaviors**. What does the customer "fire" to "hire" your solution?
 
-6. **Analizza le Forze del Progresso.** Mappa le quattro forze: **Push** della situazione + **Pull** della soluzione (spingono) vs **Abitudine** del presente + **Ansia** (di scegliere + di usare) che frenano. Lo switch avviene solo se push+pull > abitudine+ansia. Indica il **vincolo binding** e la leva più economica (spesso ridurre ansia/abitudine, non aggiungere feature).
+6. **Analyze the Forces of Progress.** Map the four forces: **Push** of the situation + **Pull** of the solution (which drive change) vs **Habit** of the present + **Anxiety** (of choosing + of using) which hold it back. The switch happens only if push+pull > habit+anxiety. Indicate the **binding constraint** and the cheapest lever (often reducing anxiety/habit, not adding features).
 
-7. **Big Hire / Little Hire.** Distingui l'acquisto (Big Hire) dall'uso reale ricorrente (Little Hire). Evidenzia il rischio "comprato e mai usato" e come progettare l'esperienza perché il prodotto venga *effettivamente usato* (è ciò che genera recensioni e referral).
+7. **Big Hire / Little Hire.** Distinguish the purchase (Big Hire) from the actual recurring use (Little Hire). Highlight the "bought and never used" risk and how to design the experience so the product is *actually used* (that is what generates reviews and referrals).
 
-8. **Job Spec → Résumé.** Sintetizza lo **spec del lavoro** (dimensioni, trade-off, set competitivo, ostacoli/ansie da rimuovere) come ponte verso l'offerta: cosa deve "avere nel curriculum" il prodotto per essere assunto.
+8. **Job Spec → Résumé.** Synthesize the **job spec** (dimensions, trade-offs, competitive set, obstacles/anxieties to remove) as a bridge to the offer: what the product must "have on its résumé" to be hired.
 
-9. **Output strutturato.** Restituisci in sezioni distinte: (a) il/i Job definiti, (b) le tre dimensioni, (c) circostanza e trigger, (d) campo competitivo + nonconsumption, (e) Forze del Progresso con il vincolo binding, (f) Big/Little Hire, (g) Job Spec per l'offerta. Allinea tono a `brand_voice`.
+9. **Structured output.** Return in distinct sections: (a) the defined Job(s), (b) the three dimensions, (c) circumstance and trigger, (d) competitive field + nonconsumption, (e) Forces of Progress with the binding constraint, (f) Big/Little Hire, (g) Job Spec for the offer. Align tone to `brand_voice`.
 
-10. **Red-team finale.** Invoca l'agent `gtm-critic` per stressare l'analisi (lavoro al livello di astrazione sbagliato? job definito con aggettivi invece che verbi? sociale/emotivo ignorato? nonconsumption dimenticata? forze opposte non affrontate?), poi integra i fix nella versione finale.
+10. **Final red-team.** Invoke the `gtm-critic` agent to stress-test the analysis (job at the wrong level of abstraction? job defined with adjectives instead of verbs? social/emotional ignored? nonconsumption forgotten? opposing forces not addressed?), then integrate the fixes into the final version.
 
-> **Aggancio al funnel:** questo è il passo 0 del go-to-market. Il/i Job definiti qui alimentano `/gtm-posizionamento` (il frame competitivo nasce dal lavoro), `/gtm-offerta` (il Job Spec diventa il value stack) e `/gtm-copy` (l'hero risponde a una forza, non a una feature).
+> **Funnel hook:** this is step 0 of the go-to-market. The Job(s) defined here feed `/gtm-positioning` (the competitive frame is born from the job), `/gtm-offer` (the Job Spec becomes the value stack), and `/gtm-copy` (the hero answers a force, not a feature).

@@ -1,47 +1,47 @@
-# Capitolo 2: Il playbook GEO in 6 step per founder bootstrap
+# Chapter 2: The 6-Step GEO Playbook for Bootstrap Founders
 
 ## Core Idea
-Un flusso operativo settimanale e ripetibile per costruire visibilità nei motori generativi con 5-10 ore/settimana: infrastruttura → keyword/brief → scrittura → autorità → tracking → iterazione.
+A repeatable weekly operating flow to build visibility in generative engines with 5–10 hours/week: infrastructure → keyword/brief → writing → authority → tracking → iteration.
 
-## Frameworks Introdotti
-- **Step 1 — Infrastruttura CMS (regola del primo response)**: il contenuto critico deve essere nell'HTML servito al primo response, NON costruito dopo via JavaScript. Gli AI crawler raramente eseguono JS (a differenza di Googlebot). Se il contenuto compare solo dopo l'idratazione client-side, per ChatGPT/Claude/Perplexity sei invisibile.
-- **Step 2 — Keyword/brief con LLM**: non ti interessa il volume Google ma quale domanda l'utente farà a un LLM dopo aver maturato intent. Flusso: estrai landing → chiedi a Claude listicoli/confronti/alternative + 3 prompt-target ciascuno → filtra per ICP (5-10 idee) → genera brief.
-- **Step 3 — Scrittura (3 amplificatori)**: (1) Heading-as-question con prima frase autonoma 1-2 righe; (2) Schema strutturato (Article+Author+Organization+FAQPage, ItemList per listicoli); (3) Originalità dichiarata ("abbiamo testato 12 strumenti per 6 settimane").
-- **Step 4 — Autorità E-E-A-T per LLM**: bio autore con foto/credenziali/sameAs; loghi clienti come **testo** (gli LLM non fanno OCR); numeri di risultato nel body text; citazioni di fonti primarie verificabili.
-- **Step 5 — Tracking GEO (4 fonti)**: GA4 source/medium, Search Console, AI Visibility tracker (Profound/Otterly/Semrush AI), test manuali settimanali.
-- **Step 6 — Iterazione settimanale**: ciclo Lun-Ven (sotto).
+## Frameworks Introduced
+- **Step 1 — CMS Infrastructure (the first-response rule)**: critical content must be in the HTML served on the first response, NOT built afterwards via JavaScript. AI crawlers rarely execute JS (unlike Googlebot). If content only appears after client-side hydration, you are invisible to ChatGPT/Claude/Perplexity.
+- **Step 2 — Keyword/brief with LLM**: forget Google search volume — what matters is which question the user will ask an LLM once intent has matured. Flow: extract landing pages → ask Claude for listicles/comparisons/alternatives + 3 prompt-targets each → filter by ICP (5–10 ideas) → generate brief.
+- **Step 3 — Writing (3 amplifiers)**: (1) Heading-as-question with a standalone first sentence of 1–2 lines; (2) Structured schema (Article+Author+Organization+FAQPage, ItemList for listicles); (3) Declared originality ("we tested 12 tools for 6 weeks").
+- **Step 4 — E-E-A-T Authority for LLMs**: author bio with photo/credentials/sameAs; client logos as **text** (LLMs do not perform OCR); result numbers in the body text; citations from verifiable primary sources.
+- **Step 5 — GEO Tracking (4 sources)**: GA4 source/medium, Search Console, AI Visibility tracker (Profound/Otterly/Semrush AI), weekly manual tests.
+- **Step 6 — Weekly Iteration**: Mon–Fri cycle (below).
 
 ## Mental Models
-- Il ciclo GEO è **settimanale, non trimestrale** — i modelli si ri-trainano, le interfacce cambiano, le fonti citate ruotano.
-- "Vantarsi quantificando" funziona: gli LLM (GPT in particolare) sono training-tuned a estrarre claim numerici come fatti.
+- The GEO cycle is **weekly, not quarterly** — models retrain, interfaces change, cited sources rotate.
+- "Boasting with numbers" works: LLMs (GPT in particular) are training-tuned to extract numerical claims as facts.
 
-## Reference Tables — CMS raccomandati 2026
-| CMS | Rendering | Pro GEO | Limite |
+## Reference Tables — Recommended CMS 2026
+| CMS | Rendering | GEO Pro | Limitation |
 |---|---|---|---|
-| Ghost | Server-rendered | Sitemap/schema/CWV out-of-box | Limitato per app complesse |
-| Astro | Static + Islands | TTFB ottimo, JS zero default | Curva tecnica alta |
-| Next.js (App Router, RSC) | SSR + RSC | Streaming, scala | Attenzione a non passare a CSR |
-| WordPress + Yoast/RankMath | Server-rendered | Maturità SEO, plugin GEO | Performance dipende da hosting |
+| Ghost | Server-rendered | Sitemap/schema/CWV out-of-box | Limited for complex apps |
+| Astro | Static + Islands | Excellent TTFB, zero JS by default | High technical learning curve |
+| Next.js (App Router, RSC) | SSR + RSC | Streaming, scalable | Beware of falling back to CSR |
+| WordPress + Yoast/RankMath | Server-rendered | SEO maturity, GEO plugins | Performance depends on hosting |
 
-Da evitare: stack vibe-coded full client-side senza fallback statico → prima della GEO viene la prerenderizzazione.
+Avoid: vibe-coded full client-side stacks without a static fallback → pre-rendering comes before GEO.
 
-## Test rapido di crawlability AI
-- Estensione Chrome **AI Eyes**: toggla JS off; se resta <70% del contenuto, problema di crawlability → priorità prerendering.
-- `curl -s https://sito.com/pagina | grep -c '</p>'` — se molto basso (<5), contenuto renderizzato client-side.
+## Quick AI Crawlability Test
+- **AI Eyes** Chrome extension: toggle JS off; if less than 70% of the content remains, there is a crawlability problem → pre-rendering is a priority.
+- `curl -s https://yoursite.com/page | grep -c '</p>'` — if the count is very low (<5), content is client-side rendered.
 
-## Ciclo di iterazione (Step 6)
-- **Lun**: cerca i prompt-target su ChatGPT/Claude/Perplexity/Gemini. Sei citato? Dove? Da dove?
-- **Mar-Mer**: per i prompt dove non sei citato, analizza chi è citato e perché (più dati, più esempi, schema migliore, presenza Reddit/G2/YouTube).
-- **Gio**: aggiorna 1-2 pagine (spesso basta aggiungere dati/FAQ/tabella).
-- **Ven**: pubblica/repubblica, notifica via Search Console + IndexNow, aggiorna dashboard.
+## Iteration Cycle (Step 6)
+- **Mon**: search your prompt-targets on ChatGPT/Claude/Perplexity/Gemini. Are you cited? Where? Sourced from where?
+- **Tue–Wed**: for prompts where you are not cited, analyze who is cited and why (more data, more examples, better schema, presence on Reddit/G2/YouTube).
+- **Thu**: update 1–2 pages (often just adding data/FAQ/table is enough).
+- **Fri**: publish/republish, notify via Search Console + IndexNow, update dashboard.
 
 ## Key Takeaways
-1. Prima la crawlability AI, poi il contenuto: prerendering è prerequisito.
-2. Indicizzazione post-publish: Search Console (Google) + IndexNow (Bing/Perplexity) in parallelo.
-3. Misurare la GEO è il vero ostacolo: si lavora per approssimazione combinando 4 fonti.
-4. SEO Gets unifica GSC+GA4 in dashboard leggibili (utile per 3-10 siti).
+1. AI crawlability first, then content: pre-rendering is a prerequisite.
+2. Post-publish indexing: Search Console (Google) + IndexNow (Bing/Perplexity) in parallel.
+3. Measuring GEO is the real bottleneck: work by approximation combining 4 sources.
+4. SEO Gets unifies GSC+GA4 into readable dashboards (useful for 3–10 sites).
 
 ## Connects To
-- **Ch 13** (SEO): IndexNow (Cap. 25), VideoObject schema, Core Web Vitals.
-- **Ch 3**: distribuzione off-site che alimenta l'autorità.
-- **Ch 6**: regola 80/20 — quali step danno più ROI.
+- **Ch 13** (SEO): IndexNow (Ch. 25), VideoObject schema, Core Web Vitals.
+- **Ch 3**: off-site distribution that feeds authority.
+- **Ch 6**: 80/20 rule — which steps deliver the most ROI.

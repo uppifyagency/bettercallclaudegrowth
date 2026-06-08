@@ -1,34 +1,34 @@
-# Playbook — Coaching & servizi ad alto tocco
+# Playbook — Coaching & high-touch services
 
-**Quando si applica:** vendi la tua competenza (coaching, consulenza, freelance, info-product, formazione). Pochi erogatori, margine alto, fiducia e autorità sono il vero collo di bottiglia. Buyer = user. Ciclo di acquisto guidato dalla relazione.
+**When it applies:** you sell your expertise (coaching, consulting, freelancing, info-products, training). Few providers, high margin, trust and authority are the real bottleneck. Buyer = user. Purchase cycle driven by the relationship.
 
-## Job to Be Done tipico (lente Christensen)
-Il cliente non compra "ore di coaching": assume un **progresso** (passare da bloccato a in movimento) in una **circostanza** carica di ansia. Dimensione **emotiva e sociale dominante** (status, identità, riprova di non essere solo). Il vero concorrente è spesso la **nonconsumption**: il fai-da-te con video gratis e il "ci penso da solo". → Vinci abbassando **ansia** (rischio, "funzionerà per me?") più che aggiungendo feature.
+## Typical Job to Be Done (Christensen lens)
+The client isn't buying "hours of coaching": they hire **progress** (going from stuck to in motion) in an anxiety-laden **circumstance**. **Emotional and social dimension dominant** (status, identity, reassurance of not being alone). The real competitor is often **nonconsumption**: the DIY route with free videos and "I'll figure it out myself." → You win by lowering **anxiety** (risk, "will it work for me?") more than by adding features.
 
-## Sequenza GTM consigliata
-`gtm-jobs` → `gtm-posizionamento` → `gtm-offerta` → `gtm-leads`* → `gtm-contenuti` → `gtm-copy` → `gtm-email`
+## Recommended GTM sequence
+`gtm-jobs` → `gtm-positioning` → `gtm-offer` → `gtm-leads`* → `gtm-content` → `gtm-copy` → `gtm-email`
 
-> *Il **warm outreach** alla tua rete parte **da subito, in parallelo** (è dove arriva il primo high-ticket). `gtm-leads` qui lo *sistematizza*; non aspettare la fine della sequenza per fare le prime conversazioni di vendita.
+> *The **warm outreach** to your network starts **right away, in parallel** (it's where the first high-ticket comes from). `gtm-leads` here *systematizes* it; don't wait for the end of the sequence to have your first sales conversations.
 
-- **Posizionamento prima di tutto:** Personal Monopoly + angolo differenziante. In un mare di coach generici, la nicchia difendibile è l'asset n.1. Usa `butcher-productize` + `doing-content-right`.
-- **Offerta high-ticket:** Grand Slam Offer con garanzia forte (inverti il rischio: è ciò che taglia l'ansia). Prezzo premium, mai sconti. Bonus che riducono Time Delay (template, community, sessioni di kickoff).
-- **Motore di contenuti = motore di fiducia:** il contenuto organico è la lead gen primaria. Persuasion Proof Stack (associazione → tuoi risultati → risultati clienti) è obbligatorio.
-- **Email = nurturing della fiducia:** welcome + drip che racconta casi e metodo; la vendita high-ticket matura via sequenza, non al primo contatto.
+- **Positioning first:** Personal Monopoly + differentiating angle. In a sea of generic coaches, the defensible niche is asset #1. Use `butcher-productize` + `doing-content-right`.
+- **High-ticket offer:** Grand Slam Offer with a strong guarantee (invert the risk: that's what cuts the anxiety). Premium price, never discounts. Bonuses that reduce Time Delay (templates, community, kickoff sessions).
+- **Content engine = trust engine:** organic content is the primary lead gen. The Persuasion Proof Stack (association → your results → client results) is mandatory.
+- **Email = trust nurturing:** welcome + drip that tells cases and method; the high-ticket sale matures via sequence, not on first contact.
 
-## Canale primario
-**Content organico + email.** Il paid (specie IG ads) viene dopo, quando l'offerta converte già in organico. Per coaching/servizi **B2B** il canale è **outbound** (LinkedIn, warm/cold outreach): non c'è una skill-canale dedicata a LinkedIn — si pianifica e si esegue dentro `gtm-leads` (Core Four). Non promettere automazioni LinkedIn che il plugin non ha: il valore è il *metodo* di outreach.
+## Primary channel
+**Organic content + email.** Paid (especially IG ads) comes later, once the offer already converts organically. For **B2B** coaching/services the channel is **outbound** (LinkedIn, warm/cold outreach): there's no dedicated channel-skill for LinkedIn — it's planned and executed within `gtm-leads` (Core Four). Don't promise LinkedIn automations the plugin doesn't have: the value is the outreach *method*.
 
-## Core Four (priorità)
-1. **Warm outreach** (la tua rete: il primo high-ticket arriva da lì) →
-2. **Content** (autorità) →
+## Core Four (priority)
+1. **Warm outreach** (your network: the first high-ticket comes from there) →
+2. **Content** (authority) →
 3. Cold outreach →
-4. Paid ads (ultimo, solo con offerta validata).
+4. Paid ads (last, only with a validated offer).
 
-## KPI nord + guardrail
-- Nord: **chiamate prenotate qualificate / settimana** e **tasso di chiusura**.
-- Guardrail: con prezzo premium, anche pochi lead bastano — non confondere "pochi lead" con "funnel rotto".
+## North-star KPIs + guardrail
+- North star: **qualified booked calls / week** and **close rate**.
+- Guardrail: with a premium price, even few leads are enough — don't confuse "few leads" with "broken funnel."
 
-## Trappole comuni (cosa NON fare)
-- Partire dai paid ads prima di avere autorità e un'offerta che chiude in organico.
-- Posizionamento generico ("aiuto le persone a crescere") → il critic lo bersaglia.
-- Sottoprezzare per paura: erode percezione di valore e attira i clienti sbagliati.
+## Common traps (what NOT to do)
+- Starting with paid ads before having authority and an offer that closes organically.
+- Generic positioning ("I help people grow") → the critic targets it.
+- Underpricing out of fear: it erodes value perception and attracts the wrong clients.

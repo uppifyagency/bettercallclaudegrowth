@@ -1,7 +1,7 @@
 {
   "name": "bettercallclaudegrowth",
   "version": "0.3.0",
-  "description": "GTM Intelligence plugin for Claude Code -- gtm-buddy router + adaptive pipeline: Jobs to Be Done, posizionamento, offerte, lead, copy, contenuti, SEO/GEO 2026, email automation, Instagram performance, con GTM Readiness Score e revisione avversariale.",
+  "description": "GTM Intelligence plugin for Claude Code -- gtm-buddy router + adaptive pipeline: Jobs to Be Done, positioning, offers, leads, copy, content, SEO/GEO 2026, email automation, Instagram performance, with a GTM Readiness Score and adversarial review.",
   "license": "MIT",
   "scripts": {
     "validate": "node scripts/validate-plugin.js && node scripts/validate-content.js",

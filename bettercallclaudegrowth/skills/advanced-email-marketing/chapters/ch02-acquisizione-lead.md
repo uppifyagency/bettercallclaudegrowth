@@ -1,36 +1,36 @@
-# Capitolo 2: Acquisire nuovi contatti & Lead Generation
+# Chapter 2: Acquiring New Contacts & Lead Generation
 
-## Idea centrale
-"Una buona strategia DEM inizia dalla lista." Prima di fare email marketing servono contatti profilati e motivati: l'acquisizione è il primo touchpoint che attiva tutte le automazioni.
+## Core Idea
+"A good DEM strategy starts with the list." Before doing email marketing you need profiled, motivated contacts: acquisition is the first touchpoint that activates all automations.
 
-## Framework introdotti
-- **Qualità vs Quantità (il rubinetto della lead acquisition)**: scegli dove posizionarti tra lead molto in-target e lead in volume.
-  - **LEAD IN TARGET**: landing page chiara e ricca di dettagli (prezzo incluso) → compila solo il vero interessato. Meno lead, più qualificati.
-  - **LEAD IN QUANTITÀ**: landing con caratteristiche principali, dettagli completi solo a chi lascia il contatto → più lead per effetto curiosità/hype, ma contrazione delle conversioni.
-  - **Mix consigliato**: campagne adv miste per intercettare pubblici diversi, regolarità nell'acquisizione, allargare i pubblici di retargeting e gestire 2 strategie email diverse.
-- **Acquisizione come ricerca**: usa sondaggi/test nei lead per scavare e ottenere dati di prima parte spontanei → analisi di mercato reale sul tuo business.
+## Frameworks Introduced
+- **Quality vs Quantity (the lead acquisition tap)**: choose where to position yourself between highly targeted leads and high-volume leads.
+  - **IN-TARGET LEADS**: clear, detail-rich landing page (price included) → only the genuinely interested person fills it out. Fewer leads, more qualified.
+  - **HIGH-VOLUME LEADS**: landing with key features only, full details shown only after the contact is submitted → more leads due to curiosity/hype effect, but lower conversion rates.
+  - **Recommended mix**: mixed ad campaigns to reach different audiences, consistent acquisition cadence, expand retargeting audiences, and manage 2 different email strategies.
+- **Acquisition as research**: use surveys/tests within lead gen to dig deeper and collect spontaneous first-party data → real market analysis for your business.
 
-## Concetti chiave
-- **Vantaggi della lista propria**: miglior coinvolgimento, minor rischio spam, maggior valore percepito, più interesse ai contenuti, conoscenza del pubblico.
-- **Affiliate marketing (Montesano)**: canale per raggiungere potenziali clienti; tutto ruota attorno a strategia, target e **ROAS**. Funziona per nuove iniziative/estensioni di linea.
-- **Top bar / pop-up / flyout form** (non fastidiosi): raccogli lead offrendo sconto, accesso esclusivo, anteprime, novità.
-- **Profilazione esplicita nel pop-up**: chiedi un dato che personalizza (es. uomo/donna/bambino per fashion; tipo di pelle per beauty) per segmentare da subito.
+## Key Concepts
+- **Advantages of your own list**: better engagement, lower spam risk, higher perceived value, greater content interest, audience knowledge.
+- **Affiliate marketing (Montesano)**: a channel for reaching potential customers; everything revolves around strategy, target, and **ROAS**. Works well for new initiatives/line extensions.
+- **Top bar / pop-up / flyout form** (non-intrusive): collect leads by offering a discount, exclusive access, previews, news.
+- **Explicit profiling in the pop-up**: ask a data point that enables personalization (e.g., man/woman/child for fashion; skin type for beauty) to segment from the very start.
 
-## Modelli mentali
-- "Più la campagna è mirata al contatto di qualità, più i costi salgono": bilancia con strategie *light* di posizionamento per regolarizzare il flusso e nutrire i lead lontani nel lungo periodo.
-- La motivazione a iscriversi deve essere **condivisibile e in linea col brand**: sconto di benvenuto, spedizione gratuita, bundle, accesso anticipato, promozioni dedicate (tecnica forte sotto BFCM, premiando gli iscritti).
+## Mental Models
+- "The more the campaign is aimed at quality contacts, the higher the costs": balance with *light* positioning strategies to regularize the flow and nurture distant leads over the long term.
+- The motivation to subscribe must be **shareable and aligned with the brand**: welcome discount, free shipping, bundle, early access, dedicated promotions (a powerful technique around BFCM, rewarding subscribers).
 
-## Anti-pattern
-- **Liste comprate**: pratica "harakiri" — rischio spam, crollo della deliverability, danno alla reputation. Mai.
-- **Un solo flusso d'ingresso per tutti**: chi si iscrive volontariamente e chi ha solo scritto in chat per un dubbio hanno bisogni diversi → abbina a ogni canale di acquisizione un flusso di partenza coerente.
+## Anti-Patterns
+- **Purchased lists**: a "harakiri" practice — spam risk, deliverability collapse, reputation damage. Never.
+- **A single entry flow for everyone**: someone who subscribes voluntarily and someone who only messaged in chat with a question have different needs → pair each acquisition channel with a consistent onboarding flow.
 
-## Takeaway
-1. Decidi consapevolmente il punto sul rubinetto qualità↔quantità; spesso il mix vince.
-2. Mai liste comprate: costruisci lead profilati con adv + organico (SEO, blog, affiliate).
-3. Inserisci profilazione esplicita già nel form/pop-up per segmentare subito.
-4. Tratta ogni canale di acquisizione come trigger di un flusso di onboarding dedicato.
+## Takeaways
+1. Consciously decide where to set the quality↔quantity tap; often the mix wins.
+2. Never buy lists: build profiled leads through ads + organic (SEO, blog, affiliate).
+3. Include explicit profiling right in the form/pop-up to segment immediately.
+4. Treat each acquisition channel as the trigger for a dedicated onboarding flow.
 
-## Collegamenti
-- **Ch 1**: l'acquisizione è la tattica del customer journey.
-- **Ch 6**: welcome series/onboarding post-acquisizione.
-- **Ch 10**: Lead Ads e first-party data nell'era cookieless.
+## Connections
+- **Ch 1**: acquisition is the tactic within the customer journey.
+- **Ch 6**: welcome series/onboarding post-acquisition.
+- **Ch 10**: Lead Ads and first-party data in the cookieless era.

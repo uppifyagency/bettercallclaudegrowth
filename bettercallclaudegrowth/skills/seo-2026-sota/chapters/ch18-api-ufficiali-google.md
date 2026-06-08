@@ -1,45 +1,45 @@
 # Capitolo 18: API ufficiali Google
 
 ## Core Idea
-Le API sono dove la SEO smette di essere arte e diventa ingegneria: automation, batch processing, integrazione in dashboard. Cinque API costituiscono lo stack core del dev SEO senior.
+APIs are where SEO stops being art and becomes engineering: automation, batch processing, integration into dashboards. Five APIs make up the core stack of a senior SEO developer.
 
 ## Frameworks Introdotti — lo stack core
-- **Search Console API** (searchconsole.googleapis.com, v1 dal 2015): risorse sites, sitemaps, searchanalytics.query, urlInspection. OAuth 2.0 obbligatorio (Service Account se aggiunto come owner). Quote: per-user 20 QPS / 1.200 query/min; per-project 100M query/giorno; URL Inspection 2.000/giorno/progetto. Query `page + query` insieme sono le più costose.
-- **Indexing API** (developers.google.com/search/apis/indexing-api): notifica create/update/delete; recrawl prioritario. **Ufficialmente solo JobPosting/BroadcastEvent** (altri tipi violano i ToS).
-- **PageSpeed Insights API v5**: stessi dati di pagespeed.web.dev → JSON con `lighthouseResult` (lab) + `loadingExperience` (CrUX field). Quote: 25.000/giorno, 240/min.
-- **CrUX API + CrUX History API**: field data real-time e serie temporali (vedi ch16).
-- **CrUX BigQuery** (`chrome-ux-report.*`): per-origin, una tabella per mese YYYYMM, billing GCP (free tier 1TB/mese). Struttura: `.all.YYYYMM` (globale), `.country_XX.YYYYMM` (per paese, es. `country_it`), `.materialized.metrics_summary` (p75 pre-aggregato), `.materialized.country_summary`.
-- **Knowledge Graph Search API**: cerca entità (persone/luoghi/org/opere), risposta JSON-LD. Stato 2026: maintenance mode (Google raccomanda Enterprise Knowledge Graph per produzione, ma l'API gratuita resta funzionante).
+- **Search Console API** (searchconsole.googleapis.com, v1 since 2015): resources sites, sitemaps, searchanalytics.query, urlInspection. OAuth 2.0 required (Service Account if added as owner). Quotas: per-user 20 QPS / 1,200 queries/min; per-project 100M queries/day; URL Inspection 2,000/day/project. Queries combining `page + query` are the most expensive.
+- **Indexing API** (developers.google.com/search/apis/indexing-api): notifies create/update/delete; priority recrawl. **Officially only JobPosting/BroadcastEvent** (other types violate the ToS).
+- **PageSpeed Insights API v5**: same data as pagespeed.web.dev → JSON with `lighthouseResult` (lab) + `loadingExperience` (CrUX field). Quota: 25,000/day, 240/min.
+- **CrUX API + CrUX History API**: real-time field data and time series (see ch16).
+- **CrUX BigQuery** (`chrome-ux-report.*`): per-origin, one table per month YYYYMM, GCP billing (free tier 1TB/month). Structure: `.all.YYYYMM` (global), `.country_XX.YYYYMM` (per country, e.g. `country_it`), `.materialized.metrics_summary` (pre-aggregated p75), `.materialized.country_summary`.
+- **Knowledge Graph Search API**: searches entities (people/places/organizations/works), JSON-LD response. Status 2026: maintenance mode (Google recommends Enterprise Knowledge Graph for production, but the free API remains functional).
 
 ## Code Examples
 ```sql
--- CrUX BigQuery: pass rate CWV, costo controllato con materialized
+-- CrUX BigQuery: CWV pass rate, cost controlled with materialized
 SELECT origin, p75_lcp, p75_inp, p75_cls
 FROM `chrome-ux-report.materialized.metrics_summary`
-WHERE yyyymm = 202605  -- aggiorna alla tabella mensile corrente
+WHERE yyyymm = 202605  -- update to the current monthly table
 ```
 
 ## Reference Table — quote principali
 | API | Quota |
 |---|---|
-| Search Console | 20 QPS/user, 1.200/min, 100M/giorno project |
-| URL Inspection | 2.000/giorno/project, 600/min |
-| PSI API v5 | 25.000/giorno, 240/min |
+| Search Console | 20 QPS/user, 1,200/min, 100M/day project |
+| URL Inspection | 2,000/day/project, 600/min |
+| PSI API v5 | 25,000/day, 240/min |
 | CrUX API | 150 QPM |
-| BigQuery free tier | 1 TB scansionato/mese |
+| BigQuery free tier | 1 TB scanned/month |
 
 ## Anti-patterns
-- **Usare l'Indexing API per pagine generiche**: funziona ma instabile e a rischio sanzioni (ToS limitati a JobPosting/BroadcastEvent).
-- **Query BigQuery non materializzata** su `.all.YYYYMM`: può scansionare >100GB. Usa sempre `materialized.*`.
-- **Date range estesi** in Search Analytics: consumano molta load quota.
+- **Using the Indexing API for generic pages**: it works but is unstable and risks penalties (ToS limited to JobPosting/BroadcastEvent).
+- **Non-materialized BigQuery queries** on `.all.YYYYMM`: can scan >100GB. Always use `materialized.*`.
+- **Extended date ranges** in Search Analytics: they consume a large share of the load quota.
 
 ## Key Takeaways
-1. Tutto ciò che fai in UI è automatizzabile via API — con quote da rispettare.
-2. CrUX BigQuery è il solo modo per benchmark settoriali su scala.
-3. Search Console API offre fino a 16 mesi di storico programmatico.
-4. Stack minimo dev SEO senior: Search Console + CrUX + PageSpeed Insights.
+1. Everything you do in the UI is automatable via API — with quotas to respect.
+2. CrUX BigQuery is the only way to benchmark industry segments at scale.
+3. Search Console API provides up to 16 months of programmatic historical data.
+4. Minimum stack for a senior SEO developer: Search Console + CrUX + PageSpeed Insights.
 
 ## Connects To
-- **Ch 16** (Exec): CrUX e Lighthouse (motori dietro le API).
-- **Ch 14** (SEO): triangolazione GSC+GA4 e BigQuery export.
-- **Ch 13** (SEO): IndexNow come canale push complementare (non-Google).
+- **Ch 16** (Exec): CrUX and Lighthouse (the engines behind the APIs).
+- **Ch 14** (SEO): GSC+GA4 triangulation and BigQuery export.
+- **Ch 13** (SEO): IndexNow as a complementary push channel (non-Google).

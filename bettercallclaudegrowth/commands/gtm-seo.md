@@ -1,31 +1,31 @@
 ---
-description: Genera un piano SEO/GEO 2026 (tecnico + contenuti + distribuzione sui motori generativi) a partire da sito, settore e obiettivo.
-argument-hint: <dominio o pagina> + settore/ICP + obiettivo (es. "acme.it, B2B SaaS HR, +pipeline da AI Overviews")
+description: Generates a 2026 SEO/GEO plan (technical + content + distribution across generative engines) starting from site, industry, and goal.
+argument-hint: <domain or page> + industry/ICP + goal (e.g. "acme.it, B2B SaaS HR, +pipeline from AI Overviews")
 ---
 
-# /gtm-seo - Piano SEO + GEO 2026
+# /gtm-seo - 2026 SEO + GEO Plan
 
-Questo comando applica la skill `seo-2026-sota` (cartella in `skills/`). Rispetta `userConfig`: scrivi in `output_language` (IT default), tara tutto su `userConfig.settore`, usa `userConfig.brand_voice` nei suggerimenti di copy e `userConfig.default_channel` per priorizzare la distribuzione.
+This command applies the `seo-2026-sota` skill (folder in `skills/`). Respect `userConfig`: write in `output_language` (IT default), tune everything to `userConfig.industry`, use `userConfig.brand_voice` in copy suggestions and `userConfig.default_channel` to prioritize distribution.
 
-## Passi
+## Steps
 
-1. **Carica la skill.** Richiama per nome la skill `seo-2026-sota` (si attiva dalla sua description; non usare path di file): parti dal suo indice, usa la cheatsheet per soglie e numeri verificati e approfondisci patterns e il capitolo dal Topic Index (CWV, schema, AIO, IndexNow, distribuzione per modello) quando servono. NON copiare il testo dei libri: estrai solo ciò che serve per decidere.
+1. **Load the skill.** Invoke the `seo-2026-sota` skill by name (it activates from its description; do not use file paths): start from its index, use the cheatsheet for verified thresholds and numbers, and dig into the patterns and the chapter from the Topic Index (CWV, schema, AIO, IndexNow, per-model distribution) when needed. DO NOT copy the books' text: extract only what you need to decide.
 
-2. **Inquadra l'input.** Da `$ARGUMENTS` ricava dominio/pagine, settore/ICP e obiettivo. Tieni separati i due programmi: **SEO classica (Google)** e **GEO (motori generativi)** — l'overlap reale è basso, non trattarli come un'unica leva.
+2. **Frame the input.** From `$ARGUMENTS`, derive the domain/pages, industry/ICP, and goal. Keep the two programs separate: **classic SEO (Google)** and **GEO (generative engines)** — the real overlap is low, do not treat them as a single lever.
 
-3. **SEO tecnica.** Valuta su **SEO tecnica Google** e **Core Web Vitals** (LCP/INP/CLS sulle soglie p75 della cheatsheet), più **schema.org** (Article+Author+Organization) ed **E-E-A-T** con la Experience dominante. Indica i fix prioritari e i tool/API ufficiali da usare per misurare.
+3. **Technical SEO.** Assess on **Google technical SEO** and **Core Web Vitals** (LCP/INP/CLS against the cheatsheet's p75 thresholds), plus **schema.org** (Article+Author+Organization) and **E-E-A-T** with Experience dominant. Indicate the priority fixes and the official tools/APIs to use for measurement.
 
-4. **Contenuti.** Imposta i contenuti per essere selezionabili da **AI Overviews** e dagli LLM: pattern heading-as-question + risposta atomica, e pivot ToFu→BoFu sui 4 formati BoFu. Lega i topic al settore e all'intento dell'ICP.
+4. **Content.** Set up content to be selectable by **AI Overviews** and by LLMs: heading-as-question + atomic answer pattern, and a ToFu→BoFu pivot across the 4 BoFu formats. Tie the topics to the industry and to the ICP's intent.
 
-5. **Distribuzione GEO.** Applica **GEO (ottimizzazione per LLM: ChatGPT/Claude/Gemini/Perplexity)** mappando ICP → modelli → canali con le leve per modello e la regola 80/20. Priorizza coerentemente con `userConfig.default_channel`.
+5. **GEO distribution.** Apply **GEO (optimization for LLMs: ChatGPT/Claude/Gemini/Perplexity)** by mapping ICP → models → channels with the per-model levers and the 80/20 rule. Prioritize consistently with `userConfig.default_channel`.
 
-6. **Output — Piano SEO/GEO 2026.** Produci un piano strutturato:
-   - **Sintesi** (1 paragrafo: dove agire prima e perché)
-   - **SEO tecnica** — fix CWV/schema/E-E-A-T prioritizzati (impatto × sforzo) con metrica e tool
-   - **Contenuti** — cluster e pagine BoFu, formato heading-as-question, intento ICP
-   - **Distribuzione GEO** — tabella modello → fonte/canale → azione, con quick win
-   - **Roadmap 30/60/90 giorni** e **KPI** (SEO e GEO separati)
+6. **Output — 2026 SEO/GEO Plan.** Produce a structured plan:
+   - **Summary** (1 paragraph: where to act first and why)
+   - **Technical SEO** — prioritized CWV/schema/E-E-A-T fixes (impact × effort) with metric and tool
+   - **Content** — clusters and BoFu pages, heading-as-question format, ICP intent
+   - **GEO distribution** — model → source/channel → action table, with quick wins
+   - **30/60/90-day roadmap** and **KPIs** (SEO and GEO kept separate)
 
-Chiudi ricordando di rivalidare cifre, URL e best practice contro le fonti primarie prima di impegnare budget; segnala dove servono dati specifici del progetto non deducibili da `$ARGUMENTS`.
+Close by reminding to re-validate figures, URLs, and best practices against primary sources before committing budget; flag where project-specific data not derivable from `$ARGUMENTS` is needed.
 
-> **Red-team (opzionale).** Invoca l'agent `gtm-critic` per stressare il piano (priorità realistiche per impatto×sforzo? SEO e GEO tenuti distinti? claim/numeri verificati? quick win davvero raggiungibili?), poi integra i fix.
+> **Red-team (optional).** Invoke the `gtm-critic` agent to stress-test the plan (priorities realistic by impact×effort? SEO and GEO kept distinct? claims/numbers verified? quick wins genuinely achievable?), then integrate the fixes.

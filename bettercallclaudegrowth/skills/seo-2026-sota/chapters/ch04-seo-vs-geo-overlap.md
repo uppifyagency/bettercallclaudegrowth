@@ -1,41 +1,41 @@
 # Capitolo 4: SEO e GEO non si sovrappongono come pensavi
 
 ## Core Idea
-La credenza del "63% di overlap tra citazioni ChatGPT e top-10 Google" è invertita: l'overlap reale è 8-12%, a volte negativamente correlato. SEO e GEO vanno trattate come due programmi distinti che si rinforzano solo in alcuni segmenti.
+The belief in a "63% overlap between ChatGPT citations and Google top-10" is inverted: the real overlap is 8–12%, sometimes negatively correlated. SEO and GEO must be treated as two separate programs that reinforce each other only in certain segments.
 
 ## Frameworks Introdotti
-- **Il dato che ribalta la credenza** (Profound 2025): overlap 12% (stock) e 8% (running shoes) tra URL citati da ChatGPT e top-10 Google; sul running la correlazione è −0,98 (quasi perfettamente inversa). Ahrefs conferma: solo 12% degli URL citati da AI ranka in top-10 Google.
-- **Tre ragioni strutturali dell'overlap basso**:
-  1. Gli LLM citano fonti che Google ignora/penalizza in top-10 commerciale (Reddit, forum, Wikipedia, YouTube).
-  2. Il "ranking" LLM è **token-based, non link-based**: frequency, recency, prossimità semantica del passaggio al prompt — non backlink.
-  3. Il training set ≠ la SERP corrente (cut-off storico, anche con browsing).
-- **Conseguenza strategica**: costruisci due programmi paralleli con leve in parte sovrapposte.
+- **The data that flips the belief** (Profound 2025): 12% overlap (stock) and 8% (running shoes) between URLs cited by ChatGPT and Google top-10; for running shoes the correlation is −0.98 (almost perfectly inverse). Ahrefs confirms: only 12% of AI-cited URLs rank in Google's top-10.
+- **Three structural reasons for the low overlap**:
+  1. LLMs cite sources that Google ignores/penalizes in commercial top-10 (Reddit, forums, Wikipedia, YouTube).
+  2. LLM "ranking" is **token-based, not link-based**: frequency, recency, semantic proximity of the passage to the prompt — not backlinks.
+  3. The training set ≠ the current SERP (historical cut-off, even with browsing).
+- **Strategic consequence**: build two parallel programs with partially overlapping levers.
 
 ## Mental Models
-- "Chi vince su Google non vince automaticamente su ChatGPT, e viceversa" — più di un terzo delle volte la correlazione è negativa.
-- Una nuova opportunità: i siti che NON raggiungono la prima pagina con metodi tradizionali possono ottenere visibilità via AI Overviews se profondamente specializzati (93,8% delle fonti citate negli AIO viene da oltre la prima pagina organica — StackMatix/Evertune 2026).
+- "Winning on Google does not automatically mean winning on ChatGPT, and vice versa" — more than one-third of the time the correlation is negative.
+- A new opportunity: sites that do NOT reach the first page with traditional methods can gain visibility via AI Overviews if deeply specialized (93.8% of sources cited in AIOs come from beyond the first organic page — StackMatix/Evertune 2026).
 
-## Reference Table — Quale leva pesa su cosa
-| Leva | Pesa su SEO | Pesa su GEO |
+## Reference Table — Which lever matters for what
+| Lever | Matters for SEO | Matters for GEO |
 |---|---|---|
-| Contenuto unico e ben strutturato | Alto | Alto |
-| Backlink autorevoli | Alto | Basso-medio |
-| Schema.org corretto | Medio | Alto |
-| Heading-as-question + risposta concisa | Medio | Alto |
-| Presenza Reddit / Wikipedia | Bassa | Alta |
-| Citazioni YouTube | Bassa | Molto alta |
-| Core Web Vitals | Medio | Basso (LLM non misurano UX) |
-| Profili G2/Capterra/Trustpilot | Bassa diretta | Alta diretta |
-| Originalità con dati propri | Alta | Molto alta |
-| E-E-A-T (autore, organization, fonti) | Alta | Alta |
+| Unique, well-structured content | High | High |
+| Authoritative backlinks | High | Low-medium |
+| Correct Schema.org | Medium | High |
+| Heading-as-question + concise answer | Medium | High |
+| Reddit / Wikipedia presence | Low | High |
+| YouTube citations | Low | Very high |
+| Core Web Vitals | Medium | Low (LLMs don't measure UX) |
+| G2/Capterra/Trustpilot profiles | Low direct | High direct |
+| Originality with proprietary data | High | Very high |
+| E-E-A-T (author, organization, sources) | High | High |
 
 ## Key Takeaways
-1. Non aspettarti che ottimizzare per Google ti porti "gratis" su ChatGPT.
-2. Le metriche, le fonti e le leve sono diverse: due dashboard, due programmi.
-3. I segmenti di sovrapposizione: contenuto unico, schema, E-E-A-T, originalità.
-4. Verifica empiricamente l'overlap nel tuo verticale prima di assumere transfer.
+1. Don't expect that optimizing for Google will get you onto ChatGPT "for free."
+2. The metrics, sources, and levers are different: two dashboards, two programs.
+3. The overlapping segments: unique content, schema, E-E-A-T, originality.
+4. Empirically verify the overlap in your vertical before assuming transfer.
 
 ## Connects To
-- **Ch 1**: il dato di conversione e zero-click che motiva il pivot.
-- **Ch 5**: come allocare l'energia per modello.
-- **Ch 13** (SEO): posizione ufficiale Google — "AI Search è ancora SEO" (apparente contraddizione: Google parla del SUO AIO, dove le pratiche convergono; gli LLM esterni divergono).
+- **Ch 1**: the conversion and zero-click data that motivates the pivot.
+- **Ch 5**: how to allocate energy per model.
+- **Ch 13** (SEO): Google's official position — "AI Search is still SEO" (apparent contradiction: Google is referring to ITS OWN AIO, where practices converge; external LLMs diverge).

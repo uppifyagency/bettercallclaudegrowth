@@ -1,120 +1,120 @@
-# Pattern & Tecniche — AEMA
+# Patterns & Techniques — AEMA
 
-Tecniche concrete, flussi pronti, sequenze e best practice del libro. Ogni pattern include quando usarlo, come costruirlo e le insidie principali.
+Concrete techniques, ready-to-use flows, sequences, and best practices from the book. Each pattern includes when to use it, how to build it, and the main pitfalls.
 
 ---
 
 ## Welcome Series (Onboarding)
-**Quando**: nuovo iscritto da qualsiasi canale (newsletter, pop-up, landing, acquisto).
-**Come**: 4–7 email | abbina un flusso a ogni canale di acquisizione | includi almeno un'email plain-text "personale" dal founder/CEO (giorno 2, orario lavorativo) | usa la **Soap Opera Sequence** (ogni email finisce con uno spoiler) | aggiungi tag "Automation Completata" a fine flow.
-**Regola**: escludi chi è in onboarding dalle newsletter standard (Smart Sending o segmento esplicito).
+**When**: new subscriber from any channel (newsletter, pop-up, landing page, purchase).
+**How**: 4–7 emails | pair a separate flow to each acquisition channel | include at least one plain-text "personal" email from the founder/CEO (day 2, during business hours) | use the **Soap Opera Sequence** (each email ends with a teaser) | add an "Automation Completed" tag at the end of the flow.
+**Rule**: exclude people in onboarding from standard newsletters (Smart Sending or explicit segment).
 
 ---
 
 ## Drip Campaign (Nurturing B2B/B2C)
-**Quando**: lead gen servizi/formazione; obiettivo: portare il lead a prenotare una call o a comprare.
-**Come**: 4–7 email in 10–15 giorni | email #1 valore immediato | email #2 plain-text "dal CEO" (rimuove il freno) | alternare email HTML e plain-text | CRM: al termine assegna score e tag, poi task al sales se Prospects.
-**Caso reale** (Accademia della Pubblicità): 7 email in 12 giorni → conversioni significative.
+**When**: service/training lead gen; goal: move the lead to book a call or make a purchase.
+**How**: 4–7 emails over 10–15 days | email #1 immediate value | email #2 plain-text "from the CEO" (removes friction) | alternate HTML and plain-text emails | CRM: at the end assign score and tag, then create a sales task for Prospects.
+**Real case** (Accademia della Pubblicità): 7 emails in 12 days → significant conversions.
 
 ---
 
 ## Funneling Flow
-**Quando**: campagne newsletter o flussi lunghi dove l'open rate cala.
-**Come**: dopo N email obbligate (es. 3), la successiva va solo a chi ha aperto almeno una delle precedenti → continua a restringere ad ogni step.
-**Dati reali** (Business School): senza funneling 75%→39%→30%→26%→20%; con funneling dalla 4ª email: 48,5%→62,1%→77,8%.
+**When**: newsletter campaigns or long flows where open rate drops.
+**How**: after N mandatory emails (e.g. 3), the next one goes only to those who opened at least one of the previous ones → keep narrowing at every step.
+**Real data** (Business School): without funneling 75%→39%→30%→26%→20%; with funneling from email #4: 48.5%→62.1%→77.8%.
 
 ---
 
 ## Abandoned Cart Recovery
-**Quando**: checkout avviato ma non completato.
-**Come**: max 2 email — email #1 dopo 1h (reminder, nessuno sconto) | email #2 dopo 24h (leva scadenza o sconto, coupon dinamico unico) | raramente oltre 7gg.
-**Nota**: non aggiungere sconto subito nell'email #1, si deprezza il prodotto.
+**When**: checkout started but not completed.
+**How**: max 2 emails — email #1 after 1h (reminder, no discount) | email #2 after 24h (deadline leverage or discount, unique dynamic coupon) | rarely beyond 7 days.
+**Note**: do not add a discount immediately in email #1 — it devalues the product.
 
 ---
 
 ## Browse Abandonment
-**Quando**: utente visita pagina prodotto/categoria ma non aggiunge al carrello.
-**Come**: 1–2 email | finestra breve (1–2h dopo visita) | mostra il prodotto visto | GDPR: verificare consenso tracciamento comportamentale.
+**When**: user visits a product/category page but does not add to cart.
+**How**: 1–2 emails | short window (1–2h after visit) | show the viewed product | GDPR: verify behavioral tracking consent.
 
 ---
 
 ## Post-Purchase Series
-**Quando**: dopo ogni acquisto.
-**Come**: email #1 conferma + ringraziamento | email #2 come/how-to uso prodotto | email #3 richiesta recensione (timing: 5–10gg dopo consegna) | email #4 coupon o up/cross-sell | **flusso diverso** per cliente nuovo vs ricorrente.
-**Replenishment**: per prodotti consumabili (es. 90gg) → flow a 80gg con "sta finendo?"; repeat-buyer spende ~3x.
+**When**: after every purchase.
+**How**: email #1 confirmation + thank you | email #2 how-to/product usage | email #3 review request (timing: 5–10 days after delivery) | email #4 coupon or up/cross-sell | **separate flow** for new vs. returning customer.
+**Replenishment**: for consumable products (e.g. 90-day supply) → flow at day 80 with "running out?"; repeat buyers spend ~3x more.
 
 ---
 
 ## Winback Flow
-**Quando**: cliente inattivo da X giorni (definisci soglia in base al tuo storico acquisti).
-**Come**: 2 email — email #1 a ~120gg (re-engagement, offerta o valore) | email #2 a +15gg (ultima chance, tono urgente) | chi non apre → Sunset.
-**Caso Lombardi** (+57% fatturato in 2 mesi): 5 automazioni "banali" incluso winback + ringraziamento per cluster di acquisto.
+**When**: customer inactive for X days (define threshold based on your purchase history).
+**How**: 2 emails — email #1 at ~120 days (re-engagement, offer or value) | email #2 at +15 days (last chance, urgent tone) | those who don't open → Sunset.
+**Lombardi case** (+57% revenue in 2 months): 5 "basic" automations including winback + thank-you by purchase cluster.
 
 ---
 
 ## Sunset Flow
-**Quando**: contatto non apre da X mesi (soglia da calibrare sul proprio ritmo di invio).
-**Come**: 1 email di "sei ancora qui?" con link di conferma interesse | chi non risponde → archiviato (non pagato nella maggior parte dei piani).
-**Benefici**: metriche di apertura migliori + costi piano inferiori.
+**When**: contact hasn't opened in X months (threshold to calibrate based on your sending frequency).
+**How**: 1 "are you still there?" email with a confirm-interest link | those who don't respond → archived (not billed in most plans).
+**Benefits**: better open rate metrics + lower plan costs.
 
 ---
 
-## Bait & Hook (raccolta data mancante)
-**Quando**: manca una data chiave (compleanno, data acquisto, anniversario).
-**Come**: email che promette un vantaggio esclusivo per chi inserisce il dato → link a Typeform o form interno → dati aggiornati in anagrafica → trigger attivato alla data.
-**Caso Balique®**: raccolta compleanni con questo metodo, poi flow compleanno ad alto open rate.
+## Bait & Hook (missing data collection)
+**When**: a key date is missing (birthday, purchase date, anniversary).
+**How**: email that promises an exclusive benefit to those who submit the data → link to Typeform or internal form → data updated in the contact record → trigger activated on the date.
+**Balique® case**: birthday collection using this method, then birthday flow with high open rate.
 
 ---
 
-## Newsletter Always-On con nome proprio
-**Come**: dai un nome alla tua newsletter (es. "Always-On!") + landing dedicata → testa "Iscriviti alla newsletter" vs "Iscriviti ora a [Nome]!".
-**Caso reale**: la versione con nome = iscrizioni costanti; la versione generica = quasi zero.
-**Ricicla le evergreen**: le email non promozionali sempreverdi vanno reinviate ai nuovi iscritti via automation (→ newsletter ha valore retroattivo).
+## Always-On Newsletter with a Proper Name
+**How**: give your newsletter a name (e.g. "Always-On!") + dedicated landing page → A/B test "Subscribe to the newsletter" vs. "Subscribe now to [Name]!".
+**Real case**: the named version = steady subscriptions; the generic version = almost zero.
+**Recycle evergreens**: non-promotional evergreen emails should be re-sent to new subscribers via automation (→ newsletter gains retroactive value).
 
 ---
 
-## Segmentazione per cluster di acquisto (Winback coupon)
-**Come**: segmenta per numero di acquisti → coupon diversi:
-- 3+ acquisti → 10% sempre (nessun coupon aggiuntivo necessario)
-- 2 acquisti → 15% valido 30gg
-- 1 acquisto → 20% valido 30gg
-- 0 acquisti → 50% valido 24h (massima urgenza per primo acquisto)
+## Segmentation by Purchase Cluster (Winback Coupon)
+**How**: segment by number of purchases → different coupons:
+- 3+ purchases → 10% always (no additional coupon needed)
+- 2 purchases → 15% valid for 30 days
+- 1 purchase → 20% valid for 30 days
+- 0 purchases → 50% valid for 24h (maximum urgency for first purchase)
 
 ---
 
-## Date Flow (compleanni, anniversari, ricorrenze)
-**Come**: raccogli data → flow si attiva N giorni prima (pre: es. regalo/preparazione) o il giorno stesso (compleanno: alta apertura) | email post-evento (recensione, assistenza).
-**Pre-event**: abbonamento in scadenza, viaggio imminente, prodotto in esaurimento (Replenishment).
-**Post-event**: "com'è andata?", survey, seconda opportunità.
+## Date Flow (birthdays, anniversaries, recurring occasions)
+**How**: collect date → flow activates N days before (pre: e.g. gift/preparation) or on the day itself (birthday: high open rate) | post-event email (review, support).
+**Pre-event**: expiring subscription, upcoming trip, product running low (Replenishment).
+**Post-event**: "how did it go?", survey, second opportunity.
 
 ---
 
-## Coupon Dinamico e Unico (best practice)
-**Regola**: nei flussi personalizzati usa sempre coupon unici per contatto (non condivisibili) + countdown timer (Mailtimer.io).
-**Quando usare statici**: saldi generali, BFCM, welcome series con tasso iscrizione molto alto (volume).
-**Motivo**: coupon statici si diffondono fuori dal contatto → erosione margini.
+## Dynamic and Unique Coupon (best practice)
+**Rule**: in personalized flows always use unique per-contact coupons (non-shareable) + countdown timer (Mailtimer.io).
+**When to use static**: general sales, BFCM, welcome series with very high subscription rate (volume).
+**Reason**: static coupons spread beyond the contact → margin erosion.
 
 ---
 
-## Framework Lead Generation (scenario completo)
-1. **Welcome Flow** (post-acquisition): presentazione brand + valore.
-2. **Drip Campaign** (nurturing): 4–7 email, email plain-text "personale", SOS.
-3. **Follow-Up** (reminder): scadenza offerta, recensioni, referral.
-4. **CRM**: funneling su score/attributi, task al sales per Prospects.
+## Lead Generation Framework (complete scenario)
+1. **Welcome Flow** (post-acquisition): brand introduction + value.
+2. **Drip Campaign** (nurturing): 4–7 emails, "personal" plain-text email, SOS.
+3. **Follow-Up** (reminder): offer deadline, reviews, referral.
+4. **CRM**: funneling on score/attributes, sales task for Prospects.
 
 ---
 
-## Framework E-commerce (scenario completo)
-1. **Welcome Series** ← iscrizione newsletter (sconto benvenuto + reminder 4h + ultima chance 8h, poi 7 email a 3gg).
+## E-commerce Framework (complete scenario)
+1. **Welcome Series** ← newsletter sign-up (welcome discount + reminder at 4h + last chance at 8h, then 7 emails every 3 days).
 2. **Shopping Flow**: Browse Abandonment → Abandoned Cart → Post-Purchase → Replenishment → Back in Stock / Price Drop.
-3. **Up & Cross Selling**: bundle/set, travel size, garanzie; per categoria/brand.
-4. **CDP**: Bait & Hook compleanni, Winback, ricorrenze, soglie RFM.
-5. **Sunset Flow**: lista pulita, metriche migliori, costi ridotti.
+3. **Up & Cross Selling**: bundles/sets, travel size, warranties; by category/brand.
+4. **CDP**: Bait & Hook birthdays, Winback, anniversaries, RFM thresholds.
+5. **Sunset Flow**: clean list, better metrics, reduced costs.
 
 ---
 
-## Advertising integrato (remarketing + lookalike)
-**Remarketing**: esporta segmenti email (inattivi, cliccato-non-comprato, RFM specifici) → Custom Audience su Meta/Google → messaggi coerenti con il flusso email attivo.
-**Lookalike**: usa Champions o clienti con LTV alto come seed → acquisizione qualitativa.
-**Exclusion**: escludi clienti attivi dalle campagne di acquisizione fredda.
-**Full-funnel sync**: chi è in Winback email vede anche un ad "Bentornato/a" su Meta.
+## Integrated Advertising (remarketing + lookalike)
+**Remarketing**: export email segments (inactive, clicked-not-purchased, specific RFM) → Custom Audience on Meta/Google → messages consistent with the active email flow.
+**Lookalike**: use Champions or high-LTV customers as seed → quality acquisition.
+**Exclusion**: exclude active customers from cold acquisition campaigns.
+**Full-funnel sync**: contacts in the Winback email flow also see a "Welcome back" ad on Meta.

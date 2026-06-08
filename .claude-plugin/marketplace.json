@@ -7,12 +7,12 @@
     "url": "https://github.com/uppifyagency"
   },
   "metadata": {
-    "description": "GTM Intelligence per Claude Code: un consulente go-to-market che orchestra Jobs to Be Done, posizionamento, offerte irresistibili, lead generation, copy, contenuti, SEO/GEO 2026, email automation e Instagram performance in una pipeline completa, con un router (gtm-buddy) che indica la skill o la sequenza giusta per ogni situazione."
+    "description": "GTM Intelligence for Claude Code: a go-to-market consultant that orchestrates Jobs to Be Done, positioning, irresistible offers, lead generation, copy, content, SEO/GEO 2026, email automation and Instagram performance into a complete pipeline, with a router (gtm-buddy) that points you to the right skill or the right sequence for any situation."
   },
   "plugins": [
     {
       "name": "bettercallclaudegrowth",
-      "description": "GTM Intelligence -- Jobs to Be Done (Christensen), posizionamento (Butcher), offerte irresistibili e lead (Hormozi), copy (SUCKS di Drew), contenuti (Doing Content Right), SEO/GEO 2026, email automation (AEMA) e Instagram performance, orchestrati in una pipeline go-to-market adattiva con scoring di readiness, revisione avversariale e un router gtm-buddy che instrada per archetipo di business.",
+      "description": "GTM Intelligence -- Jobs to Be Done (Christensen), positioning (Butcher), irresistible offers and leads (Hormozi), copy (Drew's SUCKS), content (Doing Content Right), SEO/GEO 2026, email automation (AEMA) and Instagram performance, orchestrated into an adaptive go-to-market pipeline with a readiness score, adversarial review, and a gtm-buddy router that routes by business archetype.",
       "version": "0.3.0",
       "source": "./bettercallclaudegrowth",
       "author": {

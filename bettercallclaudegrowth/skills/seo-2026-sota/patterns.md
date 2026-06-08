@@ -1,81 +1,81 @@
-# Patterns & Tecniche — SEO / GEO 2026
+# Patterns & Techniques — SEO / GEO 2026
 
-## Pivot editoriale ToFu → BoFu
-**Quando**: il CTR organico crolla con gli AIO e le query informative vanno zero-click.
-**Come**: ridistribuisci il budget sui 4 formati BoFu (listicoli verticali, X vs Y, guide alla scelta con matrice, "alternative a [competitor]"). Mantieni hub informativi per la topical authority.
-**Trade-off**: meno traffico ToFu, più conversioni; conviene a B2B/SaaS, non a ecommerce di volume.
+## Editorial Pivot ToFu → BoFu
+**When**: organic CTR collapses with AI Overviews and informational queries go zero-click.
+**How**: reallocate budget to the 4 BoFu formats (vertical listicles, X vs Y, choice guides with matrix, "alternatives to [competitor]"). Keep informational hubs for topical authority.
+**Trade-off**: less ToFu traffic, more conversions; worthwhile for B2B/SaaS, not for high-volume e-commerce.
 
-## Heading-as-question + risposta atomica
-**Quando**: vuoi essere citato da AIO/LLM e ottenere snippet dinamici.
-**Come**: H2/H3 = domanda reale; prima frase sotto = risposta autonoma 1-2 righe (≤100 char per Gemini); dettaglio sotto.
-**Trade-off**: nessuno — funziona sia per SEO classica che per GEO.
+## Heading-as-question + atomic answer
+**When**: you want to be cited by AI Overviews/LLMs and earn dynamic snippets.
+**How**: H2/H3 = real question; first sentence below = self-contained answer 1-2 lines (≤100 chars for Gemini); detail follows.
+**Trade-off**: none — works for both classic SEO and GEO.
 
-## Crawlability AI check (primo response)
-**Quando**: prima di qualsiasi lavoro GEO.
-**Come**: AI Eyes (toggle JS off; <70% contenuto = problema) o `curl -s URL | grep -c '</p>'`. Se client-side → prerendering (SSR/SSG/Islands) prima del contenuto.
-**Trade-off**: gli AI crawler non eseguono JS; Googlebot sì ma con ritardo.
+## AI Crawlability check (first response)
+**When**: before any GEO work.
+**How**: AI Eyes (toggle JS off; <70% content = problem) or `curl -s URL | grep -c '</p>'`. If client-side → prerendering (SSR/SSG/Islands) before content.
+**Trade-off**: AI crawlers do not execute JS; Googlebot does but with a delay.
 
-## Indicizzazione push parallela
-**Quando**: dopo ogni pubblicazione.
-**Come**: Google = Search Console (Controllo URL → Richiedi indicizzazione) + sitemap; Bing/Perplexity/LLM = IndexNow.
-**Trade-off**: IndexNow non tocca Google ma accelera Bing/Copilot.
+## Parallel push indexing
+**When**: after every publication.
+**How**: Google = Search Console (URL Inspection → Request Indexing) + sitemap; Bing/Perplexity/LLM = IndexNow.
+**Trade-off**: IndexNow does not touch Google but accelerates Bing/Copilot.
 
-## Canonicalizzazione a forza decrescente
-**Quando**: contenuti raggiungibili da più URL.
-**Come**: 301 (più forte) > rel=canonical > hreflang > sitemap > internal link consistenti. Canonical auto-referenziale su ogni pagina.
-**Trade-off**: rel=canonical è solo un suggerimento; verifica la canonica scelta in GSC.
+## Canonicalization by decreasing strength
+**When**: content reachable from multiple URLs.
+**How**: 301 (strongest) > rel=canonical > hreflang > sitemap > consistent internal links. Self-referencing canonical on every page.
+**Trade-off**: rel=canonical is only a hint; verify the chosen canonical in GSC.
 
-## Ottimizzazione CWV mirata (LCP/INP/CLS)
-**Quando**: <75% delle visite "Buono" su CrUX (28gg).
-**Come**: LCP → preload + fetchpriority=high + AVIF/WebP + TTFB; INP → spezza task ≤50ms, code splitting, Web Worker, debounce; CLS → width/height su media, spazio riservato, font size-adjust.
-**Trade-off**: INP è il collo di bottiglia 2026 (43% fallisce) — caccia il JS bloccante post-load.
+## Targeted CWV optimization (LCP/INP/CLS)
+**When**: <75% of visits "Good" on CrUX (28-day window).
+**How**: LCP → preload + fetchpriority=high + AVIF/WebP + TTFB; INP → break tasks ≤50ms, code splitting, Web Worker, debounce; CLS → width/height on media, reserved space, font size-adjust.
+**Trade-off**: INP is the 2026 bottleneck (43% fail) — hunt down post-load blocking JS.
 
-## Hub & spoke per topical authority
-**Quando**: vuoi "possedere" un verticale.
-**Come**: pillar → spoke → sub-spoke con internal linking denso e anchor descrittivi. Per GEO: più stretto (profondità > ampiezza).
-**Trade-off**: la coerenza semantica supera il numero di backlink (Core Update mar 2026).
+## Hub & spoke for topical authority
+**When**: you want to "own" a vertical.
+**How**: pillar → spoke → sub-spoke with dense internal linking and descriptive anchors. For GEO: narrower scope (depth > breadth).
+**Trade-off**: semantic coherence outweighs backlink count (Core Update Mar 2026).
 
-## Internal linking assistito da Claude
-**Quando**: hai molti articoli da connettere.
-**Come**: esporta URL+titoli → Claude propone matrice (sorgente, destinazione, anchor, frase di contesto, 50-200 link) → implementa con Link Whisper/Yoast.
-**Trade-off**: rivedi gli anchor per evitare over-optimization.
+## Claude-assisted internal linking
+**When**: you have many articles to connect.
+**How**: export URLs+titles → Claude proposes a matrix (source, destination, anchor, context sentence, 50-200 links) → implement with Link Whisper/Yoast.
+**Trade-off**: review anchors to avoid over-optimization.
 
-## E-E-A-T machine-readable (per Google e LLM)
-**Quando**: contenuti che danno consigli (specie YMYL) o pagine BoFu.
-**Come**: Schema Person+sameAs (LinkedIn/ORCID); Organization completo; bio autore con foto/credenziali; loghi clienti come **testo**; numeri di risultato nel body; citazioni di fonti primarie; sezione "Come abbiamo testato".
-**Trade-off**: gli LLM non fanno OCR delle immagini — il testo è il segnale.
+## Machine-readable E-E-A-T (for Google and LLMs)
+**When**: content that gives advice (especially YMYL) or BoFu pages.
+**How**: Schema Person+sameAs (LinkedIn/ORCID); complete Organization; author bio with photo/credentials; client logos as **text**; result numbers in body; citations of primary sources; "How we tested" section.
+**Trade-off**: LLMs do not OCR images — text is the signal.
 
-## Republish con canonical (Medium/LinkedIn)
-**Quando**: vuoi long-tail rapido sfruttando il DR delle piattaforme.
-**Come**: canonical sul tuo blog → attendi 1-2 settimane → republish con rel=canonical al blog.
-**Trade-off**: adatta titolo/incipit alla piattaforma; citati da Perplexity/Copilot.
+## Republish with canonical (Medium/LinkedIn)
+**When**: you want quick long-tail traffic leveraging the platform's DR.
+**How**: canonical on your blog → wait 1-2 weeks → republish with rel=canonical pointing to the blog.
+**Trade-off**: adapt title/intro to the platform; get cited by Perplexity/Copilot.
 
-## Effetto 3× B2B (profili recensioni)
-**Quando**: software B2B mirato a citazioni ChatGPT.
-**Come**: G2 + Capterra + Trustpilot completi, 20-30 recensioni, rating 4,3+, update trimestrale.
-**Trade-off**: 12-16 ore una tantum + campagna recensioni.
+## 3× B2B effect (review profiles)
+**When**: B2B software targeting ChatGPT citations.
+**How**: G2 + Capterra + Trustpilot complete, 20-30 reviews, rating 4.3+, quarterly update.
+**Trade-off**: 12-16 hours one-time + review campaign.
 
-## Debugging cali di traffico (7 step)
-**Quando**: calo di traffico organico.
-**Come**: sorgente → coincidenze temporali (Search Status Dashboard) → tecnico → algoritmico (graduale=Core Update) → manual action → stagionalità (Trends) → concorrenza.
-**Trade-off**: non agire d'impulso; un solo cambio per volta.
+## Debugging traffic drops (7 steps)
+**When**: organic traffic drop.
+**How**: source → timing coincidences (Search Status Dashboard) → technical → algorithmic (gradual = Core Update) → manual action → seasonality (Trends) → competition.
+**Trade-off**: do not act impulsively; one change at a time.
 
-## CI/CD per structured data
-**Quando**: pipeline su siti con schema.
-**Come**: validazione locale schema-dts+AJV → Schema Markup Validator → Rich Results Test come gate su staging.
-**Trade-off**: il Rich Results Test copre solo i tipi supportati da Google.
+## CI/CD for structured data
+**When**: pipeline on sites with schema.
+**How**: local validation schema-dts+AJV → Schema Markup Validator → Rich Results Test as gate on staging.
+**Trade-off**: Rich Results Test covers only the types supported by Google.
 
-## Lighthouse CI come gate di PR
-**Quando**: vuoi prevenire regressioni di performance.
-**Come**: lighthouserc.json con assertion/budget; la PR fallisce se una metrica regredisce; @lhci/server per storici.
-**Trade-off**: lancia l'audit più volte per ridurre la varianza.
+## Lighthouse CI as PR gate
+**When**: you want to prevent performance regressions.
+**How**: lighthouserc.json with assertion/budget; PR fails if a metric regresses; @lhci/server for historical tracking.
+**Trade-off**: run the audit multiple times to reduce variance.
 
-## Triangolazione GSC + GA4 + Trends
-**Quando**: report periodico orientato al business.
-**Come**: collega GSC↔GA4, imposta eventi/conversioni, contestualizza con Trends (5 anni). BigQuery export per analisi avanzate (CTR anomalo, branded/non-branded, &udm=14).
-**Trade-off**: senza eventi di conversione GA4 non misura valore.
+## GSC + GA4 + Trends triangulation
+**When**: periodic business-oriented reporting.
+**How**: connect GSC↔GA4, set up events/conversions, contextualize with Trends (5 years). BigQuery export for advanced analysis (anomalous CTR, branded/non-branded, &udm=14).
+**Trade-off**: without GA4 conversion events, value cannot be measured.
 
-## Allocazione GEO per modello
-**Quando**: risorse limitate (5-10h/sett).
-**Come**: mappa clienti→modelli→canali. ChatGPT=Wikipedia/G2; Claude=docs tecniche/GitHub; Gemini/AIO=YouTube/schema/recency; Perplexity=Reddit.
-**Trade-off**: solo Gemini/AIO dà feedback misurabile in GSC.
+## GEO allocation by model
+**When**: limited resources (5-10h/week).
+**How**: map customers→models→channels. ChatGPT=Wikipedia/G2; Claude=technical docs/GitHub; Gemini/AIO=YouTube/schema/recency; Perplexity=Reddit.
+**Trade-off**: only Gemini/AIO provides measurable feedback in GSC.

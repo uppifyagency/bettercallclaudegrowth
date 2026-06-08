@@ -1,42 +1,42 @@
-# Capitolo 19: Open source Google/Chrome e standard tecnici co-sponsorizzati
+# Chapter 19: Google/Chrome Open Source and Co-Sponsored Technical Standards
 
 ## Core Idea
-Il Chrome team mantiene su GitHub la toolchain canonica per misurare i segnali tecnici che incidono sul ranking. Quattro standard pubblici (schema.org, sitemaps.org, RFC 9309, RFC 8288) sono il fondamento normativo. Insieme, sono il punto di rottura tra "SEO opinata" e "SEO misurabile".
+The Chrome team maintains on GitHub the canonical toolchain for measuring the technical signals that affect ranking. Four public standards (schema.org, sitemaps.org, RFC 9309, RFC 8288) form the normative foundation. Together, they mark the dividing line between "opinionated SEO" and "measurable SEO".
 
-## Frameworks Introdotti — repository chiave
-- **web-vitals** (~8.500★, attivo): ~2KB, misura CWV in produzione sul browser reale. **Unica implementazione con parità di calcolo** con CrUX/PSI/GSC. Build `attribution` (+1,5KB) aggiunge l'elemento DOM responsabile dell'LCP, URL risorsa, sub-parts.
-- **lighthouse** (~30.200★, v13.3.0): motore di audit, 100+ audit, codice di scoring.
-- **lighthouse-ci** (~6.900★): orchestratore CI; lancia l'audit più volte (riduce varianza), applica assertion/budget che fanno fallire la PR su regressione; `@lhci/server` archivia storici e diff.
-- **workbox** (~13.000★, Aurora team): Service Worker — strategie CacheFirst/NetworkFirst/StaleWhileRevalidate, expiration, background sync.
-- **google/robotstxt** (C++): è LETTERALMENTE il parser che Googlebot usa in produzione. Open-sourciato 2019, riferimento normativo per RFC 9309. Risolve ogni ambiguità — la risposta è eseguibile, non opinabile. Wrapper: Java (ufficiale), Rust (Folyd), Python (usa `protego`, il più allineato).
+## Frameworks Introduced — key repositories
+- **web-vitals** (~8,500★, active): ~2KB, measures CWV in production on real browsers. **The only implementation with calculation parity** with CrUX/PSI/GSC. The `attribution` build (+1.5KB) adds the DOM element responsible for LCP, resource URL, and sub-parts.
+- **lighthouse** (~30,200★, v13.3.0): audit engine, 100+ audits, scoring code.
+- **lighthouse-ci** (~6,900★): CI orchestrator; runs the audit multiple times (reduces variance), applies assertions/budgets that fail the PR on regression; `@lhci/server` archives history and diffs.
+- **workbox** (~13,000★, Aurora team): Service Worker — CacheFirst/NetworkFirst/StaleWhileRevalidate strategies, expiration, background sync.
+- **google/robotstxt** (C++): this is LITERALLY the parser that Googlebot uses in production. Open-sourced in 2019, normative reference for RFC 9309. Resolves every ambiguity — the answer is executable, not debatable. Wrappers: Java (official), Rust (Folyd), Python (use `protego`, the most aligned).
 
-## Reference Table — repository complementari (stato 2026)
-| Repo | Stato | Sostituto |
+## Reference Table — complementary repositories (2026 status)
+| Repo | Status | Replacement |
 |---|---|---|
-| critters | Archiviato | `danielroe/beasties` (inline CSS critico) |
-| squoosh CLI | Non mantenuta (app web sì) | `sharp` (Node) per CI |
-| rendertron | **Archiviato (ott 2022)** | SSR nativo / prerendering build-time |
-| wpp-research | Attivo | toolkit performance WordPress + query HTTP Archive |
+| critters | Archived | `danielroe/beasties` (inline critical CSS) |
+| squoosh CLI | Unmaintained (web app still active) | `sharp` (Node) for CI |
+| rendertron | **Archived (Oct 2022)** | Native SSR / build-time prerendering |
+| wpp-research | Active | WordPress performance toolkit + HTTP Archive queries |
 
-## Frameworks Introdotti — standard tecnici
-- **schema.org** (co-sponsor Google/Microsoft/Yahoo/Yandex dal 2011): ~823 Types, 1.529 Properties. Core (stabile) vs Pending (sperimentale, IRI può cambiare). **Deprecazione rich result da gen 2026** per Book Actions, Course Info, Claim Review, Estimated Salary, Learning Video, Special Announcement, Vehicle Listing (i tipi restano validi, non producono display).
-- **sitemaps.org** (v0.9, invariato dal 2006): 50.000 URL / 50MB; `changefreq` e `priority` **ignorati da Google**.
-- **RFC 9309 — Robots Exclusion Protocol** (IETF, set 2022; co-author Gary Illyes, Lizzi Sassman): crawler parsa almeno i primi 500 KiB; caching max 24h; su 5xx/timeout raccomandato disallow totale; matching = longest-match, tie risolto dall'ordine; wildcard `*` e `$` supportati.
-- **RFC 8288 — Web Linking** (IETF, 2017): modello dei link via header HTTP `Link:`; registry IANA dei rel (canonical, alternate, preload, ugc, sponsored…). **Unica via per canonical su PDF/JSON/asset non-HTML.**
-- **HTTP Archive** (co-Google): crawla ~16M siti/mese; Web Almanac annuale (16 capitoli incl. SEO); dataset BigQuery joinabile con CrUX.
+## Frameworks Introduced — technical standards
+- **schema.org** (co-sponsored by Google/Microsoft/Yahoo/Yandex since 2011): ~823 Types, 1,529 Properties. Core (stable) vs Pending (experimental, IRI may change). **Rich result deprecation from Jan 2026** for Book Actions, Course Info, Claim Review, Estimated Salary, Learning Video, Special Announcement, Vehicle Listing (types remain valid, no longer produce display).
+- **sitemaps.org** (v0.9, unchanged since 2006): 50,000 URLs / 50MB; `changefreq` and `priority` **ignored by Google**.
+- **RFC 9309 — Robots Exclusion Protocol** (IETF, Sep 2022; co-authored by Gary Illyes, Lizzi Sassman): crawler parses at least the first 500 KiB; caching max 24h; on 5xx/timeout total disallow is recommended; matching = longest-match, ties resolved by order; wildcards `*` and `$` supported.
+- **RFC 8288 — Web Linking** (IETF, 2017): link model via HTTP `Link:` header; IANA registry of rel values (canonical, alternate, preload, ugc, sponsored…). **The only way to specify canonical on PDFs/JSON/non-HTML assets.**
+- **HTTP Archive** (co-Google): crawls ~16M sites/month; annual Web Almanac (16 chapters incl. SEO); BigQuery dataset joinable with CrUX.
 
 ## Anti-patterns
-- **Tenere Rendertron in produzione**: dynamic rendering NON è raccomandato → migra a SSR.
-- **Affidarsi a `urllib.robotparser` (Python)**: implementazione divergente da Google → usa `protego`.
+- **Keeping Rendertron in production**: dynamic rendering is NOT recommended → migrate to SSR.
+- **Relying on `urllib.robotparser` (Python)**: implementation diverges from Google → use `protego`.
 
 ## Key Takeaways
-1. web-vitals.js è l'unica misura RUM con parità di calcolo ufficiale.
-2. lighthouse-ci trasforma le metriche in gate di PR (budget/assertion).
-3. google/robotstxt rende le dispute robots.txt risolvibili in modo eseguibile.
-4. `changefreq`/`priority` sono ignorati: non perderci tempo.
-5. Header `Link: rel="canonical"` per i file non-HTML.
+1. web-vitals.js is the only RUM measurement with official calculation parity.
+2. lighthouse-ci turns metrics into PR gates (budgets/assertions).
+3. google/robotstxt makes robots.txt disputes resolvable in an executable way.
+4. `changefreq`/`priority` are ignored: don't waste time on them.
+5. `Link: rel="canonical"` header for non-HTML files.
 
 ## Connects To
-- **Ch 16** (Exec): Lighthouse e CrUX (motori).
+- **Ch 16** (Exec): Lighthouse and CrUX (engines).
 - **Ch 8/15**: robots.txt, sitemap, rendering.
-- **Ch 13** (SEO): schema.org in pratica, FAQ rich result rimossi.
+- **Ch 13** (SEO): schema.org in practice, FAQ rich results removed.

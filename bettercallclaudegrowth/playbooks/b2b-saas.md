@@ -1,33 +1,33 @@
 # Playbook — B2B SaaS
 
-**Quando si applica:** software in abbonamento (MRR/ARR), trial o demo, spesso **buyer ≠ user**, ciclo di vendita con più tappe, metriche di attivazione e churn. Acquisto razionale-ma-politico (rischio di carriera per chi compra).
+**When it applies:** subscription software (MRR/ARR), trial or demo, often **buyer ≠ user**, multi-stage sales cycle, activation and churn metrics. Rational-but-political purchase (career risk for the buyer).
 
-## Job to Be Done tipico (lente Christensen)
-Il cliente "licenzia" un workaround (fogli Excel, processo manuale, tool generico) per "assumere" il tuo software. Dimensione **funzionale forte ma con peso sociale** (il buyer non vuole sembrare incompetente). Spesso il vero concorrente è la **nonconsumption / lo status quo**: "continuiamo come adesso". → La leva binding è di solito ridurre **ansia di switch** (migrazione, integrazione, rischio) e **abitudine**, non aggiungere feature.
+## Typical Job to Be Done (Christensen lens)
+The customer "fires" a workaround (Excel spreadsheets, a manual process, a generic tool) to "hire" your software. **Strong functional dimension but with social weight** (the buyer doesn't want to look incompetent). Often the real competitor is **nonconsumption / the status quo**: "let's keep going as we are." → The binding lever is usually to reduce **switching anxiety** (migration, integration, risk) and **habit**, not to add features.
 
-## Sequenza GTM consigliata
-`gtm-jobs` → `gtm-posizionamento` → `gtm-offerta` → `gtm-leads` → `gtm-seo` → `gtm-email` → `gtm-contenuti` → `gtm-copy`
+## Recommended GTM sequence
+`gtm-jobs` → `gtm-positioning` → `gtm-offer` → `gtm-leads` → `gtm-seo` → `gtm-email` → `gtm-content` → `gtm-copy`
 
-- **Jobs + nonconsumption:** inquadra il campo competitivo come "status quo vs noi", non "noi vs competitor X".
-- **Offerta = riduzione del rischio di adozione:** la Grand Slam qui è fatta di onboarding fatto-per-te, garanzia di risultato/ROI, time-to-value corto. Il **Little Hire** (uso reale ricorrente) conta più del Big Hire: progetta l'attivazione.
-- **Lead engine prima dei canali:** Core Four con enfasi su **cold outreach + content SEO**. Calcola il **payback CAC** (vedi `cfa-calculator`): in B2B il LTGP:CAC ≥ 3:1 e recupero CAC sono guardrail di sopravvivenza.
-- **SEO BoFu + GEO:** intento commerciale ("alternative a X", "software per Y"), formati selezionabili da AI Overviews/LLM. Usa `seo-2026-sota`.
-- **Email = attivazione + espansione:** non solo welcome; sequenze di onboarding che portano al Little Hire, e winback per trial freddi.
+- **Jobs + nonconsumption:** frame the competitive field as "status quo vs us," not "us vs competitor X."
+- **Offer = adoption-risk reduction:** the Grand Slam here is built from done-for-you onboarding, a results/ROI guarantee, and a short time-to-value. The **Little Hire** (real recurring usage) matters more than the Big Hire: design for activation.
+- **Lead engine before the channels:** Core Four with emphasis on **cold outreach + content SEO**. Compute the **CAC payback** (see `cfa-calculator`): in B2B, an LTGP:CAC ≥ 3:1 and CAC recovery are survival guardrails.
+- **BoFu SEO + GEO:** commercial intent ("alternatives to X," "software for Y"), formats selectable by AI Overviews/LLMs. Use `seo-2026-sota`.
+- **Email = activation + expansion:** not just welcome; onboarding sequences that drive the Little Hire, and winback for cold trials.
 
-## Canale primario
-**SEO/content + email**, supportati da **outbound** (warm/cold). IG ads raramente adatto (eccezione: SaaS B2C-ish o PLG con forte componente visiva).
+## Primary channel
+**SEO/content + email**, supported by **outbound** (warm/cold). IG ads are rarely a fit (exception: B2C-ish SaaS or PLG with a strong visual component).
 
-## Core Four (priorità)
-1. **Cold outreach** (se ACV alto) o **Warm** →
-2. **Content/SEO** (intento commerciale) →
-3. Paid ads (LinkedIn/Google, dopo aver validato CAC) →
-4. Affiliati/partner (canale di rivendita).
+## Core Four (priority)
+1. **Cold outreach** (if ACV is high) or **Warm** →
+2. **Content/SEO** (commercial intent) →
+3. Paid ads (LinkedIn/Google, after validating CAC) →
+4. Affiliates/partners (resale channel).
 
-## KPI nord + guardrail
-- Nord: **trial/demo qualificati → attivati → paganti**; **MRR netto**.
-- Guardrail: **CAC payback < ciclo di cassa** e **LTGP:CAC ≥ 3:1** (usa `cfa-calculator`). Attivazione (Little Hire) prima di scalare l'acquisizione: scalare un prodotto che non attiva brucia budget.
+## North-star KPIs + guardrails
+- North star: **qualified trials/demos → activated → paying**; **net MRR**.
+- Guardrail: **CAC payback < cash cycle** and **LTGP:CAC ≥ 3:1** (use `cfa-calculator`). Activation (Little Hire) before scaling acquisition: scaling a product that doesn't activate burns budget.
 
-## Trappole comuni
-- Vendere feature invece del progresso/rischio-ridotto.
-- Scalare paid prima che l'attivazione e il payback siano sani.
-- Ignorare il buyer ≠ user: il copy per chi firma è diverso da quello per chi usa.
+## Common traps
+- Selling features instead of progress/reduced-risk.
+- Scaling paid before activation and payback are healthy.
+- Ignoring buyer ≠ user: the copy for the person who signs is different from the copy for the person who uses.

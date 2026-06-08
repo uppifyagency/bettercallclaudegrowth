@@ -1,54 +1,54 @@
 # Capitolo 7: Fondamenti SEO e come funziona la Ricerca Google
 
 ## Core Idea
-La SEO 2026 = far comprendere i contenuti ai motori + aiutare gli utenti a trovarti e scegliere di cliccare. I fondamentali del 2008 reggono ("scrivi per le persone, struttura per il crawler, sii onesto"); cambiano gli strati sopra.
+SEO 2026 = helping search engines understand your content + helping users find you and choose to click. The fundamentals from 2008 still hold ("write for people, structure for the crawler, be honest"); what changes are the layers on top.
 
 ## Frameworks Introdotti
-- **Le 5 aree di un programma SEO professionale 2026**:
-  1. Crawling e indicizzazione (Googlebot + varianti raggiungono e indicizzano le pagine importanti, no spreco crawl budget).
-  2. Architettura informativa (URL, directory, navigazione, sitemap, redirect).
-  3. Contenuti e topical authority (originali, esperienziali, per cluster — l'autorità su un tema pesa più del ranking isolato).
-  4. Aspetto nella SERP (title, snippet, dati strutturati, immagini/video; diventare fonte AIO/AI Mode).
-  5. Misura e iterazione (Search Console, GA4, CrUX, Rich Results Test, PSI).
-- **Le 3 fasi della Ricerca**:
-  - **Crawling**: Googlebot scopre URL via link, sitemap XML, Controllo URL; rispetta robots.txt; legge HTML grezzo, poi rende con Chromium headless (ritardato).
-  - **Indexing**: analisi del renderizzato (testo, immagini, dati strutturati, canonical); clustering dei duplicati, scelta del canonico.
-  - **Serving**: selezione candidati + ordinamento con centinaia di sistemi di ranking (rilevanza, qualità, Core Web Vitals, localizzazione, dati strutturati, e dal 2024-25 i modelli generativi per AIO).
+- **The 5 areas of a professional SEO program 2026**:
+  1. Crawling and indexing (Googlebot + variants reach and index important pages, no crawl budget waste).
+  2. Information architecture (URLs, directories, navigation, sitemaps, redirects).
+  3. Content and topical authority (original, experiential, cluster-based — authority on a topic outweighs isolated ranking).
+  4. SERP appearance (title, snippet, structured data, images/video; becoming an AIO/AI Mode source).
+  5. Measurement and iteration (Search Console, GA4, CrUX, Rich Results Test, PSI).
+- **The 3 phases of Search**:
+  - **Crawling**: Googlebot discovers URLs via links, XML sitemaps, URL Inspection; respects robots.txt; reads raw HTML, then renders with headless Chromium (delayed).
+  - **Indexing**: analysis of the rendered output (text, images, structured data, canonical); duplicate clustering, canonical selection.
+  - **Serving**: candidate selection + ranking with hundreds of ranking systems (relevance, quality, Core Web Vitals, localization, structured data, and since 2024-25 generative models for AIO).
 
 ## Key Concepts
-- **Googlebot e varianti**: Googlebot-Image, -Video, -News, AdsBot-Google, Storebot-Google.
-- **Verifica autenticità bot**: reverse DNS (inverso + diretto), MAI bloccare per User-Agent senza verifica (spoofabile). Google pubblica gli IP range in JSON.
-- **Topical authority**: segnale di ranking dichiarato da Google.
+- **Googlebot and variants**: Googlebot-Image, -Video, -News, AdsBot-Google, Storebot-Google.
+- **Bot authenticity verification**: reverse DNS (reverse + forward), NEVER block by User-Agent without verification (spoofable). Google publishes IP ranges in JSON.
+- **Topical authority**: a ranking signal explicitly declared by Google.
 
 ## Code Examples
 ```bash
-# Verifica che un IP appartenga a Googlebot
+# Verify that an IP belongs to Googlebot
 host 66.249.66.1            # → crawl-66-249-66-1.googlebot.com
 host crawl-66-249-66-1.googlebot.com   # → 66.249.66.1 ✓
-# JSON ufficiale degli intervalli IP
+# Official JSON of IP ranges
 curl -s https://developers.google.com/search/apis/ipranges/googlebot.json
 ```
 
 ## Mental Models
-- "Anche un motore di ricerca è un utente." Ottimizza per entrambi insieme.
-- **Cambia una cosa per volta, lascia tempo, misura.** Chi riscrive l'architettura ogni trimestre raramente migliora: il rumore supera il segnale.
+- "A search engine is also a user." Optimize for both at the same time.
+- **Change one thing at a time, allow time, measure.** Those who rewrite their architecture every quarter rarely improve: noise outweighs the signal.
 
-## Reference Table — Tempistiche tipiche
-| Intervento | Tempi | Cosa monitorare |
+## Reference Table — Typical Timelines
+| Action | Timeline | What to monitor |
 |---|---|---|
-| Correzione title/snippet | Ore-giorni | Test live GSC |
-| Nuova pagina | Ore-giorni | Indicizzazione pagine |
-| Cambio canonicalizzazione | Giorni-settimane | URL canonico GSC |
-| Migration con 301 | 1-3 mesi | Traffico, 404, GSC |
-| Miglioramento CWV | 4-8 settimane | Esperienza pagina (CrUX 28gg) |
-| Espansione cluster | 3-6 mesi | Impressioni per query |
-| Recovery da Core Update | Mesi (next update) | Confronto core update |
+| Title/snippet fix | Hours–days | GSC live test |
+| New page | Hours–days | Page indexing |
+| Canonicalization change | Days–weeks | GSC canonical URL |
+| Migration with 301 | 1–3 months | Traffic, 404s, GSC |
+| CWV improvement | 4–8 weeks | Page experience (CrUX 28d) |
+| Cluster expansion | 3–6 months | Impressions by query |
+| Recovery from Core Update | Months (next update) | Core update comparison |
 
 ## Key Takeaways
-1. Nessuna garanzia di indicizzazione: seguire le Search Essentials aumenta la probabilità.
-2. Attendi almeno alcune settimane prima di valutare un intervento.
-3. La topical authority supera il posizionamento di singola pagina.
+1. No guarantee of indexing: following Search Essentials increases the probability.
+2. Wait at least a few weeks before evaluating the impact of a change.
+3. Topical authority outperforms single-page ranking.
 
 ## Connects To
-- **Ch 8**: come verificare l'indicizzazione e gestire crawling/rendering.
-- **Ch 15** (Exec): Search Essentials e policy antispam normative.
+- **Ch 8**: how to verify indexing and manage crawling/rendering.
+- **Ch 15** (Exec): Search Essentials and anti-spam policy regulations.

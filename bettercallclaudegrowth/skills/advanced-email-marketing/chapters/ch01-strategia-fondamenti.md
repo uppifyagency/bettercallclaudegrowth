@@ -1,38 +1,38 @@
-# Capitolo 1: Strategia & fondamenti dell'Email Marketing Automation
+# Chapter 1: Strategy & Foundations of Email Marketing Automation
 
-## Idea centrale
-L'email marketing è un pezzo del puzzle della marketing automation, da progettare **dopo la strategia, non dopo la scelta del tool**. Il vero asset sono i tuoi dati: non fare MA = lasciare sul tavolo ~70% delle entrate.
+## Core Idea
+Email marketing is one piece of the marketing automation puzzle, to be designed **after the strategy, not after choosing the tool**. Your real asset is your data: not doing MA = leaving ~70% of revenue on the table.
 
-## Framework introdotti
-- **I 3 pilastri della strategia (Matteuzzi)** — *metafora della dieta*: ogni strategia è su misura ma segue lo stesso schema.
-  1. **Analisi** (4 aree): interna, della domanda, della concorrenza, delle tendenze. Strumenti: CRM + Google Analytics (interna), Answer The Public + Ubersuggest (domanda), SEMRush + Similarweb (concorrenza), Google Trends. Integra col sondaggio diretto ai clienti.
-  2. **Pianificazione (stile OKR)**: *obiettivi* (max 3, specifici/misurabili, trimestrali) → *risultati chiave* (max 3 per obiettivo) → *tattiche* (il come, ancorato al customer journey; qui entrano lead magnet ed email) → *KPI* (anticipatori: dicono se stai facendo bene; i risultati-chiave sono ritardatari) → *action list* (chi-cosa-entro quando).
-  3. **Esecuzione**: la cosa più importante sono i **test** (pubblici, creatività, copy, oggetto).
-- **Lead Nurturing**: sequenza automatizzata e continua che "nutre" i contatti durante e oltre il ciclo di vendita; la MA lo rende personalizzato e adattivo (invia in base all'attività del contatto).
-- **Asset intangibili (Silvestrini)**: il reparto digital come generatore di patrimonio intangibile — capitale relazionale, organizzativo, di mercato, informativo, comunicativo, intellettuale. Ogni azione email ha *pivot point* che incrementano/decrementano valore.
+## Frameworks Introduced
+- **The 3 Pillars of Strategy (Matteuzzi)** — *diet metaphor*: every strategy is tailored but follows the same blueprint.
+  1. **Analysis** (4 areas): internal, demand, competitive, trends. Tools: CRM + Google Analytics (internal), Answer The Public + Ubersuggest (demand), SEMRush + Similarweb (competition), Google Trends. Supplement with direct customer surveys.
+  2. **Planning (OKR style)**: *objectives* (max 3, specific/measurable, quarterly) → *key results* (max 3 per objective) → *tactics* (the how, anchored to the customer journey; this is where lead magnets and emails come in) → *KPIs* (leading indicators: tell you if you're doing well; key results are lagging) → *action list* (who-what-by when).
+  3. **Execution**: the most important thing is **testing** (audiences, creatives, copy, subject lines).
+- **Lead Nurturing**: an automated, ongoing sequence that "nurtures" contacts during and beyond the sales cycle; MA makes it personalized and adaptive (sends based on the contact's activity).
+- **Intangible Assets (Silvestrini)**: the digital department as a generator of intangible capital — relational, organizational, market, informational, communicative, intellectual. Every email action has *pivot points* that increase/decrease value.
 
-## Concetti chiave
-- **CRM (Customer Relationship Management)**: integra email + team sales; segmenta, automatizza, fa avanzare i lead.
-- **CDP (Customer Data Platform)**: base dati e-commerce; incrocia comportamenti d'acquisto (es. matrice RFM).
-- **Lead Magnet**: offerta gratuita (ebook, webinar, consulenza, sconto, campione) in cambio del contatto.
-- **Customer Retention**: vendere a un cliente acquisito costa meno che acquisirne uno nuovo (pilastro post-GDPR).
+## Key Concepts
+- **CRM (Customer Relationship Management)**: integrates email + sales team; segments, automates, and advances leads.
+- **CDP (Customer Data Platform)**: e-commerce data foundation; cross-references purchase behaviors (e.g., RFM matrix).
+- **Lead Magnet**: free offer (ebook, webinar, consultation, discount, sample) in exchange for a contact.
+- **Customer Retention**: selling to an acquired customer costs less than acquiring a new one (post-GDPR cornerstone).
 
-## Modelli mentali
-- "Il modello del brand reinforcement (Giacchino)": usa **Answer The Public** e mappa le preposizioni di ricerca → contenuti email. *perché/cosa* → Welcome Email; *quando* → sequenza risultati/tempi; *vs/o* → confronto con alternative (tabelle/video); *contro* → email di recupero carrello/non-acquisto. Riduce il CAC e alza i margini perché il fattore di scelta diventa la fiducia, non il prezzo.
-- Pensa sempre **full-funnel**: la conversione principale non è l'unica metrica; far avanzare le persone senza forzare.
+## Mental Models
+- "The brand reinforcement model (Giacchino)": use **Answer The Public** and map search prepositions → email content. *why/what* → Welcome Email; *when* → results/timeline sequence; *vs/or* → comparison with alternatives (tables/videos); *against* → cart recovery/non-purchase email. Reduces CAC and raises margins because the deciding factor becomes trust, not price.
+- Always think **full-funnel**: the primary conversion is not the only metric; move people forward without forcing them.
 
-## Anti-pattern
-- **Scegliere la piattaforma prima della strategia** → si usa ~10% del potenziale.
-- **"Fare newsletter = fare marketing automation"** → falso; è l'errore d'approccio numero uno.
-- **Bombardare tutto il database di offerte** via automazioni spinte → tradisce la fiducia.
+## Anti-Patterns
+- **Choosing the platform before the strategy** → you end up using ~10% of its potential.
+- **"Doing newsletters = doing marketing automation"** → false; this is the number one approach mistake.
+- **Bombarding the entire database with offers** via aggressive automations → betrays trust.
 
-## Takeaway
-1. Strategia prima della piattaforma; profilazione prima dell'automazione.
-2. Applica i 3 pilastri: Analisi → Pianificazione (OKR) → Esecuzione (test).
-3. Integra CRM e CDP: senza, sono "solo email mandate a delle persone".
-4. Costruisci contenuti dai micro-dati (ricerche reali) per nutrire la fiducia.
+## Takeaways
+1. Strategy before platform; profiling before automation.
+2. Apply the 3 pillars: Analysis → Planning (OKR) → Execution (testing).
+3. Integrate CRM and CDP: without them, it's "just emails sent to people."
+4. Build content from micro-data (real searches) to nurture trust.
 
-## Collegamenti
-- **Ch 2**: acquisizione (la strategia parte dalla lista).
-- **Ch 5**: customer journey e trigger.
-- **Ch 7**: segmentazione via CRM/CDP/RFM.
+## Connections
+- **Ch 2**: acquisition (the strategy starts with the list).
+- **Ch 5**: customer journey and triggers.
+- **Ch 7**: segmentation via CRM/CDP/RFM.

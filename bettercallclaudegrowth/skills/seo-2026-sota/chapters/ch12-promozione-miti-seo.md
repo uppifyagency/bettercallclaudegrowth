@@ -1,35 +1,35 @@
-# Capitolo 12: Promozione del sito e miti SEO smontati
+# Capitolo 12: Site Promotion and SEO Myths Debunked
 
 ## Core Idea
-La promozione legittima accelera la scoperta; lo spam danneggia. Molte "best practice" che circolano sono miti: conoscerli evita di sprecare energia su fattori a impatto quasi nullo.
+Legitimate promotion accelerates discovery; spam causes harm. Many "best practices" circulating online are myths: knowing them prevents wasting energy on factors with almost zero impact.
 
-## Frameworks Introdotti
-- **Digital PR e link earning legittimi 2026**: ricerche originali con dati propri (i media citano studi, non opinioni); risorse linkabili (tool, calcolatori, glossari, dashboard live); guest post su pubblicazioni con redazione; HARO/Qwoted/Featured con expertise reale; podcast/conferenze con menzione del sito; passaparola e promozione offline (URL su biglietti, packaging, newsletter autorizzate).
+## Frameworks Introduced
+- **Digital PR and legitimate link earning 2026**: original research with proprietary data (media cite studies, not opinions); linkable assets (tools, calculators, glossaries, live dashboards); guest posts on publications with editorial staff; HARO/Qwoted/Featured with genuine expertise; podcasts/conferences with site mention; word of mouth and offline promotion (URL on business cards, packaging, authorized newsletters).
 
-## Anti-patterns (Promozione vs spam)
-- Pubblicare ogni articolo su decine di gruppi Facebook, comprare backlink, PBN (reti private), gonfiare engagement con bot → manipolazione. Sanzione algoritmica (perdita traffico) o manuale (azione visibile in GSC).
+## Anti-patterns (Promotion vs. spam)
+- Publishing every article in dozens of Facebook groups, buying backlinks, PBN (private blog networks), inflating engagement with bots → manipulation. Algorithmic penalty (traffic loss) or manual action (visible in GSC).
 
-## Miti SEO smontati (Cap. 19)
-- **Meta tag keywords**: non usato dal 2009. Rimuovilo senza conseguenze.
-- **Keyword stuffing**: viola le norme antispam; Google riconosce le co-occorrenze semantiche. Scrivi naturalmente.
-- **Keyword nel dominio/URL**: effetto quasi nullo sul ranking (oltre i breadcrumb). Dal 2012 Google ha ridimensionato gli exact-match domain. Preferisci un dominio brandable.
-- **TLD**: rilevante solo per target geografico (.ch per la Svizzera). Altrimenti non incide.
-- **Lunghezza contenuti**: non è un fattore. Nessun "numero magico". Le pagine lunghe vincono sui topic complessi perché più complete, non perché lunghe.
-- **Sottodomini vs sottodirectory**: scelta architetturale, non di ranking. Sottodirectory consolidano l'autorità; sottodomini per oggetti distinti (help., status.).
-- **PageRank come metrica unica**: è uno tra centinaia di segnali. "Domain Authority"/"Page Authority" sono metriche proprietarie di terze parti, NON usate da Google.
-- **"Penalità" per duplicati interni**: nessuna azione manuale (vedi ch09).
-- **Numero/ordine delle intestazioni**: H1→H2→H3 ottimo per accessibilità, ma Google raramente si appoggia a significati semantici nascosti nell'HTML. Nessuna quantità ideale.
-- **E-E-A-T come fattore di ranking diretto**: tecnicamente no — è un concetto delle Search Quality Rater Guidelines. Ma Google sviluppa algoritmi che correlano con i giudizi dei rater → migliorare E-E-A-T spesso migliora il ranking. È una lente di valutazione, non un dial impostabile.
+## SEO Myths Debunked (Ch. 19)
+- **Meta keywords tag**: not used since 2009. Remove it with no consequences.
+- **Keyword stuffing**: violates spam policies; Google recognizes semantic co-occurrences. Write naturally.
+- **Keywords in domain/URL**: almost zero effect on rankings (beyond breadcrumbs). Since 2012 Google has downgraded exact-match domains. Prefer a brandable domain.
+- **TLD**: relevant only for geographic targeting (.ch for Switzerland). Otherwise it has no impact.
+- **Content length**: not a ranking factor. No "magic number." Long pages win on complex topics because they are more complete, not because they are long.
+- **Subdomains vs. subdirectories**: an architectural choice, not a ranking one. Subdirectories consolidate authority; subdomains for distinct objects (help., status.).
+- **PageRank as the only metric**: it is one of hundreds of signals. "Domain Authority"/"Page Authority" are third-party proprietary metrics, NOT used by Google.
+- **"Penalty" for internal duplicates**: no manual action (see ch09).
+- **Number/order of headings**: H1→H2→H3 is excellent for accessibility, but Google rarely relies on semantic meanings hidden in HTML. No ideal quantity.
+- **E-E-A-T as a direct ranking factor**: technically no — it is a concept from the Search Quality Rater Guidelines. But Google develops algorithms that correlate with rater judgments → improving E-E-A-T often improves rankings. It is an evaluation lens, not a settable dial.
 
 ## Mental Models
-- "Le scorciatoie pagano poco e durano meno." I siti che vincono trattano la SEO come conseguenza di un lavoro fatto bene.
-- Distingui ciò che Google misura (algoritmo) da ciò che i rater valutano (E-E-A-T, lente che gli algoritmi approssimano).
+- "Shortcuts pay little and last less." Sites that win treat SEO as the consequence of work done well.
+- Distinguish what Google measures (algorithm) from what raters evaluate (E-E-A-T, the lens that algorithms approximate).
 
 ## Key Takeaways
-1. Concentra l'energia sui fondamentali, non sui miti.
-2. La promozione efficace è data-driven (studi, risorse linkabili), non volume.
-3. E-E-A-T non è un interruttore: è ciò che gli algoritmi cercano di approssimare.
+1. Focus energy on fundamentals, not myths.
+2. Effective promotion is data-driven (studies, linkable assets), not volume.
+3. E-E-A-T is not a switch: it is what algorithms try to approximate.
 
 ## Connects To
-- **Ch 13** (SEO): E-E-A-T evoluzione, Helpful Content System, site reputation abuse.
-- **Ch 20** (Exec): SQRG, leak maggio 2024 (SiteAuthority esiste davvero), policy antispam.
+- **Ch 13** (SEO): E-E-A-T evolution, Helpful Content System, site reputation abuse.
+- **Ch 20** (Exec): SQRG, May 2024 leak (SiteAuthority really exists), antispam policy.

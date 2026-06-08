@@ -1,34 +1,34 @@
-# Playbook — B2C / prodotto al consumatore (incl. e-commerce/DTC)
+# Playbook — B2C / consumer product (incl. e-commerce/DTC)
 
-**Quando si applica:** prodotto o brand venduto al consumatore finale. Acquisto **emotivo/impulsivo o d'identità**, AOV basso-medio, conta il **volume** e il costo di acquisizione. Include e-commerce/DTC, app consumer, abbonamenti B2C. `ecommerce` (valore di config) instrada qui.
+**When it applies:** product or brand sold to the end consumer. **Emotional/impulsive or identity-driven** purchase, low-to-medium AOV, where **volume** and acquisition cost are what count. Includes e-commerce/DTC, consumer apps, B2C subscriptions. `ecommerce` (config value) routes here.
 
-> **Variante SENZA checkout online** (prodotto retail/offline, vendita in negozio o tramite distributori): **salta** le meccaniche e-commerce (carrello abbandonato, RFM transazionale, Pixel di acquisto). Usa l'email come **recall/lista d'attesa/recensioni**, l'IG/Meta geo per il punto vendita, e misura su **lead/visite al negozio/sell-through**, non su ROAS di checkout. Il resto del playbook (Jobs emotivo, offerta, creative) resta valido.
+> **Variant WITHOUT online checkout** (retail/offline product, sold in-store or through distributors): **skip** the e-commerce mechanics (abandoned cart, transactional RFM, purchase Pixel). Use email as **recall/waitlist/reviews**, IG/Meta geo for the point of sale, and measure on **leads/store visits/sell-through**, not on checkout ROAS. The rest of the playbook (emotional Jobs, offer, creative) still holds.
 
-## Job to Be Done tipico (lente Christensen)
-Dimensione **emotiva e sociale spesso dominante** (come mi fa sentire, cosa dice di me). La circostanza/trigger conta più del demografico ("quando mi succede X, voglio Y"). Il concorrente reale può essere un'altra spesa per lo stesso "lavoro emotivo", non un prodotto della stessa categoria (il Milk Shake Dilemma è qui al massimo).
+## Typical Job to Be Done (Christensen lens)
+The **emotional and social dimension is often dominant** (how it makes me feel, what it says about me). The circumstance/trigger matters more than the demographic ("when X happens to me, I want Y"). The real competitor may be another spend for the same "emotional job," not a product in the same category (the Milk Shake Dilemma is at its peak here).
 
-## Sequenza GTM consigliata
-`gtm-jobs` → `gtm-offerta` → `gtm-posizionamento` → `gtm-instagram` → `gtm-copy` → `gtm-email` → `gtm-contenuti`
+## Recommended GTM sequence
+`gtm-jobs` → `gtm-offer` → `gtm-positioning` → `gtm-instagram` → `gtm-copy` → `gtm-email` → `gtm-content`
 
-- **Offerta presto:** in B2C la conversione si gioca su offerta + creative. Grand Slam adattata: bundle, garanzia ("soddisfatto o rimborsato"), urgenza/scarsità *oneste*, prezzo ancorato.
-- **Instagram/Meta performance come motore:** `instagram-performance-marketing` — obiettivo conversioni, Custom→Lookalike, creative video/UGC 2-3 varianti orientate al CTR, learning phase ~50 eventi, retargeting via Pixel. Guardrail **ROAS/CPA**.
-- **Email/SMS = recupero margine:** carrello abbandonato, post-acquisto, winback. Per e-commerce la **segmentazione RFM** è centrale (usa `advanced-email-marketing`).
-- **Copy = hook + desiderio:** SUCKS calato sul lettore-eroe, prova sociale, slippery slope alla CTA.
+- **Offer early:** in B2C, conversion is won on offer + creative. Grand Slam adapted: bundles, guarantee ("satisfaction or money back"), *honest* urgency/scarcity, anchored price.
+- **Instagram/Meta performance as the engine:** `instagram-performance-marketing` — conversions objective, Custom→Lookalike, video/UGC creative with 2-3 variants geared toward CTR, learning phase ~50 events, retargeting via Pixel. **ROAS/CPA** guardrail.
+- **Email/SMS = margin recovery:** abandoned cart, post-purchase, winback. For e-commerce, **RFM segmentation** is central (use `advanced-email-marketing`).
+- **Copy = hook + desire:** SUCKS applied to the reader-as-hero, social proof, slippery slope to the CTA.
 
-## Canale primario
-**Instagram/Meta ads + email/SMS.** SEO/content come canale di lungo periodo e difesa del margine (riduce dipendenza dal paid), non come motore iniziale se il ciclo è impulsivo.
+## Primary channel
+**Instagram/Meta ads + email/SMS.** SEO/content as a long-term channel and margin defense (reduces dependence on paid), not as the initial engine if the cycle is impulsive.
 
-## Core Four (priorità)
-1. **Paid ads** (Meta/IG) — il motore B2C per eccellenza →
-2. **Content** (creator/UGC, organico) →
-3. Affiliati/influencer →
-4. Warm/cold outreach (marginale in B2C puro).
+## Core Four (priority)
+1. **Paid ads** (Meta/IG) — the B2C engine par excellence →
+2. **Content** (creators/UGC, organic) →
+3. Affiliates/influencers →
+4. Warm/cold outreach (marginal in pure B2C).
 
-## KPI nord + guardrail
-- Nord: **ROAS**, **CPA vs margine di contribuzione**, **AOV**, **tasso di riacquisto**.
-- Guardrail: **CAC recuperato sul primo ordine o entro il ciclo di cassa** (Client-Financed Acquisition, `cfa-calculator`). Senza riacquisto/AOV sufficiente, il paid B2C va in perdita: prima sistema offerta+AOV, poi scala lo spend.
+## North-star KPIs + guardrails
+- North star: **ROAS**, **CPA vs. contribution margin**, **AOV**, **repurchase rate**.
+- Guardrail: **CAC recovered on the first order or within the cash cycle** (Client-Financed Acquisition, `cfa-calculator`). Without sufficient repurchase/AOV, B2C paid runs at a loss: first fix offer+AOV, then scale the spend.
 
-## Trappole comuni
-- Scalare il budget ads prima che la creative e l'offerta siano validate (front-loading su un'offerta debole brucia cassa).
-- Ignorare l'email/SMS: in e-commerce è dove sta il margine recuperato.
-- Posizionamento solo "feature/prezzo" in un acquisto emotivo.
+## Common traps
+- Scaling the ads budget before the creative and the offer are validated (front-loading on a weak offer burns cash).
+- Ignoring email/SMS: in e-commerce, that's where the recovered margin lives.
+- Positioning solely on "feature/price" in an emotional purchase.

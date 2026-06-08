@@ -1,43 +1,43 @@
 # Capitolo 5: Customer Journey & gli 8 trigger
 
-## Idea centrale
-Si progetta la strategia **partendo dal Customer Journey**: si smonta il percorso d'acquisto e si individuano i primi trigger per le automazioni. Da ogni trigger nascono sia i flussi sia i segmenti dinamici.
+## Core idea
+The strategy is designed **starting from the Customer Journey**: the purchase path is broken down and the first triggers for automations are identified. Each trigger gives rise to both flows and dynamic segments.
 
-## Framework introdotti
-- **Customer Journey Map (e-commerce)** → flussi base applicabili a quasi tutti gli store: welcome series, newsletter (promo/news/storia brand), recupero visitatori, recupero carrelli/checkout, post-purchase series (thank you, recensioni, how-to, coupon).
-- **Gli 8 trigger di attivazione/segmentazione**:
-  1. **Acquisizione del lead** → onboarding/welcome series; abbina un flusso a ogni canale.
-  2. **Interazioni con l'email** → manutenzione audience (inattivi) + individuare gli attivi; segmenti: ha aperto le ultime X, ha cliccato email specifiche, ha concluso il flusso.
-  3. **Eventi/date** → compleanno (alti open rate; idee oltre lo sconto: gift box, bonus, campioni, **tecnica Bait & Hook** sul LTV), anniversari iscrizione, data primo acquisto.
-  4. **Attributi assegnati al contatto** → logica Trigger/Condizione/Azione (es. "dopo 3gg dall'apertura, SE attributo 'Call prenotata'=No → reminder").
-  5. **Comportamenti sul sito** → pagina pricing = fase di valutazione; **Price Drop** a chi ha visto/aggiunto al carrello (limitato dal GDPR).
-  6. **Shopping experience** → carrello/back-in-stock, wishlist, up/cross-selling, post-purchase; flussi diversi per cliente nuovo vs ricorrente.
-  7. **CRM** → stato avanzamento lead, probabilità conversione, **score**; manutenzione lista e individuazione dei "best in town".
-  8. **CDP** → sincronizza email/shop; eventi Shopify (ordini, importo, checkout iniziato, rimborsi); abilita la **matrice RFM**.
-- **Matrice RFM (Recency, Frequency, Monetary)**: segmenta per importo speso, n° ordini, regolarità d'acquisto. Ogni cliente cambia cluster nel tempo (oggi Champion, domani At Risk). → dettaglio in ch07.
+## Frameworks introduced
+- **Customer Journey Map (e-commerce)** → base flows applicable to almost every store: welcome series, newsletter (promo/news/brand story), visitor recovery, cart/checkout recovery, post-purchase series (thank you, reviews, how-to, coupon).
+- **The 8 activation/segmentation triggers**:
+  1. **Lead acquisition** → onboarding/welcome series; pair a flow with every channel.
+  2. **Email interactions** → audience maintenance (inactive) + identifying actives; segments: opened the last X, clicked specific emails, completed the flow.
+  3. **Events/dates** → birthday (high open rates; ideas beyond discounts: gift box, bonus, samples, **Bait & Hook technique** on LTV), subscription anniversaries, first-purchase date.
+  4. **Attributes assigned to the contact** → Trigger/Condition/Action logic (e.g. "after 3 days from open, IF attribute 'Call booked'=No → reminder").
+  5. **On-site behavior** → pricing page = evaluation stage; **Price Drop** to visitors who viewed/added to cart (limited by GDPR).
+  6. **Shopping experience** → cart/back-in-stock, wishlist, up/cross-selling, post-purchase; separate flows for new vs. returning customers.
+  7. **CRM** → lead progression status, conversion probability, **score**; list maintenance and identification of "best in town" customers.
+  8. **CDP** → syncs email/shop; Shopify events (orders, amount, checkout started, refunds); enables the **RFM matrix**.
+- **RFM Matrix (Recency, Frequency, Monetary)**: segments by amount spent, number of orders, purchase regularity. Each customer changes cluster over time (Champion today, At Risk tomorrow). → details in ch07.
 
-## Concetti chiave
-- **LTV (LifeTime Value)** e **Expected Date Of Next Order**: dato predittivo (ML) che stima la data del prossimo ordine → trigger per riacquisto.
-- **Churn**: ex-clienti che smettono di acquistare → recupero con **Winback**.
-- **Replenishment**: riacquisto di consumabili (es. trattamento da 90gg → flow a 80gg).
-- **Zero/First-party data**: dati dati intenzionalmente dall'utente, base affidabile dei segmenti.
-- **WIIFM / per stage del funnel (Neha Divanji)**: Awareness → *What's In It For Me? / Why us? / elevator pitch*; Consideration → confronto con concorrenti + press mentions; Purchase → recensioni/rating + UGC; Onboarding → rinforza la scelta; Loyalty/Advocacy → referral, ambassador, lookalike.
+## Key concepts
+- **LTV (LifeTime Value)** and **Expected Date Of Next Order**: predictive data (ML) that estimates the next order date → trigger for repurchase.
+- **Churn**: former customers who stop purchasing → recovery with **Winback**.
+- **Replenishment**: repurchase of consumables (e.g. 90-day treatment → flow at 80 days).
+- **Zero/First-party data**: data intentionally provided by the user, the reliable foundation of segments.
+- **WIIFM / per funnel stage (Neha Divanji)**: Awareness → *What's In It For Me? / Why us? / elevator pitch*; Consideration → comparison with competitors + press mentions; Purchase → reviews/rating + UGC; Onboarding → reinforces the choice; Loyalty/Advocacy → referral, ambassador, lookalike.
 
-## Modelli mentali
-- Lavora in **full-funnel**: la conversione d'acquisto non è l'unica metrica; far avanzare le persone verso la *conversione successiva*, post-vendita incluso (retention).
-- "Siamo noi a dettare le regole del gioco" su CDP/RFM: stabilisci dove e quando intervenire.
+## Mental models
+- Work **full-funnel**: the purchase conversion is not the only metric; move people toward the *next conversion*, post-sale included (retention).
+- "We set the rules of the game" on CDP/RFM: establish where and when to intervene.
 
-## Anti-pattern
-- Considerare l'acquisto come unica metrica → ignori i micro-trigger che lo abilitano.
-- Voler montare "l'intero castello" alla prima versione → procedi step-by-step.
+## Anti-patterns
+- Treating the purchase as the only metric → you ignore the micro-triggers that enable it.
+- Wanting to build "the entire castle" in the first version → proceed step-by-step.
 
-## Takeaway
-1. Parti dal customer journey: smonta il percorso, individua i primi trigger.
-2. Usa gli 8 trigger come menu di flussi e segmenti.
-3. Sfrutta RFM, LTV ed Expected Date Of Next Order per anticipare il riacquisto.
-4. Mappa i contenuti al funnel stage (WIIFM, social proof, ecc.).
+## Takeaways
+1. Start from the customer journey: break down the path, identify the first triggers.
+2. Use the 8 triggers as a menu of flows and segments.
+3. Leverage RFM, LTV, and Expected Date Of Next Order to anticipate repurchase.
+4. Map content to funnel stage (WIIFM, social proof, etc.).
 
-## Collegamenti
-- **Ch 6**: come i trigger diventano workflow.
-- **Ch 7**: RFM e segmenti in dettaglio.
-- **Ch 9**: i flussi per scenario (shopping, date, winback).
+## Connections
+- **Ch 6**: how triggers become workflows.
+- **Ch 7**: RFM and segments in detail.
+- **Ch 9**: flows by scenario (shopping, dates, winback).

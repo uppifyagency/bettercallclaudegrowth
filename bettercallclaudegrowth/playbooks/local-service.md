@@ -1,33 +1,33 @@
-# Playbook — Servizio locale (raggio geografico)
+# Playbook — Local service (geographic radius)
 
-**Quando si applica:** attività con clientela in un'area geografica — officina, studio professionale, ristorante, negozio, artigiano, servizi alla persona/azienda su territorio. Google Maps, recensioni e prossimità sono determinanti.
+**When it applies:** businesses serving customers within a geographic area — auto shop, professional practice, restaurant, store, tradesperson, personal/business services delivered on location. Google Maps, reviews, and proximity are decisive.
 
-## Job to Be Done tipico (lente Christensen)
-Il job è quasi sempre **innescato da una circostanza acuta e locale** ("si è rotto X ora", "mi serve Y vicino"). Dimensione **funzionale + fiducia** (rischio di affidarsi a uno sconosciuto in zona). La prova sociale locale (recensioni, passaparola) è la leva che abbatte l'ansia. Il concorrente è "l'altro fornitore in zona" **e** il rimandare/fai-da-te.
+## Typical Job to Be Done (Christensen lens)
+The job is almost always **triggered by an acute, local circumstance** ("X just broke", "I need Y nearby"). The dimension is **functional + trust** (the risk of relying on a stranger in the area). Local social proof (reviews, word of mouth) is the lever that defuses the anxiety. The competitor is "the other provider in the area" **and** putting it off / doing it yourself.
 
-## Sequenza GTM consigliata
-`gtm-jobs` → `gtm-posizionamento` → `gtm-offerta` → `gtm-seo` → `gtm-leads` → `gtm-instagram` → `gtm-email`
+## Recommended GTM sequence
+`gtm-jobs` → `gtm-positioning` → `gtm-offer` → `gtm-seo` → `gtm-leads` → `gtm-instagram` → `gtm-email`
 
-- **Jobs sul trigger:** intercetta il momento di lotta ("quando capita X"). È ciò che il targeting locale e gli annunci devono leggere.
-- **SEO locale + GBP:** `seo-2026-sota` con focus su intento "near me", scheda Google Business, recensioni, NAP coerente. Il pacchetto local è spesso il canale a ROI più alto.
-- **Offerta + prova:** garanzia, preventivo chiaro, riduzione del rischio percepito; le **recensioni** sono parte dell'offerta (Perceived Likelihood).
-- **IG/Meta geo-targetizzato:** raggio stretto, creative locali, retargeting di chi ha visto. `instagram-performance-marketing` con riduzione GEO/CPM.
-- **Email/recall:** richiami stagionali, recensioni post-servizio, riattivazione clienti dormienti.
+- **Jobs on the trigger:** capture the struggling moment ("when X happens"). This is what local targeting and ads need to read.
+- **Local SEO + GBP:** `seo-2026-sota` with a focus on "near me" intent, Google Business Profile, reviews, consistent NAP. The local bundle is often the highest-ROI channel.
+- **Offer + proof:** guarantee, clear quote, reducing perceived risk; **reviews** are part of the offer (Perceived Likelihood).
+- **Geo-targeted IG/Meta:** tight radius, local creatives, retargeting of those who viewed. `instagram-performance-marketing` with GEO/CPM reduction.
+- **Email/recall:** seasonal reminders, post-service reviews, reactivation of dormant customers.
 
-## Canale primario
-**SEO locale (Google/Maps) + Instagram geo.** Il content engine ampio e il programmatic SEO di solito **non** servono: meglio profondità locale che ampiezza.
+## Primary channel
+**Local SEO (Google/Maps) + geo Instagram.** A broad content engine and programmatic SEO usually **aren't** needed: local depth beats breadth.
 
-## Core Four (priorità)
-1. **Content/local SEO + recensioni** (presenza dove cercano) →
-2. **Warm outreach / referral locali** →
-3. **Paid ads geo** →
-4. Cold outreach (B2B locale).
+## Core Four (priority)
+1. **Content/local SEO + reviews** (presence where they search) →
+2. **Warm outreach / local referrals** →
+3. **Geo paid ads** →
+4. Cold outreach (local B2B).
 
-## KPI nord + guardrail
-- Nord: **chiamate/prenotazioni/preventivi da zona**, **posizione nel map pack**, **n. e rating recensioni**.
-- Guardrail: non disperdere budget fuori dal raggio servito; misurare per area.
+## North-star KPIs + guardrails
+- North star: **calls/bookings/quotes from the area**, **position in the map pack**, **number and rating of reviews**.
+- Guardrail: don't waste budget outside the served radius; measure by area.
 
-## Trappole comuni
-- Trascurare Google Business Profile e recensioni (il vero "funnel" locale).
-- Targeting troppo ampio (paghi click fuori raggio).
-- Copy generico non ancorato alla circostanza locale.
+## Common traps
+- Neglecting Google Business Profile and reviews (the real local "funnel").
+- Targeting that's too broad (you pay for clicks outside the radius).
+- Generic copy not anchored to the local circumstance.

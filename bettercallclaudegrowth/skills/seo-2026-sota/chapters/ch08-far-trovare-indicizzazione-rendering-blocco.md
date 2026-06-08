@@ -1,13 +1,13 @@
 # Capitolo 8: Far trovare i contenuti — indicizzazione, rendering, blocco
 
 ## Core Idea
-Prima di agire, verifica se sei già nell'indice. Poi assicurati che Google veda la pagina come l'utente (risorse + rendering) e usa gli strumenti giusti per escludere ciò che non deve comparire.
+Before taking action, verify whether you are already in the index. Then make sure Google sees the page the same way the user does (resources + rendering) and use the right tools to exclude what should not appear.
 
 ## Frameworks Introdotti
-- **Verifica indicizzazione**: operatore `site:tuosito.it`. Se vedi risultati, sei nell'indice. Se no, controlla: accessibile da Googlebot, 200 OK, no robots.txt block, no meta noindex, HTML valido, lingua dichiarata.
-- **Scoperta delle pagine**: principalmente via link (esterni + interni) + sitemap XML. Sitemap raccomandata sopra 500 pagine, contenuti che cambiano spesso, scarsa connettività interna. Limiti: 50.000 URL / 50 MB per file → oltre, usa sitemap index.
-- **JavaScript SEO — la regola dei tre rendering**: SSR, SSG, CSR (vedi tabella). Oltre il 95% dei siti usa JS; Google lo supporta ma con rendering asincrono, ritardato e a budget.
-- **Le 3 tecniche per bloccare** (e quando): robots.txt (controlla crawling, non indicizzazione), meta robots noindex (esclude dall'indice, pagina scansionabile), X-Robots-Tag HTTP (per file non-HTML come PDF).
+- **Index verification**: `site:yoursite.com` operator. If you see results, you are in the index. If not, check: accessible to Googlebot, 200 OK, no robots.txt block, no meta noindex, valid HTML, declared language.
+- **Page discovery**: primarily via links (external + internal) + XML sitemap. Sitemap recommended above 500 pages, frequently changing content, poor internal connectivity. Limits: 50,000 URLs / 50 MB per file → beyond that, use a sitemap index.
+- **JavaScript SEO — the three-rendering rule**: SSR, SSG, CSR (see table). Over 95% of sites use JS; Google supports it but with asynchronous, delayed rendering at a budget.
+- **The 3 blocking techniques** (and when to use them): robots.txt (controls crawling, not indexing), meta robots noindex (excludes from the index, page remains crawlable), X-Robots-Tag HTTP (for non-HTML files such as PDFs).
 
 ## Code Examples
 ```apache
@@ -24,38 +24,38 @@ Sitemap: https://www.example.com/sitemap_index.xml
 <meta name="googlebot-news" content="noindex">
 ```
 ```nginx
-# X-Robots-Tag per escludere PDF (Nginx)
+# X-Robots-Tag to exclude PDFs (Nginx)
 location ~* \.(pdf|doc|docx)$ { add_header X-Robots-Tag "noindex, nofollow"; }
 ```
 
 ## Anti-patterns
-- **ERRORE CRITICO — non combinare Disallow + noindex**: se la URL è in Disallow, Googlebot non la legge e non vede mai il noindex → può restare nell'indice "senza descrizione". Procedura corretta: prima noindex (pagina scansionabile), poi — dopo l'uscita dall'indice — Disallow per risparmiare crawl budget.
-- **Contenuto che appare solo dopo interazione** ("Carica altro"): Googlebot non clicca.
-- **Routing client-side con hash (#/pagina)**: usa History API (pushState) e route reali.
+- **CRITICAL ERROR — do not combine Disallow + noindex**: if the URL is in Disallow, Googlebot never reads it and never sees the noindex → the page may remain in the index "without a description". Correct procedure: noindex first (page must be crawlable), then — after the page has been removed from the index — add Disallow to save crawl budget.
+- **Content that only appears after user interaction** ("Load more"): Googlebot does not click.
+- **Client-side routing with hash (#/page)**: use the History API (pushState) and real routes.
 
-## Reference Table — Strategie di rendering
-| Strategia | Come | Quando |
+## Reference Table — Rendering Strategies
+| Strategy | How | When |
 |---|---|---|
-| SSR | Server genera HTML per richiesta | Contenuti dinamici, e-commerce, news |
-| SSG | HTML pre-generato al build, da CDN | Blog, marketing, docs |
-| CSR | HTML vuoto, JS monta nel browser | Sconsigliata SEO: solo dashboard private |
-| ISR | Cache statica + rigenerazione on-demand | Cataloghi grandi, update parziali |
-| Islands / hydration parziale | HTML statico + isole interattive | Miglior compromesso CRP/SEO 2026 |
+| SSR | Server generates HTML per request | Dynamic content, e-commerce, news |
+| SSG | HTML pre-generated at build time, served from CDN | Blog, marketing, docs |
+| CSR | Empty HTML, JS mounts in the browser | Not recommended for SEO: private dashboards only |
+| ISR | Static cache + on-demand regeneration | Large catalogs, partial updates |
+| Islands / partial hydration | Static HTML + interactive islands | Best CRP/SEO trade-off in 2026 |
 
-| Tecnica blocco | Effetto | Quando |
+| Blocking technique | Effect | When |
 |---|---|---|
-| robots.txt Disallow | Blocca crawling (non index) | Risparmiare crawl budget |
-| Meta noindex | Esclude dall'indice | Duplicati, filtri, area utente |
-| X-Robots-Tag | noindex per file non-HTML | PDF, immagini, JSON |
-| Password | Blocca crawl + index | Staging, draft, riservato |
-| 410/404 | Rimozione duratura | Pagine eliminate |
+| robots.txt Disallow | Blocks crawling (not indexing) | Save crawl budget |
+| Meta noindex | Excludes from the index | Duplicates, filters, user area |
+| X-Robots-Tag | noindex for non-HTML files | PDFs, images, JSON |
+| Password | Blocks crawl + index | Staging, drafts, restricted |
+| 410/404 | Permanent removal | Deleted pages |
 
 ## Key Takeaways
-1. Lo strumento Controllo URL in GSC mostra come Google vede e rende la pagina (test live).
-2. Googlebot scansiona tipicamente dagli USA: rendi accessibili i contenuti geo-localizzati.
-3. Non bloccare CSS/JS/font necessari al rendering.
+1. The URL Inspection tool in GSC shows how Google sees and renders the page (live test).
+2. Googlebot typically crawls from the USA: make geo-localised content accessible.
+3. Do not block CSS/JS/fonts required for rendering.
 
 ## Connects To
-- **Ch 9**: canonicalizzazione dei duplicati.
-- **Ch 13** (SEO): JavaScript SEO avanzato (Web Components, RSC, streaming).
-- **Ch 16/19** (Exec): pipeline rendering, google/robotstxt parser, RFC 9309.
+- **Ch 9**: canonicalisation of duplicates.
+- **Ch 13** (SEO): advanced JavaScript SEO (Web Components, RSC, streaming).
+- **Ch 16/19** (Exec): rendering pipeline, google/robotstxt parser, RFC 9309.

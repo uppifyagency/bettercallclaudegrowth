@@ -68,10 +68,10 @@ const skills = skillNames();
 const cmdDir = path.join(PLUGIN_DIR, 'commands');
 const COMMAND_SKILL_MAP = {
   'gtm-jobs.md': ['christensen-jobs'],
-  'gtm-posizionamento.md': ['butcher-productize', 'doing-content-right'],
-  'gtm-offerta.md': ['hormozi-offers'],
+  'gtm-positioning.md': ['butcher-productize', 'doing-content-right'],
+  'gtm-offer.md': ['hormozi-offers'],
   'gtm-leads.md': ['hormozi-leads'],
-  'gtm-contenuti.md': ['doing-content-right'],
+  'gtm-content.md': ['doing-content-right'],
   'gtm-copy.md': ['drew-sucks-framework'],
   'gtm-email.md': ['advanced-email-marketing'],
   'gtm-seo.md': ['seo-2026-sota'],

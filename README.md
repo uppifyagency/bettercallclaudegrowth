@@ -109,10 +109,10 @@ Runs an end-to-end path calibrated to your case:
 | `/gtm-buddy` | Router / concierge: classifies archetype × stage and routes you to a skill or a sequence | — |
 | `/gtm` | Full adaptive GTM pipeline + GTM Readiness Score | All |
 | `/gtm-jobs` | Jobs to Be Done: the "job" your customer hires your product to do | christensen-jobs |
-| `/gtm-posizionamento` | ICP + Personal Monopoly: who you're the obvious choice for | butcher-productize · doing-content-right |
-| `/gtm-offerta` | Grand Slam Offer + Value Equation: an offer that's hard to refuse | hormozi-offers |
+| `/gtm-positioning` | ICP + Personal Monopoly: who you're the obvious choice for | butcher-productize · doing-content-right |
+| `/gtm-offer` | Grand Slam Offer + Value Equation: an offer that's hard to refuse | hormozi-offers |
 | `/gtm-leads` | Core Four + lead magnet: get interested strangers to show up | hormozi-leads |
-| `/gtm-contenuti` | Content strategy + editorial calendar | doing-content-right |
+| `/gtm-content` | Content strategy + editorial calendar | doing-content-right |
 | `/gtm-copy` | Copywriting with the SUCKS framework | drew-sucks-framework |
 | `/gtm-email` | Email marketing automation: welcome, drip, winback | advanced-email-marketing |
 | `/gtm-seo` | SEO + GEO 2026: Google and generative engines (AI Overviews, LLMs) | seo-2026-sota |
@@ -169,7 +169,7 @@ On top of these sit **7 playbooks**, each tuned per archetype to calibrate every
 
 ```
 bettercallclaudegrowth/
-├── commands/        # 11 commands: /gtm-buddy, /gtm, /gtm-offerta, …
+├── commands/        # 11 commands: /gtm-buddy, /gtm, /gtm-offer, …
 ├── agents/          # 3 agents: gtm-buddy, gtm-orchestrator, gtm-critic
 ├── skills/          # 9 knowledge bases (the book frameworks)
 ├── playbooks/       # routing matrix + playbooks per archetype × stage
@@ -206,9 +206,9 @@ Set your preferences once and every command respects them.
 | Key | Meaning | Examples |
 | --- | --- | --- |
 | `output_language` | Language of deliverables | `EN`, `IT` |
-| `archetipo` | Default business type (or `auto`) | `coaching`, `b2b-saas`, `b2c`, `ecommerce`, `local-service`, `established-no-marketing` |
-| `stadio` | Growth stage (or `auto`) | `micro-launch`, `scaling`, `established` |
-| `settore` | Industry / vertical | nutrition, automotive, food, … |
+| `archetype` | Default business type (or `auto`) | `coaching`, `b2b-saas`, `b2c`, `ecommerce`, `local-service`, `established-no-marketing` |
+| `stage` | Growth stage (or `auto`) | `micro-launch`, `scaling`, `established` |
+| `industry` | Industry / vertical | nutrition, automotive, food, … |
 | `default_channel` | Primary channel (or `auto`) | `seo`, `instagram`, `email` |
 | `brand_voice` | Brand tone of voice | direct, premium, technical, friendly |
 
@@ -221,7 +221,7 @@ Set your preferences once and every command respects them.
 
 /gtm B2B SaaS for auto-parts inventory, 50 trials/month, growing
 
-/gtm-offerta monthly specialty-coffee subscription box
+/gtm-offer monthly specialty-coffee subscription box
 
 /gtm-leads local photography studio, I want more quote requests
 
@@ -246,7 +246,7 @@ No. `/gtm-buddy` acts as a concierge: start by describing your situation in your
 No. The plugin is **local-first**: no MCP, no hooks, no network dependency. It all runs in your Claude Code session.
 
 **Can I use a single skill without the pipeline?**
-Yes. Every command (`/gtm-offerta`, `/gtm-copy`, `/gtm-seo`, …) works on its own. The `/gtm` pipeline is optional, for when you want the full path.
+Yes. Every command (`/gtm-offer`, `/gtm-copy`, `/gtm-seo`, …) works on its own. The `/gtm` pipeline is optional, for when you want the full path.
 
 **Do I need an ad budget?**
 No. Many paths (organic, content, outreach, SEO) are designed to start on a minimal budget. Paid ads are an option, not a requirement.

@@ -1,51 +1,51 @@
-# Capitolo 20: Documenti interni, persone Google e la frontiera GEO/AI
+# Capitolo 20: Internal Documents, Google People, and the GEO/AI Frontier
 
 ## Core Idea
-La "terra di mezzo" (SQRG, atti antitrust, leak 2024) è l'unica finestra ufficiale su come la macchina di ranking funziona davvero. Nel 2026 Google riconosce ufficialmente che "AI Search è ancora SEO". La voce ufficiale si è deplatformizzata su tutto il team Search Relations.
+The "middle ground" (SQRG, antitrust proceedings, 2024 leak) is the only official window into how the ranking machine actually works. In 2026 Google officially acknowledges that "AI Search is still SEO." The official voice has become deplatformized across the entire Search Relations team.
 
-## Frameworks Introdotti — documenti interni resi pubblici
-- **Search Quality Rater Guidelines (SQRG)** — il documento più importante prodotto da Google per chi fa SEO seria. PDF 182 pagine (11 set 2025). Manuale per i quality rater umani: non determinano il ranking ma alimentano il training. 3 parti: Page Quality (scala Lowest→Highest), Understanding Search User Needs (intent Know/Do/Website/Visit-in-Person, Needs Met), Needs Met Rating. Novità set 2025: criteri per AI Overview, raffinamento YMYL (esteso a Government/Civics), esempi per pagine AI-generated.
-- **USA v. Google (antitrust)** — sistemi confermati sotto giuramento per la prima volta:
-  - **NavBoost**: re-ranking su dati di click, rolling window 13 mesi. "Not a machine learning system. It's just a big spreadsheet" (Lehman) — log di click su coppie query-URL.
-  - **Glue**: controparte di NavBoost per le universal features (carousel, knowledge panel).
-  - **Tangram (ex Tetris)**: assemblatore finale della SERP (composizione + prominence).
-  - **RankBrain, DeepRank, RankEmbed BERT**: refinement layer deep learning finali.
-  - Pipeline reale: Retrieval → NavBoost cull → RankBrain/DeepRank scoring → Tangram assembly.
-- **API Content Warehouse Leak (5 mag 2024)**: 2.596 moduli, 14.014 attributi (Google ha confermato l'autenticità). Feature emerse: **SiteAuthority** (Google ha sempre negato una "domain authority"), **NSR** (Normalized Site Rank), NavBoost confermato come **Twiddler** (re-ranking post-retrieval), HostAge (sandbox nuovi domini), Chrome data integration. Valore vero: **vocabolario** per nominare ciò che si osserva nelle SERP.
+## Frameworks Introduced — publicly released internal documents
+- **Search Quality Rater Guidelines (SQRG)** — the most important document Google has ever produced for anyone doing serious SEO. 182-page PDF (11 Sep 2025). Manual for human quality raters: they do not determine rankings but feed the training data. 3 parts: Page Quality (Lowest→Highest scale), Understanding Search User Needs (Know/Do/Website/Visit-in-Person intent, Needs Met), Needs Met Rating. Sep 2025 updates: criteria for AI Overviews, YMYL refinement (extended to Government/Civics), examples for AI-generated pages.
+- **USA v. Google (antitrust)** — systems confirmed under oath for the first time:
+  - **NavBoost**: re-ranking on click data, 13-month rolling window. "Not a machine learning system. It's just a big spreadsheet" (Lehman) — click log on query-URL pairs.
+  - **Glue**: NavBoost counterpart for universal features (carousel, knowledge panel).
+  - **Tangram (formerly Tetris)**: final SERP assembler (composition + prominence).
+  - **RankBrain, DeepRank, RankEmbed BERT**: final deep-learning refinement layers.
+  - Real pipeline: Retrieval → NavBoost cull → RankBrain/DeepRank scoring → Tangram assembly.
+- **API Content Warehouse Leak (5 May 2024)**: 2,596 modules, 14,014 attributes (Google confirmed authenticity). Features that surfaced: **SiteAuthority** (Google had always denied a "domain authority"), **NSR** (Normalized Site Rank), NavBoost confirmed as a **Twiddler** (post-retrieval re-ranking), HostAge (sandbox for new domains), Chrome data integration. Real value: **vocabulary** for naming what you observe in the SERPs.
 
-## Frameworks Introdotti — frontiera GEO/AI (Google ufficiale)
-- **AI Features and Your Website**: requisiti = pagina indicizzata, eleggibile a snippet, conforme. **Nessun file nuovo, nessun markup, nessun llms.txt.** Traffico AIO/AI Mode incluso nel report Performance (tipo "Web", nessuna segmentazione).
-- **AI Optimization Guide (15 mag 2026)**: prima guida ufficiale consolidata. Contenuto non-commodity (esempio Google: "7 Tips for First-Time Homebuyers" commodity vs "Why We Waived the Inspection & Saved Money" non-commodity). **Smentite esplicite**: llms.txt nessun trattamento speciale; chunking artificiale inutile; markup speciale AI inesistente.
-- **4 pilastri (post mag 2025)**: contenuto unico non-commodity; esperienza di pagina solida; supporto multimediale; comprensione del valore del traffico AI (click di qualità superiore).
-- **Crawler AI**: **Google-Extended** (opt-out training generativo — bloccarlo NON influisce su ranking/traffico Search); GoogleOther (catch-all); Googlebot (non bloccare). 
-- **Gemini API**: il motore degli AIO. `groundingMetadata` rivela "da dove" è costruita una risposta → permette di reverse-engineerare come gli AIO scelgono le fonti.
+## Frameworks Introduced — GEO/AI frontier (official Google)
+- **AI Features and Your Website**: requirements = page indexed, eligible for snippet, compliant. **No new files, no markup, no llms.txt.** AIO/AI Mode traffic included in the Performance report (type "Web," no segmentation).
+- **AI Optimization Guide (15 May 2026)**: first consolidated official guide. Non-commodity content (Google's example: "7 Tips for First-Time Homebuyers" = commodity vs. "Why We Waived the Inspection & Saved Money" = non-commodity). **Explicit rebuttals**: llms.txt receives no special treatment; artificial chunking is useless; AI-specific markup does not exist.
+- **4 pillars (post May 2025)**: unique non-commodity content; solid page experience; multimedia support; understanding the value of AI traffic (higher-quality clicks).
+- **AI crawlers**: **Google-Extended** (opt-out generative training — blocking it does NOT affect Search ranking/traffic); GoogleOther (catch-all); Googlebot (do not block).
+- **Gemini API**: the engine behind AI Overviews. `groundingMetadata` reveals "where" a response is built from → enables reverse-engineering how AI Overviews choose their sources.
 
-## Persone Google da seguire (mappa 2026)
-| Persona | Piattaforma 2026 | Focus |
+## Google People to Follow (2026 map)
+| Person | 2026 Platform | Focus |
 |---|---|---|
-| John Mueller | **Bluesky** @johnmu.com | Crawl/index, debunking miti |
+| John Mueller | **Bluesky** @johnmu.com | Crawl/index, myth debunking |
 | Martin Splitt | LinkedIn, YouTube | JavaScript SEO, rendering |
 | Gary Illyes | LinkedIn, Mastodon | Crawling, robots.txt, IndexNow |
 | Lizzi Sassman | LinkedIn, Mastodon | Technical writing docs |
-| Danny Sullivan | (Liaison terminato ago 2025) | Direzione interna Search |
+| Danny Sullivan | (Liaison ended Aug 2025) | Internal Search direction |
 | Daniel Waisberg | LinkedIn, YouTube | Search Console |
 | Barry Pollard | web.dev, Bluesky | Core Web Vitals |
 | Addy Osmani | addyosmani.com | Performance + AI (Google Cloud AI) |
 
-## Mental Models — i 5 cambi strutturali 2026
-1. **Fine della negazione sui click**: NavBoost/Glue esistono (antitrust+leak). "I click non contano" è dimostrabilmente falso → misurare CTR e dwell ha valore strategico.
-2. **Deplatformizzazione della voce ufficiale**: niente più voce singola → monitora 5+ canali.
-3. **"AI Search è ancora SEO"**: niente markup speciale/llms.txt/chunking → SEO classica resa più severa, non discipline separate.
-4. **Primato del contenuto non-commodity**: Google chiede contenuto che nessun altro avrebbe potuto produrre (la E di Experience) → content puro-volume obsoleto.
-5. **Integrazione performance↔AI**: i CWV sono la condizione minima per essere selezionati come fonte da un AIO.
+## Mental Models — the 5 structural shifts of 2026
+1. **End of click denial**: NavBoost/Glue exist (antitrust + leak). "Clicks don't matter" is demonstrably false → measuring CTR and dwell time has strategic value.
+2. **Deplatformization of the official voice**: no single voice anymore → monitor 5+ channels.
+3. **"AI Search is still SEO"**: no special markup/llms.txt/chunking → classic SEO made more rigorous, not separate disciplines.
+4. **Primacy of non-commodity content**: Google asks for content no one else could have produced (the E of Experience) → pure-volume content is obsolete.
+5. **Performance↔AI integration**: CWV are the minimum condition for being selected as a source by an AI Overview.
 
 ## Key Takeaways
-1. SQRG = lettura una tantum imprescindibile; sezioni E-E-A-T per i content team.
-2. Il leak dà il vocabolario (SiteAuthority, NavBoost): nominare ciò che osservi.
-3. Per gli AIO non costruire "AI-specific layers": Google li ha dichiarati inesistenti.
-4. La voce di Google è un feed distribuito da monitorare, non una libreria da chiudere.
+1. SQRG = essential one-time read; E-E-A-T sections for content teams.
+2. The leak gives you vocabulary (SiteAuthority, NavBoost): name what you observe.
+3. For AI Overviews do not build "AI-specific layers": Google has declared them nonexistent.
+4. Google's voice is a distributed feed to monitor, not a library to archive.
 
 ## Connects To
-- **Ch 4** (GEO): apparente tensione "AI Search è ancora SEO" (AIO Google) vs overlap basso (LLM esterni).
-- **Ch 12** (SEO): miti smontati vs leak (SiteAuthority esiste, "Domain Authority" di terze parti no).
-- **Ch 1** (GEO): contenuto non-commodity = originalità con dati propri.
+- **Ch 4** (GEO): apparent tension "AI Search is still SEO" (Google AIO) vs. low overlap (external LLMs).
+- **Ch 12** (SEO): debunked myths vs. leak (SiteAuthority exists, third-party "Domain Authority" does not).
+- **Ch 1** (GEO): non-commodity content = originality backed by proprietary data.

@@ -1,79 +1,79 @@
-# GTM Routing Matrix — il cervello di gtm-buddy e gtm-orchestrator
+# GTM Routing Matrix — the brain of gtm-buddy and gtm-orchestrator
 
-Questo file è la **single source of truth per l'instradamento**. Sia il router `gtm-buddy` sia la pipeline `gtm-orchestrator` lo leggono per: (1) classificare la situazione dell'utente in **archetipo × stadio**, (2) scegliere la **sequenza di skill/command** giusta, (3) decidere **canale primario, enfasi e cosa saltare**.
+This file is the **single source of truth for routing**. Both the `gtm-buddy` router and the `gtm-orchestrator` pipeline read it to: (1) classify the user's situation into **archetype × stage**, (2) pick the right **skill/command sequence**, (3) decide the **primary channel, emphasis, and what to skip**.
 
-Non duplicare qui i framework: vivono nelle `skills/` (richiamate **per nome**, auto-attivazione). Qui vive solo la **logica di scelta**.
+Do not duplicate the frameworks here: they live in the `skills/` (invoked **by name**, auto-activation). Only the **choice logic** lives here.
 
-> **Come leggere i file di questa cartella:** sono file bundled del plugin → si aprono con Bash via `cat "${CLAUDE_PLUGIN_ROOT}/playbooks/<file>.md"`, **non** con path relativi (che si risolverebbero contro la cwd dell'utente e fallirebbero). I link `(coaching-services.md)` qui sotto sono solo riferimenti al nome file.
+> **How to read the files in this folder:** they are bundled plugin files → open them with Bash via `cat "${CLAUDE_PLUGIN_ROOT}/playbooks/<file>.md"`, **not** with relative paths (which would resolve against the user's cwd and fail). The `(coaching-services.md)` links below are merely references to the file name.
 
 ---
 
-## 1. Come classificare la situazione (archetipo)
+## 1. How to classify the situation (archetype)
 
-Deduci l'archetipo dai segnali nell'input utente. Se ambiguo, fai **1 sola domanda** di disambiguazione, poi procedi.
+Infer the archetype from the signals in the user's input. If ambiguous, ask **a single** disambiguation question, then proceed.
 
-| Archetipo | Segnali di riconoscimento | Playbook |
+| Archetype | Recognition signals | Playbook |
 |---|---|---|
-| **coaching** | servizio ad alto tocco, personal brand, consulenza, corsi/info-product, "vendo la mia competenza", 1-pochi erogatori | [coaching-services.md](coaching-services.md) |
-| **b2b-saas** | software in abbonamento, trial/demo, MRR/ARR, buyer ≠ user, ciclo di vendita, "trial/onboarding/churn" | [b2b-saas.md](b2b-saas.md) |
-| **b2c** | prodotto/brand al consumatore, acquisto d'impulso o emotivo, AOV basso-medio, volume; include **e-commerce/DTC** | [b2c-product.md](b2c-product.md) |
-| **local-service** | raggio geografico, "officine/studio/ristorante/negozio", clienti in zona, Google Maps/recensioni contano | [local-service.md](local-service.md) |
-| **established-no-marketing** | azienda con fatturato e clienti ma **senza reparto/processo marketing**; cresciuta per passaparola; vuole struttura | [established-no-marketing.md](established-no-marketing.md) |
+| **coaching** | high-touch service, personal brand, consulting, courses/info-products, "I sell my expertise", one-to-few providers | [coaching-services.md](coaching-services.md) |
+| **b2b-saas** | subscription software, trial/demo, MRR/ARR, buyer ≠ user, sales cycle, "trial/onboarding/churn" | [b2b-saas.md](b2b-saas.md) |
+| **b2c** | product/brand to the consumer, impulse or emotional purchase, low-to-mid AOV, volume; includes **e-commerce/DTC** | [b2c-product.md](b2c-product.md) |
+| **local-service** | geographic radius, "workshops/studio/restaurant/shop", customers in the area, Google Maps/reviews matter | [local-service.md](local-service.md) |
+| **established-no-marketing** | company with revenue and customers but **no marketing department/process**; grown by word of mouth; wants structure | [established-no-marketing.md](established-no-marketing.md) |
 
-> `established-no-marketing` è uno **scenario trasversale**: si combina con l'archetipo merceologico sottostante (spesso b2b-saas, local-service o b2c). Quando lo riconosci, leggi *entrambi* i playbook (lo scenario + l'archetipo merceologico).
+> `established-no-marketing` is a **cross-cutting scenario**: it combines with the underlying product archetype (often b2b-saas, local-service, or b2c). When you recognize it, read *both* playbooks (the scenario + the product archetype).
 >
-> **Alias:** `ecommerce` (valore selezionabile in `userConfig.archetipo`) è un **alias di `b2c`** → usa `b2c-product.md`. Un **B2C senza checkout online** (prodotto retail/offline) è comunque `b2c`, ma vedi la nota "senza carrello" nel suo playbook. Un **coaching/servizio B2B** resta `coaching` per offerta/posizionamento, ma il canale è **outbound** (warm/cold via `gtm-leads`), non una skill dedicata.
+> **Alias:** `ecommerce` (selectable value in `userConfig.archetype`) is an **alias of `b2c`** → use `b2c-product.md`. A **B2C without online checkout** (retail/offline product) is still `b2c`, but see the "no cart" note in its playbook. A **coaching/B2B service** stays `coaching` for offer/positioning, but the channel is **outbound** (warm/cold via `gtm-leads`), not a dedicated skill.
 
-## 2. Come classificare lo stadio (modificatore)
+## 2. How to classify the stage (modifier)
 
-| Stadio | Segnali | Effetto sulla sequenza |
+| Stage | Signals | Effect on the sequence |
 |---|---|---|
-| **micro-launch** | idea/MVP, budget ~0, 1 persona, "voglio testare/validare", nessun cliente o pochissimi | percorso **corto e a costo zero**: jobs → offerta → 1 canale organico → misura. Vedi [micro-launch.md](micro-launch.md) |
-| **scaling** | ha traction/primi clienti, vuole crescere in modo ripetibile | percorso **completo** con enfasi su lead engine + canali a pagamento + email |
-| **established** | azienda avviata, risorse, ma GTM non strutturato | percorso completo con enfasi su **posizionamento/sistematizzazione** e misura; spesso parte da audit del esistente |
+| **micro-launch** | idea/MVP, budget ~0, 1 person, "I want to test/validate", no customers or very few | **short, zero-cost** path: jobs → offer → 1 organic channel → measurement. See [micro-launch.md](micro-launch.md) |
+| **scaling** | has traction/first customers, wants to grow repeatably | **complete** path with emphasis on lead engine + paid channels + email |
+| **established** | up-and-running company, resources, but unstructured GTM | complete path with emphasis on **positioning/systematization** and measurement; often starts from an audit of the existing | 
 
-Default se non deducibile: **scaling** (il percorso completo bilanciato).
+Default if not inferable: **scaling** (the balanced complete path).
 
-## 3. Matrice archetipo × sequenza consigliata
+## 3. Archetype × recommended sequence matrix
 
-La colonna "Sequenza" è l'ordine di `/gtm-*` che gtm-buddy propone (e può eseguire in automatico). "Canale" è il `default_channel` consigliato quando l'utente non lo forza.
+The "Sequence" column is the order of `/gtm-*` that gtm-buddy proposes (and can run automatically). "Channel" is the recommended `default_channel` when the user doesn't force it.
 
-| Archetipo | Canale primario | Sequenza consigliata | Enfasi | Tende a saltare |
+| Archetype | Primary channel | Recommended sequence | Emphasis | Tends to skip |
 |---|---|---|---|---|
-| **coaching** | content organico + email | `gtm-jobs` → `gtm-posizionamento` → `gtm-offerta` → `gtm-leads`* → `gtm-contenuti` → `gtm-copy` → `gtm-email` | Personal Monopoly, offerta high-ticket, prova/autorità. *(\*il warm outreach alla rete parte subito/in parallelo: è la prima fonte di ricavo; `gtm-leads` lo sistematizza)* | IG ads pagati nei primi step |
-| **b2b-saas** | seo + email (+ outbound) | `gtm-jobs` → `gtm-posizionamento` → `gtm-offerta` → `gtm-leads` → `gtm-seo` → `gtm-email` → `gtm-contenuti` → `gtm-copy` | nonconsumption, attivazione/Little Hire, lead engine, payback CAC | IG ads (raro per B2B) |
-| **b2c** | instagram + email | `gtm-jobs` → `gtm-offerta` → `gtm-posizionamento` → `gtm-instagram` → `gtm-copy` → `gtm-email` → `gtm-contenuti` | dimensione emotiva/sociale, creative, retargeting, AOV/ROAS | SEO lunga se il ciclo è impulsivo |
-| **local-service** | seo (local) + instagram | `gtm-jobs` → `gtm-posizionamento` → `gtm-offerta` → `gtm-seo` → `gtm-leads` → `gtm-instagram` → `gtm-email` | trigger di circostanza, prossimità, recensioni, GBP | content engine ampio, programmatic |
-| **established-no-marketing** | auto (dipende dal merceologico) | `gtm-buddy` audit → `gtm-posizionamento` → `gtm-offerta` → `gtm-leads` → canale dell'archetipo → `gtm-email` → misura | sistematizzare ciò che già funziona, non reinventare; quick win | nulla: prima si mette ordine |
+| **coaching** | organic content + email | `gtm-jobs` → `gtm-positioning` → `gtm-offer` → `gtm-leads`* → `gtm-content` → `gtm-copy` → `gtm-email` | Personal Monopoly, high-ticket offer, proof/authority. *(\*warm outreach to the network starts immediately/in parallel: it is the first source of revenue; `gtm-leads` systematizes it)* | paid IG ads in the early steps |
+| **b2b-saas** | seo + email (+ outbound) | `gtm-jobs` → `gtm-positioning` → `gtm-offer` → `gtm-leads` → `gtm-seo` → `gtm-email` → `gtm-content` → `gtm-copy` | nonconsumption, activation/Little Hire, lead engine, CAC payback | IG ads (rare for B2B) |
+| **b2c** | instagram + email | `gtm-jobs` → `gtm-offer` → `gtm-positioning` → `gtm-instagram` → `gtm-copy` → `gtm-email` → `gtm-content` | emotional/social dimension, creative, retargeting, AOV/ROAS | long-tail SEO if the cycle is impulsive |
+| **local-service** | seo (local) + instagram | `gtm-jobs` → `gtm-positioning` → `gtm-offer` → `gtm-seo` → `gtm-leads` → `gtm-instagram` → `gtm-email` | circumstance triggers, proximity, reviews, GBP | broad content engine, programmatic |
+| **established-no-marketing** | auto (depends on the product type) | `gtm-buddy` audit → `gtm-positioning` → `gtm-offer` → `gtm-leads` → archetype channel → `gtm-email` → measurement | systematize what already works, don't reinvent; quick wins | nothing: first you put things in order |
 
-## 4. Matrice stadio × profondità
+## 4. Stage × depth matrix
 
-| Stadio | /gtm completo? | Checkpoint critic | Note |
+| Stage | Full /gtm? | Critic checkpoint | Notes |
 |---|---|---|---|
-| **micro-launch** | No — percorso corto (jobs → offerta → 1 canale organico → misura) | 1 (sull'offerta) | costo zero, 1 canale, time-to-first-win < 14 giorni |
-| **scaling** | Sì — pipeline completa | 2 (offerta + funnel) | bilanciato |
-| **established** | Sì, ma apri con **audit** del materiale esistente | 2 + audit iniziale | rispetta ciò che già genera ricavi |
+| **micro-launch** | No — short path (jobs → offer → 1 organic channel → measurement) | 1 (on the offer) | zero cost, 1 channel, time-to-first-win < 14 days |
+| **scaling** | Yes — full pipeline | 2 (offer + funnel) | balanced |
+| **established** | Yes, but open with an **audit** of the existing material | 2 + initial audit | respect what already generates revenue |
 
-## 5. Quando proporre cosa (decisione di gtm-buddy)
+## 5. When to propose what (gtm-buddy's decision)
 
-- **L'utente ha UNA domanda precisa** ("come prezzo?", "scrivimi una email") → indica **una singola skill/command** (es. `/gtm-offerta`, `/gtm-email`). Non imporre la pipeline.
-- **L'utente è a 0 / vuole un piano** → proponi la **sequenza** dell'archetipo (sezione 3) e offri di eseguirla, oppure `/gtm` per la pipeline orchestrata end-to-end.
-- **L'utente è established e disordinato** → parti da **audit** (gtm-buddy interroga lo stato attuale) prima di generare.
-- **Situazione ambigua** → 1 domanda di disambiguazione (archetipo o stadio), mai più di una prima di dare valore.
+- **The user has ONE precise question** ("how do I price?", "write me an email") → point to **a single skill/command** (e.g. `/gtm-offer`, `/gtm-email`). Don't impose the pipeline.
+- **The user is at 0 / wants a plan** → propose the archetype's **sequence** (section 3) and offer to run it, or `/gtm` for the end-to-end orchestrated pipeline.
+- **The user is established and disorganized** → start from an **audit** (gtm-buddy interrogates the current state) before generating.
+- **Ambiguous situation** → 1 disambiguation question (archetype or stage), never more than one before delivering value.
 
-## 6. Mappa command → skill (integrità referenziale)
+## 6. Command → skill map (referential integrity)
 
-Usata anche dal validatore `validate-content.js`. Ogni command carica le skill indicate (leggendo `skills/<nome>/SKILL.md`).
+Also used by the `validate-content.js` validator. Each command loads the indicated skills (reading `skills/<name>/SKILL.md`).
 
 | Command | Skill |
 |---|---|
-| `/gtm-buddy` | (router: legge questo indice; non carica skill di dominio) |
-| `/gtm` | tutte, via `gtm-orchestrator` |
+| `/gtm-buddy` | (router: reads this index; does not load domain skills) |
+| `/gtm` | all, via `gtm-orchestrator` |
 | `/gtm-jobs` | `christensen-jobs` |
-| `/gtm-posizionamento` | `butcher-productize`, `doing-content-right` |
-| `/gtm-offerta` | `hormozi-offers` |
+| `/gtm-positioning` | `butcher-productize`, `doing-content-right` |
+| `/gtm-offer` | `hormozi-offers` |
 | `/gtm-leads` | `hormozi-leads` |
-| `/gtm-contenuti` | `doing-content-right` |
+| `/gtm-content` | `doing-content-right` |
 | `/gtm-copy` | `drew-sucks-framework` |
 | `/gtm-email` | `advanced-email-marketing` |
 | `/gtm-seo` | `seo-2026-sota` |

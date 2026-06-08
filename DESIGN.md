@@ -1,88 +1,88 @@
 # BetterCallClaudeGrowth — Design Document
 
-**Stato**: proposta di design — da approvare prima dello scaffolding del codice
-**Data**: 2026-06-08
-**Modello di riferimento**: `bettercallclaude_italia` (architettura plugin Claude Code a 5 livelli)
-**Profilo**: *lean* — pipeline di orchestrazione + 2 agent, niente MCP, niente hook
+**Status**: design proposal — to be approved before scaffolding the code
+**Date**: 2026-06-08
+**Reference model**: `bettercallclaude_italia` (5-level Claude Code plugin architecture)
+**Profile**: *lean* — orchestration pipeline + 2 agents, no MCP, no hooks
 
-> Nome di lavoro: **bettercallclaudegrowth**. È un parametro: si può rinominare in `bettercallgrowth`, `antygravity-gtm`, `growth-stack`… senza impatto strutturale. In questo documento uso `bettercallclaudegrowth` ovunque.
-
----
-
-## 1. Obiettivo
-
-Trasformare le 9 skill di marketing già prodotte (knowledge base estratte dai libri) in un **plugin Claude Code installabile e distribuibile**, che funzioni come `bettercallclaude_italia` ma per il **Go-To-Market**: un consulente GTM che incatena jobs → posizionamento → offerta → lead → contenuti → canali → email → misura.
-
-Principio guida (la disciplina del senior engineer):
-1. **Separation of concerns** — le skill restano conoscenza pura; i command sono orchestrazione sottile; nessuna conoscenza duplicata nei command.
-2. **Start lean** — 2 agent, non 20. L'orchestratore e il critic. Gli altri si guadagnano sul campo.
-3. **Packaging discipline** — versione unica allineata su 3 file, validata in CI, semver.
-
-### Cosa NON costruiamo (e perché)
-| Componente di bettercallclaude | Lo replichiamo? | Motivo |
-|---|---|---|
-| 7 server MCP (Cassazione, Normattiva…) | ❌ No | Il GTM gira interamente sulla conoscenza dei libri, in locale. Nessun dato esterno autorevole da interrogare. Zero infrastruttura. |
-| Hook privacy (`privacy-check.js`) | ❌ No | Nessun segreto professionale da proteggere. Nessun guardrail necessario. |
-| MCP server TypeScript proprio (ollama) | ❌ No | Non serve inferenza locale. |
-| 20 agent | ❌ No | Solo 2 (orchestrator + critic). |
-
-Risultato: un plugin **più semplice e più robusto** del modello — nessun server da mantenere, nessuna dipendenza di rete.
+> Working name: **bettercallclaudegrowth**. It's a parameter: it can be renamed to `bettercallgrowth`, `antygravity-gtm`, `growth-stack`… with no structural impact. In this document I use `bettercallclaudegrowth` everywhere.
 
 ---
 
-## 2. Mappatura skill → funnel GTM
+## 1. Goal
 
-| Skill (esistente) | Fase GTM | Command dedicato |
+Turn the 9 marketing skills already produced (knowledge bases extracted from the books) into an **installable and distributable Claude Code plugin**, which works like `bettercallclaude_italia` but for **Go-To-Market**: a GTM consultant that chains jobs → positioning → offer → leads → content → channels → email → measurement.
+
+Guiding principle (the senior engineer's discipline):
+1. **Separation of concerns** — the skills stay pure knowledge; the commands are thin orchestration; no knowledge duplicated in the commands.
+2. **Start lean** — 2 agents, not 20. The orchestrator and the critic. The others earn their place in the field.
+3. **Packaging discipline** — a single version aligned across 3 files, validated in CI, semver.
+
+### What we do NOT build (and why)
+| bettercallclaude component | Do we replicate it? | Reason |
 |---|---|---|
-| `butcher-productize` | Posizionamento / Personal Monopoly | `/gtm-posizionamento` |
-| `hormozi-offers` | Offerta (Grand Slam, Value Equation) | `/gtm-offerta` |
+| 7 MCP servers (Cassazione, Normattiva…) | ❌ No | GTM runs entirely on the books' knowledge, locally. No authoritative external data to query. Zero infrastructure. |
+| Privacy hook (`privacy-check.js`) | ❌ No | No professional secret to protect. No guardrail needed. |
+| Custom TypeScript MCP server (ollama) | ❌ No | No need for local inference. |
+| 20 agents | ❌ No | Only 2 (orchestrator + critic). |
+
+Result: a plugin **simpler and more robust** than the model — no server to maintain, no network dependency.
+
+---
+
+## 2. Mapping skills → GTM funnel
+
+| Skill (existing) | GTM phase | Dedicated command |
+|---|---|---|
+| `butcher-productize` | Positioning / Personal Monopoly | `/gtm-positioning` |
+| `hormozi-offers` | Offer (Grand Slam, Value Equation) | `/gtm-offer` |
 | `hormozi-leads` | Lead generation (Core Four) | `/gtm-leads` |
-| `doing-content-right` | Contenuti / audience / niche | `/gtm-contenuti` |
-| `drew-sucks-framework` | Copy & persuasione (SUCKS) | `/gtm-copy` |
+| `doing-content-right` | Content / audience / niche | `/gtm-content` |
+| `drew-sucks-framework` | Copy & persuasion (SUCKS) | `/gtm-copy` |
 | `advanced-email-marketing` | Email automation & nurturing | `/gtm-email` |
-| `seo-2026-sota` | Canale: SEO / GEO 2026 | `/gtm-seo` |
-| `instagram-performance-marketing` | Canale: Meta / IG ads | `/gtm-instagram` |
+| `seo-2026-sota` | Channel: SEO / GEO 2026 | `/gtm-seo` |
+| `instagram-performance-marketing` | Channel: Meta / IG ads | `/gtm-instagram` |
 
-> Escluse dal plugin (non-GTM): `secure-source-code`, `book-to-skill`.
+> Excluded from the plugin (non-GTM): `secure-source-code`, `book-to-skill`.
 
-Mapping 1:1 skill → command, **più** un command orchestratore `/gtm` che le incatena tutte.
+1:1 mapping skill → command, **plus** an orchestrator command `/gtm` that chains them all.
 
 ---
 
-## 3. Struttura del repository (standalone, pushabile su GitHub)
+## 3. Repository structure (standalone, pushable to GitHub)
 
 ```
-bettercallclaudegrowth/                              ← root del repo GitHub
+bettercallclaudegrowth/                              ← GitHub repo root
 ├─ .claude-plugin/
-│  └─ marketplace.json                  ← vetrina: 1 plugin installabile
-├─ package.json                         ← versione + metadati
-├─ README.md                            ← cosa fa + come si installa
+│  └─ marketplace.json                  ← showcase: 1 installable plugin
+├─ package.json                         ← version + metadata
+├─ README.md                            ← what it does + how to install
 ├─ LICENSE
 ├─ CHANGELOG.md
 ├─ scripts/
-│  └─ validate-plugin.js                ← CI: schema + allineamento versioni
+│  └─ validate-plugin.js                ← CI: schema + version alignment
 ├─ .github/
 │  └─ workflows/
-│     └─ ci.yml                         ← esegue validate-plugin su ogni push
-└─ bettercallclaudegrowth/                           ← IL PLUGIN (source: ./bettercallclaudegrowth)
+│     └─ ci.yml                         ← runs validate-plugin on every push
+└─ bettercallclaudegrowth/                           ← THE PLUGIN (source: ./bettercallclaudegrowth)
    ├─ .claude-plugin/
-   │  └─ plugin.json                    ← manifesto + userConfig
+   │  └─ plugin.json                    ← manifest + userConfig
    ├─ README.md
    ├─ agents/
    │  ├─ gtm-orchestrator.md
    │  └─ gtm-critic.md
    ├─ commands/
-   │  ├─ gtm.md                         ← PIPELINE completa
+   │  ├─ gtm.md                         ← full PIPELINE
    │  ├─ gtm-jobs.md
-   │  ├─ gtm-posizionamento.md
-   │  ├─ gtm-offerta.md
+   │  ├─ gtm-positioning.md
+   │  ├─ gtm-offer.md
    │  ├─ gtm-leads.md
-   │  ├─ gtm-contenuti.md
+   │  ├─ gtm-content.md
    │  ├─ gtm-copy.md
    │  ├─ gtm-email.md
    │  ├─ gtm-seo.md
    │  └─ gtm-instagram.md
-   └─ skills/                           ← le 9 skill COPIATE qui (plugin autocontenuto)
+   └─ skills/                           ← the 9 skills COPIED here (self-contained plugin)
       ├─ christensen-jobs/
       ├─ butcher-productize/
       ├─ hormozi-offers/
@@ -94,13 +94,13 @@ bettercallclaudegrowth/                              ← root del repo GitHub
       └─ instagram-performance-marketing/
 ```
 
-**Doppio livello `bettercallclaudegrowth/bettercallclaudegrowth/`** = identico al modello: il livello esterno è la *vetrina* (marketplace), quello interno è il *plugin* vero (`source: ./bettercallclaudegrowth`). Permette `/plugin marketplace add <repo>` → `/plugin install bettercallclaudegrowth`.
+**Double level `bettercallclaudegrowth/bettercallclaudegrowth/`** = identical to the model: the outer level is the *showcase* (marketplace), the inner one is the actual *plugin* (`source: ./bettercallclaudegrowth`). It enables `/plugin marketplace add <repo>` → `/plugin install bettercallclaudegrowth`.
 
-> Le skill vengono **copiate** dentro `bettercallclaudegrowth/skills/`. Le originali in `Book to Skill/.claude/skills/` restano come backup/sorgente. Una nota futura: per evitare drift, l'unica copia "viva" sarà quella nel plugin.
+> The skills are **copied** into `bettercallclaudegrowth/skills/`. The originals in `Book to Skill/.claude/skills/` remain as backup/source. A future note: to avoid drift, the only "live" copy will be the one in the plugin.
 
 ---
 
-## 4. Specifica dei file di configurazione
+## 4. Configuration files specification
 
 ### 4.1 `.claude-plugin/marketplace.json`
 ```json
@@ -110,7 +110,7 @@ bettercallclaudegrowth/                              ← root del repo GitHub
   "plugins": [
     {
       "name": "bettercallclaudegrowth",
-      "description": "GTM Intelligence — posizionamento, offerte irresistibili (Hormozi), lead generation, copy (SUCKS), contenuti, SEO/GEO 2026, email automation e Instagram performance, orchestrati in una pipeline go-to-market completa.",
+      "description": "GTM Intelligence — positioning, irresistible offers (Hormozi), lead generation, copy (SUCKS), content, SEO/GEO 2026, email automation and Instagram performance, orchestrated in a complete go-to-market pipeline.",
       "version": "0.1.0",
       "source": "./bettercallclaudegrowth",
       "author": { "name": "<NOME>" },
@@ -128,33 +128,33 @@ bettercallclaudegrowth/                              ← root del repo GitHub
 {
   "name": "bettercallclaudegrowth",
   "version": "0.1.0",
-  "description": "Consulente Go-To-Market: pipeline jobs→posizionamento→offerta→lead→contenuti→canali→email→misura, basata su 9 framework di marketing (Christensen Jobs to Be Done, Hormozi, Drew, Butcher, Frangioni, SEO/GEO 2026, Instagram performance).",
+  "description": "Go-To-Market consultant: jobs→positioning→offer→leads→content→channels→email→measurement pipeline, based on 9 marketing frameworks (Christensen Jobs to Be Done, Hormozi, Drew, Butcher, Frangioni, SEO/GEO 2026, Instagram performance).",
   "author": { "name": "<NOME>" },
   "userConfig": {
     "output_language": {
-      "type": "string", "title": "Lingua output",
-      "description": "Lingua preferita per gli output. IT o EN.",
+      "type": "string", "title": "Output language",
+      "description": "Preferred language for outputs. IT or EN.",
       "default": "IT", "sensitive": false
     },
-    "settore": {
-      "type": "string", "title": "Settore / mercato",
-      "description": "Settore di default del business (es. B2B SaaS, e-commerce moda, servizi locali). Ancora le risposte al contesto.",
+    "industry": {
+      "type": "string", "title": "Industry / market",
+      "description": "Default industry of the business (e.g. B2B SaaS, fashion e-commerce, local services). Anchors the answers to context.",
       "default": "", "sensitive": false
     },
     "default_channel": {
-      "type": "string", "title": "Canale primario",
-      "description": "Canale di distribuzione preferito: seo | instagram | email | tutti.",
+      "type": "string", "title": "Primary channel",
+      "description": "Preferred distribution channel: seo | instagram | email | all.",
       "default": "tutti", "sensitive": false
     },
     "brand_voice": {
-      "type": "string", "title": "Tono di voce",
-      "description": "Tono del brand per copy e contenuti (es. diretto, autorevole, ironico).",
+      "type": "string", "title": "Tone of voice",
+      "description": "Brand tone for copy and content (e.g. direct, authoritative, ironic).",
       "default": "", "sensitive": false
     }
   }
 }
 ```
-> Nota: `plugin.json` NON elenca esplicitamente commands/agents/skills — vengono **auto-scoperti** dalle cartelle convenzionali (`commands/`, `agents/`, `skills/`), esattamente come nel modello.
+> Note: `plugin.json` does NOT explicitly list commands/agents/skills — they are **auto-discovered** from the conventional folders (`commands/`, `agents/`, `skills/`), exactly as in the model.
 
 ### 4.3 `package.json` (root)
 ```json
@@ -167,179 +167,179 @@ bettercallclaudegrowth/                              ← root del repo GitHub
 }
 ```
 
-### 4.4 `scripts/validate-plugin.js` — checklist (porting dal modello)
-Esegue in CI e in locale. Verifica:
-- Esistono: `.claude-plugin/marketplace.json`, `bettercallclaudegrowth/.claude-plugin/plugin.json`, `package.json`, cartelle `bettercallclaudegrowth/agents`, `bettercallclaudegrowth/commands`, `bettercallclaudegrowth/skills`.
-- `marketplace.json`: `name` presente; `plugins[]` non vuoto; ogni plugin ha `name/version/source/repository/license`; `source` inizia con `./`.
-- `plugin.json`: `name/version/description` presenti.
-- **Allineamento versioni**: `marketplace.json` ↔ `plugin.json` ↔ `package.json` identiche (fallisce se divergono).
-- Ogni cartella in `skills/` contiene un `SKILL.md`.
-- Ogni file in `commands/` e `agents/` ha frontmatter YAML valido con `description`.
+### 4.4 `scripts/validate-plugin.js` — checklist (ported from the model)
+Runs in CI and locally. Verifies:
+- These exist: `.claude-plugin/marketplace.json`, `bettercallclaudegrowth/.claude-plugin/plugin.json`, `package.json`, folders `bettercallclaudegrowth/agents`, `bettercallclaudegrowth/commands`, `bettercallclaudegrowth/skills`.
+- `marketplace.json`: `name` present; `plugins[]` not empty; every plugin has `name/version/source/repository/license`; `source` starts with `./`.
+- `plugin.json`: `name/version/description` present.
+- **Version alignment**: `marketplace.json` ↔ `plugin.json` ↔ `package.json` identical (fails if they diverge).
+- Every folder in `skills/` contains a `SKILL.md`.
+- Every file in `commands/` and `agents/` has valid YAML frontmatter with `description`.
 
 ---
 
-## 5. I 2 agent
+## 5. The 2 agents
 
-Formato (dal modello): file `.md` con frontmatter `name`, `description`, `model`, `tools`. Sono subagent invocati dai command.
+Format (from the model): `.md` file with `name`, `description`, `model`, `tools` frontmatter. They are subagents invoked by the commands.
 
 ### 5.1 `agents/gtm-orchestrator.md`
 ```yaml
 ---
 name: gtm-orchestrator
-description: "Orchestratore Go-To-Market. Guida la pipeline GTM completa, sequenzia le fasi, mantiene il contesto tra una fase e l'altra e applica la skill giusta per ogni fase."
+description: "Go-To-Market orchestrator. Drives the complete GTM pipeline, sequences the phases, maintains context between one phase and the next, and applies the right skill for each phase."
 model: sonnet
 tools: [Read, Grep, Glob, Write]
 ---
 ```
-**Responsabilità**
-- Riceve il contesto business (prodotto, ICP, obiettivo) come input.
-- Esegue le 7 fasi in sequenza (vedi §7), applicando per ognuna la/e skill rilevante/i (le legge da `skills/`).
-- Mantiene uno stato condiviso: ciò che la fase N produce alimenta la fase N+1.
-- Invoca `gtm-critic` ai checkpoint (offerta, funnel finale).
-- Produce un deliverable unico: `gtm-plan.md` nella working dir dell'utente.
+**Responsibilities**
+- Receives the business context (product, ICP, goal) as input.
+- Runs the 7 phases in sequence (see §7), applying for each the relevant skill(s) (it reads them from `skills/`).
+- Maintains a shared state: what phase N produces feeds phase N+1.
+- Invokes `gtm-critic` at the checkpoints (offer, final funnel).
+- Produces a single deliverable: `gtm-plan.md` in the user's working dir.
 
 ### 5.2 `agents/gtm-critic.md`
 ```yaml
 ---
 name: gtm-critic
-description: "Revisore avversariale del GTM. Red-teama l'offerta (punti deboli della Value Equation), il funnel (punti di fuga), il posizionamento e il copy. Restituisce critiche concrete e azionabili, non lodi."
+description: "Adversarial GTM reviewer. Red-teams the offer (weak points of the Value Equation), the funnel (leak points), the positioning and the copy. Returns concrete, actionable critiques, not praise."
 model: sonnet
 tools: [Read, Grep, Glob]
 ---
 ```
-**Responsabilità** (l'equivalente del `contraddittorio` legale — il differenziatore)
-- Sull'**offerta**: applica la Value Equation di Hormozi al contrario — dove il sogno è debole, la probabilità percepita bassa, il tempo/sforzo alti? Prezzi, garanzie, scarsità reggono?
-- Sul **funnel**: dove perde lead? Coerenza messaggio offerta↔canale↔email? Frizioni?
-- Sul **posizionamento**: è davvero differenziato (Personal Monopoly) o generico?
-- Output: lista di debolezze classificate (Critica / Media / Minore) + fix proposto per ognuna.
+**Responsibilities** (the equivalent of the legal `contraddittorio` — the differentiator)
+- On the **offer**: applies Hormozi's Value Equation in reverse — where is the dream weak, the perceived likelihood low, the time/effort high? Do prices, guarantees, scarcity hold up?
+- On the **funnel**: where does it lose leads? Message consistency offer↔channel↔email? Frictions?
+- On the **positioning**: is it truly differentiated (Personal Monopoly) or generic?
+- Output: a list of weaknesses classified (Critical / Medium / Minor) + a proposed fix for each.
 
 ---
 
-## 6. I command
+## 6. The commands
 
-Formato (dal modello): file `.md` in `commands/` con frontmatter (`description`, `argument-hint`, opz. `allowed-tools`, `model`). Nome comando = nome file. Invocati come `/bettercallclaudegrowth:<nome>`.
+Format (from the model): `.md` files in `commands/` with frontmatter (`description`, `argument-hint`, opt. `allowed-tools`, `model`). Command name = file name. Invoked as `/bettercallclaudegrowth:<name>`.
 
-### 6.1 Command specialista — template (esempio worked: `gtm-offerta.md`)
+### 6.1 Specialist command — template (worked example: `gtm-offer.md`)
 ```yaml
 ---
-description: "Costruisce un'offerta irresistibile (Grand Slam Offer) applicando i framework di $100M Offers."
-argument-hint: "[prodotto/servizio + contesto, es. 'corso online di fotografia per principianti']"
+description: "Builds an irresistible offer (Grand Slam Offer) applying the frameworks of $100M Offers."
+argument-hint: "[product/service + context, e.g. 'online photography course for beginners']"
 ---
 
-# /gtm-offerta — Grand Slam Offer
+# /gtm-offer — Grand Slam Offer
 
-Applica la skill **hormozi-offers** per costruire l'offerta.
+Apply the **hormozi-offers** skill to build the offer.
 
-1. Leggi la skill `hormozi-offers` (SKILL.md + cheatsheet/patterns se servono).
-2. Dato l'input utente ($ARGUMENTS) e il `settore` da userConfig:
-   - Identifica il mercato (Starving Crowd).
-   - Costruisci la Value Equation: massimizza Dream Outcome + Perceived Likelihood; minimizza Time Delay + Effort/Sacrifice.
-   - Aggiungi scarsità, urgenza, bonus, garanzia.
-   - Nomina l'offerta.
-3. (Opzionale) invoca l'agent `gtm-critic` per red-teamare l'offerta.
-4. Output: scheda offerta strutturata + i fix del critic.
+1. Read the `hormozi-offers` skill (SKILL.md + cheatsheet/patterns if needed).
+2. Given the user input ($ARGUMENTS) and the `industry` from userConfig:
+   - Identify the market (Starving Crowd).
+   - Build the Value Equation: maximize Dream Outcome + Perceived Likelihood; minimize Time Delay + Effort/Sacrifice.
+   - Add scarcity, urgency, bonuses, guarantee.
+   - Name the offer.
+3. (Optional) invoke the `gtm-critic` agent to red-team the offer.
+4. Output: structured offer spec + the critic's fixes.
 ```
-Gli altri 6 command specialista seguono lo stesso template, cambiando skill e logica:
+The other 6 specialist commands follow the same template, changing skill and logic:
 
-| Command | Skill applicata | Output |
+| Command | Applied skill | Output |
 |---|---|---|
-| `/gtm-posizionamento` | `butcher-productize` | ICP, posizionamento, Personal Monopoly |
-| `/gtm-leads` | `hormozi-leads` | Piano Core Four (warm/cold/content/ads) + lead magnet |
-| `/gtm-contenuti` | `doing-content-right` | Strategia contenuti/niche + calendario |
-| `/gtm-copy` | `drew-sucks-framework` | Copy (email, landing, post) secondo SUCKS |
-| `/gtm-email` | `advanced-email-marketing` | Workflow automation (welcome/drip/winback) |
-| `/gtm-seo` | `seo-2026-sota` | Piano SEO/GEO 2026 |
-| `/gtm-instagram` | `instagram-performance-marketing` | Setup campagne Meta/IG |
+| `/gtm-positioning` | `butcher-productize` | ICP, positioning, Personal Monopoly |
+| `/gtm-leads` | `hormozi-leads` | Core Four plan (warm/cold/content/ads) + lead magnet |
+| `/gtm-content` | `doing-content-right` | Content/niche strategy + calendar |
+| `/gtm-copy` | `drew-sucks-framework` | Copy (email, landing, posts) following SUCKS |
+| `/gtm-email` | `advanced-email-marketing` | Automation workflow (welcome/drip/winback) |
+| `/gtm-seo` | `seo-2026-sota` | SEO/GEO 2026 plan |
+| `/gtm-instagram` | `instagram-performance-marketing` | Meta/IG campaign setup |
 
-### 6.2 Command pipeline — `gtm.md` (il prodotto)
+### 6.2 Pipeline command — `gtm.md` (the product)
 ```yaml
 ---
-description: "Pipeline GTM completa: posizionamento → offerta → lead → contenuti/copy → canali → email → misura. Produce un piano go-to-market completo."
-argument-hint: "[descrizione business: prodotto, target, obiettivo]"
+description: "Complete GTM pipeline: positioning → offer → leads → content/copy → channels → email → measurement. Produces a complete go-to-market plan."
+argument-hint: "[business description: product, target, goal]"
 ---
 ```
-Il corpo delega all'agent `gtm-orchestrator`, passandogli `$ARGUMENTS` + userConfig, che esegue le 7 fasi del §7.
+The body delegates to the `gtm-orchestrator` agent, passing it `$ARGUMENTS` + userConfig, which runs the 7 phases of §7.
 
 ---
 
-## 7. La pipeline `/gtm` (orchestrazione — il cuore)
+## 7. The `/gtm` pipeline (orchestration — the core)
 
-Equivalente diretto del `legale-5step` del modello. 7 fasi sequenziali; ogni fase applica una skill e alimenta la successiva; 2 checkpoint del critic.
+Direct equivalent of the model's `legale-5step`. 7 sequential phases; each phase applies a skill and feeds the next; 2 critic checkpoints.
 
 ```
-1. POSIZIONAMENTO & ICP      (butcher-productize)
-        ↓  chi siamo, per chi, perché noi (Personal Monopoly)
-2. OFFERTA                   (hormozi-offers)        ──► [CRITIC: red-team offerta]
-        ↓  Grand Slam Offer ancorata all'ICP
+1. POSITIONING & ICP         (butcher-productize)
+        ↓  who we are, for whom, why us (Personal Monopoly)
+2. OFFER                     (hormozi-offers)        ──► [CRITIC: red-team offer]
+        ↓  Grand Slam Offer anchored to the ICP
 3. LEAD GENERATION           (hormozi-leads)
-        ↓  Core Four + lead magnet coerenti con l'offerta
-4. CONTENUTI & COPY          (doing-content-right + drew-sucks-framework)
-        ↓  motore di contenuti + copy persuasivo
-5. CANALI                    (seo-2026-sota | instagram-performance-marketing)
-        ↓  distribuzione sul canale scelto (default_channel)
+        ↓  Core Four + lead magnet consistent with the offer
+4. CONTENT & COPY            (doing-content-right + drew-sucks-framework)
+        ↓  content engine + persuasive copy
+5. CHANNELS                  (seo-2026-sota | instagram-performance-marketing)
+        ↓  distribution on the chosen channel (default_channel)
 6. EMAIL & NURTURING         (advanced-email-marketing)
-        ↓  automation per convertire i lead
-7. MISURA & ITERA            (KPI, loop)             ──► [CRITIC: red-team funnel]
+        ↓  automation to convert the leads
+7. MEASURE & ITERATE         (KPI, loop)             ──► [CRITIC: red-team funnel]
         ↓
    DELIVERABLE: gtm-plan.md
 ```
 
-**Regole di flusso**
-- Ogni fase riceve il contesto cumulato dalle fasi precedenti (l'offerta vincola i lead magnet; il posizionamento vincola il copy; ecc.).
-- Fase 5 sceglie il canale da `default_channel` (o tutti).
-- I checkpoint del critic sono bloccanti "soft": espongono le debolezze, l'utente decide se iterare.
-- Output finale: un singolo `gtm-plan.md` strutturato per fase, scritto nella working dir.
+**Flow rules**
+- Each phase receives the cumulative context from the previous phases (the offer constrains the lead magnets; the positioning constrains the copy; etc.).
+- Phase 5 chooses the channel from `default_channel` (or all).
+- The critic's checkpoints are "soft" binding: they expose the weaknesses, the user decides whether to iterate.
+- Final output: a single `gtm-plan.md` structured by phase, written in the working dir.
 
 ---
 
-## 8. Installazione e distribuzione
+## 8. Installation and distribution
 
-**Per l'autore (push):**
+**For the author (push):**
 ```
 git init && git add . && git commit -m "feat: bettercallclaudegrowth v0.1.0"
 git remote add origin https://github.com/<USER>/bettercallclaudegrowth.git
 git push -u origin main
 ```
 
-**Per l'utente finale (install):**
+**For the end user (install):**
 ```
 /plugin marketplace add <USER>/bettercallclaudegrowth
 /plugin install bettercallclaudegrowth
 ```
-Poi: `/gtm <descrizione business>` per la pipeline, o i singoli `/gtm-offerta`, `/gtm-seo`, ecc.
+Then: `/gtm <business description>` for the pipeline, or the individual `/gtm-offer`, `/gtm-seo`, etc.
 
-**CI** (`.github/workflows/ci.yml`): su ogni push esegue `npm run validate` → blocca il merge se versioni disallineate o schema rotto.
+**CI** (`.github/workflows/ci.yml`): on every push it runs `npm run validate` → blocks the merge if versions are misaligned or the schema is broken.
 
 ---
 
 ## 9. Versioning
 
-Semver. Versione **unica** in 3 file (`marketplace.json`, `plugin.json`, `package.json`), tenuta allineata da `validate-plugin.js`. Start a `0.1.0`. Bump:
-- patch: fix di un command/skill;
-- minor: nuovo command o canale;
-- major: cambio struttura pipeline.
+Semver. A **single** version across 3 files (`marketplace.json`, `plugin.json`, `package.json`), kept aligned by `validate-plugin.js`. Start at `0.1.0`. Bump:
+- patch: fix of a command/skill;
+- minor: new command or channel;
+- major: change of pipeline structure.
 
 ---
 
-## 10. Decisioni aperte (da confermare in fase di build)
+## 10. Open decisions (to confirm at build time)
 
-1. **Nome del plugin/repo**: `bettercallclaudegrowth` (default) vs `bettercallgrowth` / `antygravity-gtm` / altro.
-2. **Licenza**: MIT (proposta) vs altro. Le skill derivano da libri di terzi → valutare se il repo va pubblico o privato (vedi nota copyright sotto).
-3. **`<USER>` GitHub e `<NOME>` autore** da inserire nei manifest.
-4. **Granularità canali fase 5**: un solo canale per run (da `default_channel`) o tutti e tre in parallelo nel piano.
+1. **Plugin/repo name**: `bettercallclaudegrowth` (default) vs `bettercallgrowth` / `antygravity-gtm` / other.
+2. **License**: MIT (proposed) vs other. The skills derive from third-party books → assess whether the repo should be public or private (see copyright note below).
+3. **GitHub `<USER>` and author `<NOME>`** to fill into the manifests.
+4. **Channel granularity in phase 5**: a single channel per run (from `default_channel`) or all three in parallel in the plan.
 
-> **Nota copyright/distribuzione**: le 9 skill sono knowledge base estratte da libri protetti (Christensen, Hormozi, Drew, Butcher, Frangioni, ecc.). Se il repo sarà **pubblico**, conviene che le skill contengano *framework e principi riformulati*, non testo verbatim dei libri, per evitare problemi di copyright. Se **privato/personale**, nessun problema. Da decidere prima del push.
+> **Copyright/distribution note**: the 9 skills are knowledge bases extracted from copyrighted books (Christensen, Hormozi, Drew, Butcher, Frangioni, etc.). If the repo is to be **public**, it's best for the skills to contain *reformulated frameworks and principles*, not verbatim text from the books, to avoid copyright issues. If **private/personal**, no problem. To be decided before the push.
 
 ---
 
-## 11. Piano di build (dopo approvazione)
+## 11. Build plan (after approval)
 
-1. Creare struttura cartelle del repo.
-2. Copiare le 9 skill in `bettercallclaudegrowth/skills/`.
-3. Scrivere `marketplace.json`, `plugin.json`, `package.json`.
-4. Scrivere `validate-plugin.js` + `ci.yml`.
-5. Scrivere i 2 agent (`gtm-orchestrator`, `gtm-critic`).
-6. Scrivere i 10 command (1 pipeline + 9 specialisti).
+1. Create the repo's folder structure.
+2. Copy the 9 skills into `bettercallclaudegrowth/skills/`.
+3. Write `marketplace.json`, `plugin.json`, `package.json`.
+4. Write `validate-plugin.js` + `ci.yml`.
+5. Write the 2 agents (`gtm-orchestrator`, `gtm-critic`).
+6. Write the 10 commands (1 pipeline + 9 specialists).
 7. README + LICENSE + CHANGELOG.
-8. `npm run validate` → verde.
-9. Test locale: `/plugin install` da path locale, poi `/gtm`.
+8. `npm run validate` → green.
+9. Local test: `/plugin install` from local path, then `/gtm`.

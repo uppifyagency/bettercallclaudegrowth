@@ -1,41 +1,41 @@
-# Capitolo 4: La checklist dell'email perfetta
+# Chapter 4: The Perfect Email Checklist
 
-## Idea centrale
-Quattro leve rendono un'email "perfetta": contenuti dinamici/personalizzati, oggetto + preview text, tempi di invio, A/B testing. Prima ancora: trova il *perché* della comunicazione (Taverniti) — lo scopo guida tutto il resto, oggetto incluso.
+## Core Idea
+Four levers make an email "perfect": dynamic/personalized content, subject line + preview text, send timing, A/B testing. Before all else: find the *why* of the communication (Taverniti) — the purpose drives everything else, including the subject line.
 
-## Framework introdotti
-- **Contenuti dinamici e personalizzati**:
-  - Base: nome dinamico ("Ciao Alessandro!"), efficace nell'oggetto per alzare l'open rate (non in tutte le email).
-  - Level-up creativo: **immagini/GIF personalizzate** che chiamano per nome (tool: Nexweave) → compleanni, coupon dinamici, gift card, welcome email.
-  - **Countdown GIF** per creare **FOMO** e leva scarsità (tool: Mailtimer.io).
-  - **Contenuti variabili IF/ELSE** in base agli attributi del contatto (es. collezione uomo/donna; promo solo per chi non è ancora iscritto). *Caso ROADS®*: una sola email plain-text con condizioni IF sull'attributo "Motivo di contatto" gestisce 3 tipi di richiesta; inviata dopo 24h, in orario lavorativo, per simulare una risposta umana reale.
-- **Ottimizzare oggetto e preview text** (+ mittente): TOV coerente col brand. Best-practice da testare: emoji (con misura), campi personalizzati, **angles** diversi.
-  - Tipologie di oggetto (esempi Libero): domanda, curiosità, imperativo, negazione, numero, shock, punchline, parola in maiuscolo, referenze, sospensioni, CTA, date/scadenze, ordine parole diverso, esclamazioni/mood.
-  - **Angles** (anche per l'adv): paura di perdere, punti dolenti, remarketing, benefit, how-to, post-scadenza.
-- **Tempi di invio**: per le newsletter, **regolarità** (crea un'abitudine). **Send Time Optimization** (invio 1:1 in base allo storico del contatto). Evita il **sovraccarico** con **Smart Sending** (limita le email per persona in un arco di tempo).
-- **A/B Testing**: valida ipotesi su oggetto, mittente, corpo, timing. Campione di test → ai restanti la versione "vincente". L'oggetto è il test più impattante (KPI open rate).
+## Frameworks Introduced
+- **Dynamic and personalized content**:
+  - Basic: dynamic name ("Hi Alessandro!"), effective in the subject line to boost open rate (not in every email).
+  - Creative level-up: **personalized images/GIFs** that address recipients by name (tool: Nexweave) → birthdays, dynamic coupons, gift cards, welcome emails.
+  - **Countdown GIFs** to create **FOMO** and scarcity leverage (tool: Mailtimer.io).
+  - **IF/ELSE variable content** based on contact attributes (e.g. men's/women's collection; promo only for non-subscribers yet). *ROADS® case study*: a single plain-text email with IF conditions on the "Contact reason" attribute handles 3 types of request; sent after 24h, during business hours, to simulate a real human reply.
+- **Optimizing subject line and preview text** (+ sender): TOV consistent with the brand. Best practices to test: emojis (in moderation), personalization fields, different **angles**.
+  - Subject line types (Libero examples): question, curiosity, imperative, negation, number, shock, punchline, capitalized word, references, cliffhangers, CTA, dates/deadlines, different word order, exclamations/mood.
+  - **Angles** (also for advertising): fear of missing out, pain points, remarketing, benefits, how-to, post-deadline.
+- **Send timing**: for newsletters, **consistency** (builds a habit). **Send Time Optimization** (1:1 send based on each contact's history). Avoid **overload** with **Smart Sending** (limits the number of emails per person within a time window).
+- **A/B Testing**: validate hypotheses on subject line, sender, body, timing. Test sample → remaining recipients get the "winning" version. The subject line is the most impactful test (KPI: open rate).
 
-## Concetti chiave
-- **Preview text**: testo di anteprima accanto all'oggetto, co-responsabile dell'apertura.
-- **Skin stagionale**: variante grafica per periodo (es. Halloween) dal modello principale.
-- **TOV (Tone Of Voice)**: deve essere pertinente e in linea col brand.
+## Key Concepts
+- **Preview text**: preview snippet shown next to the subject line, jointly responsible for opens.
+- **Seasonal skin**: a graphic variant for a specific period (e.g. Halloween) derived from the main template.
+- **TOV (Tone Of Voice)**: must be relevant and consistent with the brand.
 
-## Modelli mentali
-- "Una sola email scala all'infinito": con contenuti dinamici (campi nascosti, attributi) eviti di duplicare le automazioni (caso Universal Film Academy: una welcome email dinamica per multisede).
-- "L'oggetto viene all'inizio" (Taverniti): nasce con l'idea della comunicazione, non come ultima rifinitura.
+## Mental Models
+- "One email scales infinitely": with dynamic content (hidden fields, attributes) you avoid duplicating automations (Universal Film Academy case: a single dynamic welcome email for multiple locations).
+- "The subject line comes first" (Taverniti): it originates with the communication idea, not as a final finishing touch.
 
-## Anti-pattern
-- Usare il nome ovunque a forza → perde efficacia.
-- Inviare "tanto non costa nulla" → bombardamento, disiscrizioni.
-- Welcome email + newsletter settimanale nello stesso giorno → sovraccarico (vedi Smart Sending, ch06).
+## Anti-Patterns
+- Overusing the recipient's name everywhere → loses effectiveness.
+- Sending "because it costs nothing" → bombardment, unsubscribes.
+- Welcome email + weekly newsletter on the same day → overload (see Smart Sending, ch06).
 
-## Takeaway
-1. Personalizza con IF/ELSE e immagini dinamiche; una email dinamica > molte automazioni.
-2. Testa oggetto/preview con tipologie e angles; emoji con misura.
-3. Regolarità + Send Time Optimization; Smart Sending contro il sovraccarico.
-4. A/B test sempre, soprattutto sull'oggetto.
+## Takeaways
+1. Personalize with IF/ELSE and dynamic images; one dynamic email > many automations.
+2. Test subject line/preview with different types and angles; emojis in moderation.
+3. Consistency + Send Time Optimization; Smart Sending to prevent overload.
+4. Always A/B test, especially on the subject line.
 
-## Collegamenti
-- **Ch 3**: mittente e deliverability.
-- **Ch 6**: sovrapposizione di flussi e Smart Sending.
-- **Ch 9**: coupon dinamici e feed prodotti nelle email.
+## Links
+- **Ch 3**: sender and deliverability.
+- **Ch 6**: flow overlap and Smart Sending.
+- **Ch 9**: dynamic coupons and product feeds in emails.

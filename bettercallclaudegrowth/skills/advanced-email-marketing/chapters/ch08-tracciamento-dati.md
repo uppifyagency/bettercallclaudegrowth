@@ -1,39 +1,39 @@
-# Capitolo 8: Tracciamento & analisi dei dati
+# Chapter 8: Tracking & Data Analysis
 
-## Idea centrale
-L'email marketing automation è un flusso basato su una strategia: va misurata. Servono KPI corretti **e** il presidio dei touchpoint dell'intero customer journey (Sbarzaglia). Il tracciamento (Zambon / Tag Manager Italia) è la spina dorsale dei dati.
+## Core Idea
+Email marketing automation is a strategy-driven flow: it must be measured. You need the right KPIs **and** coverage of all touchpoints across the entire customer journey (Sbarzaglia). Tracking (Zambon / Tag Manager Italia) is the backbone of your data.
 
-## Framework introdotti
-- **Tre configurazioni di tracciamento**:
-  - **#1 Codice di tracciamento del tool di email marketing**: installa lo script della piattaforma DEM sul sito per legare le visite ai contatti.
-  - **#2 Parametri UTM + API per creare segmenti in GA4**: tagga i link e usa le API per costruire audience in Google Analytics 4.
-  - **Bonus: GA4 + tracciamento Server-Side** — sposta il tracciamento dal browser al server.
-- **Vantaggi del Server-Side**:
-  - aumenta la **precisione** dei dati (aggira ostacoli sul device: es. una telefonata mentre si aggiunge al carrello);
-  - aumenta la **sicurezza** di Google Tag Manager;
-  - più **flessibilità** sul trattamento dati → conformità Privacy UE;
-  - ottimizza GTM → pagine più veloci.
+## Frameworks Introduced
+- **Three tracking configurations**:
+  - **#1 Email marketing tool tracking code**: install the DEM platform script on the website to link visits to contacts.
+  - **#2 UTM parameters + API to build segments in GA4**: tag links and use APIs to build audiences in Google Analytics 4.
+  - **Bonus: GA4 + Server-Side tracking** — move tracking from the browser to the server.
+- **Advantages of Server-Side**:
+  - increases data **accuracy** (bypasses device-level obstacles: e.g. a phone call while adding to cart);
+  - increases **security** of Google Tag Manager;
+  - more **flexibility** in data processing → EU Privacy compliance;
+  - optimizes GTM → faster pages.
 
-## Concetti chiave
-- **Touchpoint**: punti fondamentali del customer journey da monitorare oltre ai KPI finali della campagna.
-- **KPI**: indicatori chiave; ricorda (ch01) la distinzione tra KPI *anticipatori* e risultati-chiave *ritardatari*. L'open rate è un KPI molto impattato dall'oggetto.
-- **Contesto cookieless**: cookie di terza parte in dismissione (Cookiegeddon), provvedimenti Garante, iOS 14/15 → il server-side è una risposta tecnica (dettagli adv in ch10).
+## Key Concepts
+- **Touchpoint**: fundamental points of the customer journey to monitor beyond the campaign's final KPIs.
+- **KPI**: key indicators; recall (ch01) the distinction between *leading* KPIs and *lagging* key results. Open rate is a KPI heavily influenced by the subject line.
+- **Cookieless context**: third-party cookies being deprecated (Cookiegeddon), Garante provisions, iOS 14/15 → server-side is the technical response (advertising details in ch10).
 
-## Modelli mentali
-- "Il tracciamento al servizio dell'email marketing automation (e viceversa)": i dati alimentano i flussi e i flussi generano dati da tracciare.
-- Tratta la MA come un sistema misurabile end-to-end, non "una semplice sequenza di email".
+## Mental Models
+- "Tracking in service of email marketing automation (and vice versa)": data feeds flows and flows generate data to track.
+- Treat MA as an end-to-end measurable system, not "a simple email sequence".
 
-## Anti-pattern
-- Considerare la MA come una sequenza di email senza analisi → si perde il controllo delle performance.
-- Affidarsi solo al tracciamento client-side nell'era della privacy → dati incompleti/imprecisi.
+## Anti-Patterns
+- Treating MA as an email sequence without analysis → losing control of performance.
+- Relying solely on client-side tracking in the privacy era → incomplete/inaccurate data.
 
-## Takeaway
-1. Installa il codice di tracciamento DEM e collega le visite ai contatti.
-2. Usa UTM + API per costruire segmenti/audience in GA4.
-3. Valuta il tracciamento Server-Side per precisione, sicurezza, privacy e velocità.
-4. Definisci pochi KPI rilevanti e presidia i touchpoint del journey, non solo la conversione finale.
+## Takeaways
+1. Install the DEM tracking code and link visits to contacts.
+2. Use UTM + API to build segments/audiences in GA4.
+3. Evaluate Server-Side tracking for accuracy, security, privacy, and speed.
+4. Define a few relevant KPIs and monitor journey touchpoints, not just the final conversion.
 
-## Collegamenti
-- **Ch 1**: KPI nel piano (anticipatori vs ritardatari).
-- **Ch 5**: i comportamenti sito come trigger.
-- **Ch 10**: cookieless, ATT e first-party data nell'advertising.
+## Connections
+- **Ch 1**: KPIs in the plan (leading vs lagging).
+- **Ch 5**: site behaviors as triggers.
+- **Ch 10**: cookieless, ATT, and first-party data in advertising.
