@@ -1,0 +1,19 @@
+{
+  "name": "bettercallclaudegrowth",
+  "version": "0.3.0",
+  "description": "GTM Intelligence plugin for Claude Code -- gtm-buddy router + adaptive pipeline: Jobs to Be Done, posizionamento, offerte, lead, copy, contenuti, SEO/GEO 2026, email automation, Instagram performance, con GTM Readiness Score e revisione avversariale.",
+  "license": "MIT",
+  "scripts": {
+    "validate": "node scripts/validate-plugin.js && node scripts/validate-content.js",
+    "validate:schema": "node scripts/validate-plugin.js",
+    "validate:content": "node scripts/validate-content.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uppifyagency/bettercallclaudegrowth.git"
+  },
+  "author": {
+    "name": "Uppify Agency",
+    "email": "email.vlad.vrinceanu@gmail.com"
+  }
+}

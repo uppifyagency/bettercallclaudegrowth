@@ -1,0 +1,80 @@
+{
+  "name": "bettercallclaudegrowth",
+  "version": "0.3.0",
+  "description": "Consulente Go-To-Market: router gtm-buddy + pipeline adattiva jobs -> posizionamento -> offerta -> lead -> contenuti/copy -> canali -> email -> misura, calibrata per archetipo di business (coaching, B2B SaaS, B2C/e-commerce, servizio locale, azienda avviata senza marketing) e stadio (micro-lancio/test vs scaling). Basata su 9 framework di marketing (Christensen Jobs to Be Done, Hormozi Offers & Leads, Drew SUCKS, Butcher Productize, Frangioni AEMA, SEO/GEO 2026, Instagram Performance, Doing Content Right), con scoring di GTM readiness e revisione avversariale.",
+  "author": {
+    "name": "Uppify Agency",
+    "email": "email.vlad.vrinceanu@gmail.com",
+    "url": "https://github.com/uppifyagency"
+  },
+  "homepage": "https://github.com/uppifyagency/bettercallclaudegrowth",
+  "repository": "https://github.com/uppifyagency/bettercallclaudegrowth",
+  "license": "MIT",
+  "category": "marketing",
+  "keywords": [
+    "go-to-market",
+    "gtm",
+    "jobs-to-be-done",
+    "positioning",
+    "grand-slam-offer",
+    "lead-generation",
+    "copywriting",
+    "content-strategy",
+    "seo",
+    "geo",
+    "email-automation",
+    "instagram-ads",
+    "b2b-saas",
+    "b2c",
+    "coaching",
+    "ecommerce",
+    "local-business",
+    "product-launch",
+    "gtm-readiness-score",
+    "adversarial-review"
+  ],
+  "userConfig": {
+    "output_language": {
+      "type": "string",
+      "title": "Lingua output",
+      "description": "Lingua preferita per gli output. Valori: IT, EN.",
+      "default": "IT",
+      "sensitive": false
+    },
+    "archetipo": {
+      "type": "string",
+      "title": "Archetipo di business",
+      "description": "Archetipo di default: coaching | b2b-saas | b2c | ecommerce | local-service | established-no-marketing | auto. 'auto' lascia che gtm-buddy/orchestrator lo deducano dall'input.",
+      "default": "auto",
+      "sensitive": false
+    },
+    "stadio": {
+      "type": "string",
+      "title": "Stadio del business",
+      "description": "Stadio di default: micro-launch (test/validazione) | scaling (crescita) | established (azienda avviata) | auto.",
+      "default": "auto",
+      "sensitive": false
+    },
+    "settore": {
+      "type": "string",
+      "title": "Settore / mercato",
+      "description": "Settore di default del business (es. B2B SaaS HR, e-commerce moda, servizi locali, automotive ricambi). Ancora le risposte al contesto.",
+      "default": "",
+      "sensitive": false
+    },
+    "default_channel": {
+      "type": "string",
+      "title": "Canale primario",
+      "description": "Canale di distribuzione preferito su cui approfondire: seo | instagram | email | auto. 'auto' lascia che l'archetipo determini il canale primario.",
+      "default": "auto",
+      "sensitive": false
+    },
+    "brand_voice": {
+      "type": "string",
+      "title": "Tono di voce",
+      "description": "Tono del brand per copy e contenuti (es. diretto, autorevole, ironico).",
+      "default": "",
+      "sensitive": false
+    }
+  }
+}

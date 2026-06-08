@@ -1,0 +1,56 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "bettercallclaudegrowth-marketplace",
+  "owner": {
+    "name": "Uppify Agency",
+    "email": "email.vlad.vrinceanu@gmail.com",
+    "url": "https://github.com/uppifyagency"
+  },
+  "metadata": {
+    "description": "GTM Intelligence per Claude Code: un consulente go-to-market che orchestra Jobs to Be Done, posizionamento, offerte irresistibili, lead generation, copy, contenuti, SEO/GEO 2026, email automation e Instagram performance in una pipeline completa, con un router (gtm-buddy) che indica la skill o la sequenza giusta per ogni situazione."
+  },
+  "plugins": [
+    {
+      "name": "bettercallclaudegrowth",
+      "description": "GTM Intelligence -- Jobs to Be Done (Christensen), posizionamento (Butcher), offerte irresistibili e lead (Hormozi), copy (SUCKS di Drew), contenuti (Doing Content Right), SEO/GEO 2026, email automation (AEMA) e Instagram performance, orchestrati in una pipeline go-to-market adattiva con scoring di readiness, revisione avversariale e un router gtm-buddy che instrada per archetipo di business.",
+      "version": "0.3.0",
+      "source": "./bettercallclaudegrowth",
+      "author": {
+        "name": "Uppify Agency",
+        "email": "email.vlad.vrinceanu@gmail.com",
+        "url": "https://github.com/uppifyagency"
+      },
+      "homepage": "https://github.com/uppifyagency/bettercallclaudegrowth",
+      "repository": "https://github.com/uppifyagency/bettercallclaudegrowth",
+      "license": "MIT",
+      "category": "marketing",
+      "keywords": [
+        "go-to-market",
+        "gtm",
+        "marketing",
+        "jobs-to-be-done",
+        "positioning",
+        "grand-slam-offer",
+        "lead-generation",
+        "copywriting",
+        "content-strategy",
+        "seo",
+        "geo",
+        "email-automation",
+        "instagram-ads",
+        "meta-ads",
+        "b2b-saas",
+        "b2c",
+        "coaching",
+        "ecommerce",
+        "local-business",
+        "product-launch",
+        "growth",
+        "hormozi",
+        "christensen",
+        "adversarial-review",
+        "gtm-readiness-score"
+      ]
+    }
+  ]
+}
