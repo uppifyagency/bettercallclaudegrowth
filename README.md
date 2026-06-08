@@ -2,7 +2,7 @@
   <img src="assets/banner.svg" alt="BetterCallClaudeGrowth" width="100%">
 </p>
 
-# BetterCallClaudeGrowth — Plugin Go-To-Market (GTM) e marketing per Claude Code
+# BetterCallClaudeGrowth — Go-To-Market (GTM) & Marketing Plugin for Claude Code
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-22c55e.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-0.3.0-6366f1.svg)](https://github.com/uppifyagency/bettercallclaudegrowth/releases)
@@ -11,275 +11,275 @@
 [![Made for go-to-market](https://img.shields.io/badge/made%20for-go--to--market-0ea5e9.svg)](#)
 [![Local-first](https://img.shields.io/badge/local--first-no%20MCP%20%C2%B7%20no%20network-14b8a6.svg)](#)
 
-> Un consulente **Go-To-Market** dentro il terminale. BetterCallClaudeGrowth trasforma **9 framework di marketing** tratti da libri in un assistente operativo che riconosce il tuo tipo di business e ti guida dal posizionamento alla misurazione. È il gemello GTM di **BetterCallClaude**, e gira **interamente in locale**: nessun server MCP, nessun hook, nessuna dipendenza di rete.
+> A **Go-To-Market consultant inside your terminal.** BetterCallClaudeGrowth turns **9 proven marketing frameworks** from top books into an operational assistant that recognizes your type of business and walks you from positioning to measurement. It's the GTM twin of **BetterCallClaude**, and it runs **entirely local**: no MCP server, no hooks, no network dependency.
 
 ---
 
-## Perché esiste
+## Why it exists
 
-La maggior parte dei founder non ha un problema di idee. Ha un problema di **sequenza**: cosa fare prima, cosa dopo, e cosa ignorare. Compri cinque libri di marketing, ne applichi il 10%, e resti bloccato tra "ho un'offerta" e "ho clienti".
+Most founders don't have an idea problem. They have a **sequencing** problem: what to do first, what comes next, and what to ignore. You buy five marketing books, apply 10% of them, and get stuck somewhere between "I have an offer" and "I have customers."
 
-BetterCallClaudeGrowth chiude quel buco. Prende **9 framework collaudati** e li mette al lavoro **sul tuo caso specifico** — non in astratto. Niente teoria da slide: un piano, dei deliverable, un punteggio di prontezza, e una revisione critica che ti dice dove stai per sbagliare.
+BetterCallClaudeGrowth closes that gap. It takes **9 battle-tested frameworks** and puts them to work **on your specific case** — not in the abstract. No slideware theory: a plan, real deliverables, a readiness score, and a critical review that tells you where you're about to go wrong.
 
-> *Smetti di leggere di marketing. Inizia a farlo.*
+> *Stop reading about marketing. Start doing it.*
 
 ---
 
 ## Quickstart
 
-Installa il plugin da Claude Code (due righe, in quest'ordine):
+Install the plugin from Claude Code (two lines, in this order):
 
 ```
 /plugin marketplace add uppifyagency/bettercallclaudegrowth
 /plugin install bettercallclaudegrowth
 ```
 
-Poi descrivi la tua situazione e lascia che il router ti indichi la strada:
+Then describe your situation and let the router point the way:
 
 ```
-/gtm-buddy lancio un coaching di nutrizione, parto da zero, budget minimo
+/gtm-buddy launching a nutrition coaching business, starting from zero, minimal budget
 ```
 
-Oppure esegui la pipeline completa su un caso reale:
+Or run the full pipeline on a real case:
 
 ```
-/gtm SaaS B2B gestione ricambi per officine, 50 trial/mese, in crescita
+/gtm B2B SaaS for auto-parts inventory, 50 trials/month, growing
 ```
 
 ---
 
-## Cos'è
+## What it is
 
-BetterCallClaudeGrowth è un **plugin per Claude Code** che mette al tuo fianco un consulente di **GTM strategy** e **AI marketing**. Non è un generatore di slogan: è un sistema che classifica il tuo **archetipo di business** e il tuo **stadio**, sceglie il **playbook** giusto e produce deliverable concreti — posizionamento, offerta, lead generation, contenuti, copywriting, canali, email, SEO, Instagram ads.
+BetterCallClaudeGrowth is a **plugin for Claude Code** that puts a **GTM strategy** and **AI marketing** consultant by your side. It's not a slogan generator: it's a system that classifies your **business archetype** and **stage**, picks the right **playbook**, and produces concrete deliverables — positioning, offer, lead generation, content, copywriting, channels, email, SEO, Instagram ads.
 
 ---
 
-## Per chi è (qualsiasi business)
+## Who it's for (any business)
 
-Il plugin **riconosce l'archetipo** e adatta il percorso. Funziona se sei:
+The plugin **recognizes your archetype** and adapts the path. It works whether you're:
 
-| Tipo di business | Cosa ottieni |
+| Business type | What you get |
 | --- | --- |
-| **Coaching / Servizio / Freelance** | Posizionamento da "Personal Monopoly", offerta premium, primi lead senza budget. |
-| **B2B SaaS** | ICP affilato, Grand Slam Offer, pipeline lead, canali e metriche LTGP:CAC. |
-| **Prodotto / Servizio B2C** | Messaggio che converte, contenuti, canali e funnel di acquisizione. |
-| **E-commerce** | Offerta e bonus, campagne Instagram/Meta, email automation, SEO prodotto. |
-| **Servizio locale / Small business** | Posizionamento territoriale, lead a costo zero, SEO/GEO locale, recensioni. |
-| **Micro-lancio / Test di prodotto** | Validazione rapida, offerta minima, canale singolo, misura falsificabile. |
-| **Azienda avviata _senza_ reparto marketing** | Un sistema GTM completo che colma il vuoto, con un punteggio di prontezza. |
+| **Coaching / Service / Freelance** | "Personal Monopoly" positioning, a premium offer, first leads with no budget. |
+| **B2B SaaS** | A sharp ICP, a Grand Slam Offer, a lead pipeline, channels, and LTGP:CAC metrics. |
+| **B2C product / service** | A message that converts, content, channels, and an acquisition funnel. |
+| **E-commerce** | Offer and bonuses, Instagram/Meta campaigns, email automation, product SEO. |
+| **Local service / Small business** | Local positioning, zero-budget leads, local SEO/GEO, reviews. |
+| **Micro-launch / Product test** | Fast validation, a minimal offer, a single channel, falsifiable measurement. |
+| **Established company _without_ a marketing team** | A complete GTM system that fills the gap, with a readiness score. |
 
-Non importa da dove parti. **Il router capisce dove sei e ti dice il prossimo passo.**
-
----
-
-## I due punti di ingresso
-
-### `/gtm-buddy` — il router / concierge
-
-Il modo più semplice per iniziare. Descrivi dove sei e dove vuoi arrivare: `gtm-buddy` classifica **archetipo × stadio**, ti dice se ti basta **una skill** o se ti serve una **sequenza**, e può eseguirla per te. È l'assistente che ti evita di indovinare da dove partire.
-
-```
-/gtm-buddy lancio un coaching di nutrizione, parto da zero, budget minimo
-```
-
-> Ti risponde come un consulente: *"Sei un coach allo stadio zero. Prima il posizionamento, poi l'offerta, poi i primi lead organici. Partiamo dal posizionamento?"*
-
-### `/gtm` — la pipeline completa adattiva
-
-Esegue un percorso end-to-end calibrato sul tuo caso:
-
-- **Fase 0 — Classificazione**: rileva archetipo e stadio, sceglie il playbook.
-- **7 fasi operative**: Jobs-to-Be-Done & posizionamento → Offerta → Lead → Contenuti & Copy → Canali → Email → Misura.
-- **Due checkpoint di revisione avversariale** (`gtm-critic`) che fanno red-teaming di offerta, funnel, posizionamento e copy.
-- **Sintesi PERCEIVE–ANALYZE–VALIDATE–ACT** con ipotesi falsificabili.
-- **GTM Readiness Score 0–100** e deliverable finale **`gtm-plan.md`**.
-
-```
-/gtm abbonamento mensile box di caffè specialty, pre-lancio, lista da costruire
-```
-
-> *Da descrizione a piano, con la revisione critica già inclusa.*
+No matter where you start. **The router figures out where you are and tells you the next step.**
 
 ---
 
-## Gli 11 comandi
+## Two entry points
 
-| Comando | Cosa fa | Framework / fonte |
+### `/gtm-buddy` — the router / concierge
+
+The easiest way to start. Describe where you are and where you want to go: `gtm-buddy` classifies **archetype × stage**, tells you whether you need **one skill** or a **sequence**, and can run it for you. It's the assistant that saves you from guessing where to begin.
+
+```
+/gtm-buddy launching a nutrition coaching business, starting from zero, minimal budget
+```
+
+> It answers like a consultant: *"You're a coach at stage zero. Positioning first, then the offer, then your first organic leads. Shall we start with positioning?"*
+
+### `/gtm` — the full adaptive pipeline
+
+Runs an end-to-end path calibrated to your case:
+
+- **Phase 0 — Classification**: detects archetype and stage, selects the playbook.
+- **7 operational phases**: Jobs-to-Be-Done & positioning → Offer → Leads → Content & Copy → Channels → Email → Measurement.
+- **Two adversarial review checkpoints** (`gtm-critic`) that red-team your offer, funnel, positioning, and copy.
+- **PERCEIVE–ANALYZE–VALIDATE–ACT synthesis** with falsifiable hypotheses.
+- **GTM Readiness Score 0–100** and a final deliverable: **`gtm-plan.md`**.
+
+```
+/gtm monthly specialty-coffee subscription box, pre-launch, list to build
+```
+
+> *From a description to a plan, with the critical review already baked in.*
+
+---
+
+## The 11 commands
+
+| Command | What it does | Framework / source |
 | --- | --- | --- |
-| `/gtm-buddy` | Router / concierge: classifica archetipo × stadio e instrada verso skill o sequenza | — |
-| `/gtm` | Pipeline GTM completa adattiva + GTM Readiness Score | Tutti |
-| `/gtm-jobs` | Jobs to Be Done: il "lavoro" che il cliente assume il tuo prodotto per svolgere | christensen-jobs |
-| `/gtm-posizionamento` | ICP + Personal Monopoly: per chi sei la scelta ovvia | butcher-productize · doing-content-right |
-| `/gtm-offerta` | Grand Slam Offer + Value Equation: un'offerta difficile da rifiutare | hormozi-offers |
-| `/gtm-leads` | Core Four + lead magnet: far arrivare sconosciuti interessati | hormozi-leads |
-| `/gtm-contenuti` | Strategia contenuti + calendario editoriale | doing-content-right |
-| `/gtm-copy` | Copywriting con il framework SUCKS | drew-sucks-framework |
+| `/gtm-buddy` | Router / concierge: classifies archetype × stage and routes you to a skill or a sequence | — |
+| `/gtm` | Full adaptive GTM pipeline + GTM Readiness Score | All |
+| `/gtm-jobs` | Jobs to Be Done: the "job" your customer hires your product to do | christensen-jobs |
+| `/gtm-posizionamento` | ICP + Personal Monopoly: who you're the obvious choice for | butcher-productize · doing-content-right |
+| `/gtm-offerta` | Grand Slam Offer + Value Equation: an offer that's hard to refuse | hormozi-offers |
+| `/gtm-leads` | Core Four + lead magnet: get interested strangers to show up | hormozi-leads |
+| `/gtm-contenuti` | Content strategy + editorial calendar | doing-content-right |
+| `/gtm-copy` | Copywriting with the SUCKS framework | drew-sucks-framework |
 | `/gtm-email` | Email marketing automation: welcome, drip, winback | advanced-email-marketing |
-| `/gtm-seo` | SEO + GEO 2026: Google e motori generativi (AI Overviews, LLM) | seo-2026-sota |
-| `/gtm-instagram` | Campagne Meta / Instagram a conversione | instagram-performance-marketing |
+| `/gtm-seo` | SEO + GEO 2026: Google and generative engines (AI Overviews, LLMs) | seo-2026-sota |
+| `/gtm-instagram` | Conversion-focused Meta / Instagram campaigns | instagram-performance-marketing |
 
 ---
 
-## I 9 framework / skill
+## The 9 frameworks / skills
 
-Ogni skill è una **knowledge base** che riformula i principi operativi di un libro o di una metodologia, pronta da applicare al tuo caso.
+Each skill is a **knowledge base** that reframes the operational principles of a book or methodology, ready to apply to your case.
 
-| Skill | Tema | Autore / fonte |
+| Skill | Topic | Author / source |
 | --- | --- | --- |
 | `christensen-jobs` | Jobs to Be Done | Clayton Christensen — *Competing Against Luck* |
-| `butcher-productize` | Productize Yourself, scalare un servizio | Jack Butcher — *Visualize Value* |
+| `butcher-productize` | Productize Yourself, scaling a service | Jack Butcher — *Visualize Value* |
 | `hormozi-offers` | Grand Slam Offer, Value Equation, pricing | Alex Hormozi — *$100M Offers* |
-| `hormozi-leads` | Core Four, lead magnet, Client-Financed Acquisition | Alex Hormozi — *$100M Leads* |
-| `doing-content-right` | Contenuti, niche, Personal Monopoly | Steph Smith — *Doing Content Right* |
-| `drew-sucks-framework` | Copywriting SUCKS per il web | Kieran Drew |
-| `advanced-email-marketing` | Email automation, segmentazione, deliverability | Frangioni / AEMA |
-| `seo-2026-sota` | SEO tecnica + GEO per LLM e AI Overviews | SEO/GEO 2026 |
+| `hormozi-leads` | Core Four, lead magnets, Client-Financed Acquisition | Alex Hormozi — *$100M Leads* |
+| `doing-content-right` | Content, niche, Personal Monopoly | Steph Smith — *Doing Content Right* |
+| `drew-sucks-framework` | SUCKS copywriting for the web | Kieran Drew |
+| `advanced-email-marketing` | Email automation, segmentation, deliverability | Frangioni / AEMA |
+| `seo-2026-sota` | Technical SEO + GEO for LLMs and AI Overviews | SEO/GEO 2026 |
 | `instagram-performance-marketing` | Meta / Instagram conversion ads | Robert Thomas |
 
 ---
 
-## I 3 agent
+## The 3 agents
 
-| Agent | Ruolo |
+| Agent | Role |
 | --- | --- |
-| `gtm-buddy` | Router / concierge. Classifica il tuo caso e ti instrada verso la skill o la sequenza corretta. |
-| `gtm-orchestrator` | Guida la pipeline adattiva end-to-end e calcola il **GTM Readiness Score** 0–100. |
-| `gtm-critic` | Revisore avversariale. Fa red-teaming di offerta, funnel, posizionamento e copy prima che tu ci spenda budget. |
+| `gtm-buddy` | The router / concierge. Figures out where you are and routes you to the right skill or sequence. |
+| `gtm-orchestrator` | Drives the adaptive pipeline end-to-end and computes the **GTM Readiness Score** 0–100. |
+| `gtm-critic` | The adversarial reviewer. Red-teams your offer, funnel, positioning, and copy before you spend budget on them. |
 
-> *Un consulente che propone. Un critico che ti salva.*
+> *A consultant that proposes. A critic that saves you.*
 
 ---
 
-## I 4 script deterministici
+## The 4 deterministic scripts
 
-Quattro script Node che producono numeri ripetibili, non opinioni. Stessi input, stesso output.
+Four Node scripts that produce repeatable numbers, not opinions. Same input, same output.
 
 | Script | Output |
 | --- | --- |
-| `cfa-calculator` | Rapporto **LTGP:CAC** e modello **Client-Financed Acquisition** (Hormozi): la tua acquisizione si autofinanzia? |
-| `value-equation-score` | Forza dell'offerta su scala **0–100** |
-| `gtm-readiness-score` | **GTM Readiness Score** 0–100 della pipeline |
-| `gtm-plan-lint` | Controllo di qualità e coerenza del `gtm-plan.md` |
+| `cfa-calculator` | **LTGP:CAC** ratio and the **Client-Financed Acquisition** model (Hormozi): does your acquisition pay for itself? |
+| `value-equation-score` | Offer strength on a **0–100** scale |
+| `gtm-readiness-score` | Pipeline **GTM Readiness Score** 0–100 |
+| `gtm-plan-lint` | Quality and consistency check for `gtm-plan.md` |
 
-A questi si aggiungono **7 playbook** specifici per archetipo, che calibrano ogni fase sul tuo tipo di business.
+On top of these sit **7 playbooks**, each tuned per archetype to calibrate every phase to your type of business.
 
 ---
 
-## Architettura
+## Architecture
 
 ```
 bettercallclaudegrowth/
-├── commands/        # 11 comandi: /gtm-buddy, /gtm, /gtm-offerta, …
-├── agents/          # 3 agent: gtm-buddy, gtm-orchestrator, gtm-critic
-├── skills/          # 9 knowledge base (i framework dei libri)
-├── playbooks/       # 7 playbook calibrati per archetipo × stadio
-├── scripts/         # 4 script Node deterministici
-└── assets/          # banner.svg e risorse
+├── commands/        # 11 commands: /gtm-buddy, /gtm, /gtm-offerta, …
+├── agents/          # 3 agents: gtm-buddy, gtm-orchestrator, gtm-critic
+├── skills/          # 9 knowledge bases (the book frameworks)
+├── playbooks/       # routing matrix + playbooks per archetype × stage
+├── scripts/         # 4 deterministic Node scripts
+└── assets/          # banner.svg and resources
 ```
 
-**Flusso tipico della pipeline `/gtm`:**
+**Typical `/gtm` pipeline flow:**
 
 ```
-/gtm  ──►  Fase 0: classificazione (archetipo × stadio)
+/gtm  ──►  Phase 0: classification (archetype × stage)
           │
           ▼
-   selezione del playbook per archetipo
+   playbook selection (per archetype)
           │
           ▼
-   7 fasi: JTBD/posizionamento ► offerta ► lead ► contenuti/copy ► canali ► email ► misura
+   7 phases: JTBD/positioning ► offer ► leads ► content/copy ► channels ► email ► measurement
           │                              │
           ▼                              ▼
-   checkpoint gtm-critic          checkpoint gtm-critic
+   gtm-critic checkpoint          gtm-critic checkpoint
           │
           ▼
-   sintesi PERCEIVE–ANALYZE–VALIDATE–ACT  ►  GTM Readiness Score  ►  gtm-plan.md
+   PERCEIVE–ANALYZE–VALIDATE–ACT synthesis  ►  GTM Readiness Score  ►  gtm-plan.md
 ```
 
-**Local-first per scelta:** nessun server MCP, nessun hook, nessuna chiamata di rete. Tutto gira dentro la tua sessione di Claude Code.
+**Local-first by design:** no MCP server, no hooks, no network calls. Everything runs inside your Claude Code session.
 
 ---
 
-## Configurazione (`userConfig`)
+## Configuration (`userConfig`)
 
-Imposta una volta le preferenze e ogni comando le rispetta.
+Set your preferences once and every command respects them.
 
-| Chiave | Significato | Esempi |
+| Key | Meaning | Examples |
 | --- | --- | --- |
-| `output_language` | Lingua dei deliverable | `IT`, `EN` |
-| `archetipo` | Tipo di business (o `auto`) | `coaching`, `b2b-saas`, `b2c`, `ecommerce`, `local-service`, `established-no-marketing` |
-| `stadio` | Stadio di crescita (o `auto`) | `micro-launch`, `scaling`, `established` |
-| `settore` | Settore merceologico | nutrizione, automotive, food, … |
-| `default_channel` | Canale primario (o `auto`) | `seo`, `instagram`, `email` |
-| `brand_voice` | Tono di voce del brand | diretto, premium, tecnico, friendly |
+| `output_language` | Language of deliverables | `EN`, `IT` |
+| `archetipo` | Default business type (or `auto`) | `coaching`, `b2b-saas`, `b2c`, `ecommerce`, `local-service`, `established-no-marketing` |
+| `stadio` | Growth stage (or `auto`) | `micro-launch`, `scaling`, `established` |
+| `settore` | Industry / vertical | nutrition, automotive, food, … |
+| `default_channel` | Primary channel (or `auto`) | `seo`, `instagram`, `email` |
+| `brand_voice` | Brand tone of voice | direct, premium, technical, friendly |
 
 ---
 
-## Esempi d'uso
+## Usage examples
 
 ```
-/gtm-buddy lancio un coaching di nutrizione, parto da zero, budget minimo
+/gtm-buddy launching a nutrition coaching business, starting from zero, minimal budget
 
-/gtm SaaS B2B gestione ricambi per officine, 50 trial/mese, in crescita
+/gtm B2B SaaS for auto-parts inventory, 50 trials/month, growing
 
-/gtm-offerta abbonamento mensile box di caffè specialty
+/gtm-offerta monthly specialty-coffee subscription box
 
-/gtm-leads studio fotografico locale, voglio più richieste di preventivo
+/gtm-leads local photography studio, I want more quote requests
 
-/gtm-seo blog di ricette plant-based, voglio comparire nelle AI Overviews
+/gtm-seo plant-based recipe blog, I want to show up in AI Overviews
 
-/gtm-instagram ecommerce di skincare, scalare le campagne a conversione
+/gtm-instagram skincare e-commerce, scaling conversion campaigns
 ```
 
-> Apri il terminale. Scrivi cosa vendi. Esci con un piano.
+> Open your terminal. Type what you sell. Walk out with a plan.
 
 ---
 
 ## FAQ
 
-**A chi serve?**
-A founder, solopreneur, coach, team di B2B SaaS, brand B2C ed e-commerce, attività locali e PMI avviate **senza reparto marketing**. Se devi portare qualcosa sul mercato, è per te.
+**Who is it for?**
+Founders, solopreneurs, coaches, B2B SaaS teams, B2C and e-commerce brands, local businesses, and established SMBs **without a marketing team**. If you need to take something to market, it's for you.
 
-**Devo conoscere il marketing per usarlo?**
-No. `/gtm-buddy` fa da concierge: parti descrivendo la situazione a parole tue e il router ti dice esattamente quale skill o sequenza usare.
+**Do I need to know marketing to use it?**
+No. `/gtm-buddy` acts as a concierge: start by describing your situation in your own words and the router tells you exactly which skill or sequence to use.
 
-**Serve una connessione o un server MCP?**
-No. Il plugin è **local-first**: nessun MCP, nessun hook, nessuna dipendenza di rete. Gira tutto nella tua sessione di Claude Code.
+**Does it need a connection or an MCP server?**
+No. The plugin is **local-first**: no MCP, no hooks, no network dependency. It all runs in your Claude Code session.
 
-**Posso usare una sola skill senza la pipeline?**
-Sì. Ogni comando (`/gtm-offerta`, `/gtm-copy`, `/gtm-seo`, …) funziona da solo. La pipeline `/gtm` è opzionale, per chi vuole il percorso completo.
+**Can I use a single skill without the pipeline?**
+Yes. Every command (`/gtm-offerta`, `/gtm-copy`, `/gtm-seo`, …) works on its own. The `/gtm` pipeline is optional, for when you want the full path.
 
-**Mi serve un budget pubblicitario?**
-No. Molti percorsi (organico, contenuti, outreach, SEO) sono pensati per partire a budget minimo. I paid ads sono un'opzione, non un obbligo.
+**Do I need an ad budget?**
+No. Many paths (organic, content, outreach, SEO) are designed to start on a minimal budget. Paid ads are an option, not a requirement.
 
-**In che lingua produce i deliverable?**
-In italiano o inglese, secondo `output_language`. Di default segue la tua configurazione.
+**What language are deliverables in?**
+English or Italian, controlled by `output_language`. Set it to `EN` for English output.
 
-**I deliverable sono affidabili?**
-Le valutazioni numeriche (Value Equation, LTGP:CAC, GTM Readiness Score) sono prodotte da **script deterministici**: stessi input, stesso risultato. La parte strategica passa per i checkpoint avversariali di `gtm-critic`.
+**Are the deliverables reliable?**
+The numeric evaluations (Value Equation, LTGP:CAC, GTM Readiness Score) are produced by **deterministic scripts**: same input, same result. The strategic side goes through `gtm-critic`'s adversarial checkpoints.
 
-**Contiene il testo dei libri?**
-No. Vedi la sezione **Crediti & Copyright** qui sotto.
-
----
-
-## Crediti & Copyright
-
-Le 9 skill di BetterCallClaudeGrowth sono **knowledge base** con framework e principi **riformulati** a scopo di studio e applicazione operativa. **Non contengono il testo integrale** dei libri di riferimento. Tutti i diritti sulle opere originali restano dei rispettivi autori ed editori.
-
-Riconoscimenti agli autori i cui framework hanno ispirato questo plugin: Clayton Christensen, Jack Butcher (Visualize Value), Alex Hormozi, Steph Smith, Kieran Drew, Alessandro Frangioni (AEMA / ROADS®), Robert Thomas, e gli autori della trilogia SEO/GEO 2026.
-
-Realizzato da **Uppify Agency** · Repo: **github.com/uppifyagency/bettercallclaudegrowth** · versione **0.3.0** · categoria **marketing**.
+**Does it contain the text of the books?**
+No. See **Credits & Copyright** below.
 
 ---
 
-## Licenza
+## Credits & Copyright
 
-Distribuito con licenza **MIT**. Vedi il file [`LICENSE`](LICENSE). Usalo, modificalo, costruiscici sopra.
+The 9 skills in BetterCallClaudeGrowth are **knowledge bases** with frameworks and principles **reformulated** for study and operational use. They **do not contain the full text** of the reference books. All rights to the original works remain with their respective authors and publishers.
+
+Acknowledgements to the authors whose frameworks inspired this plugin: Clayton Christensen, Jack Butcher (Visualize Value), Alex Hormozi, Steph Smith, Kieran Drew, Alessandro Frangioni (AEMA / ROADS®), Robert Thomas, and the authors of the SEO/GEO 2026 series.
+
+Built by **Uppify Agency** · Repo: **github.com/uppifyagency/bettercallclaudegrowth** · version **0.3.0** · category **marketing**.
 
 ---
 
-## Keyword / Topics
+## License
+
+Released under the **MIT** license. See the [`LICENSE`](LICENSE) file. Use it, modify it, build on it.
+
+---
+
+## Keywords / Topics
 
 `go-to-market` · `GTM` · `GTM strategy` · `marketing` · `AI marketing` · `Claude Code plugin` · `Claude Code skill` · `Anthropic` · `product launch` · `positioning` · `offer` · `lead generation` · `copywriting` · `SEO` · `GEO` · `email marketing` · `Instagram ads` · `Meta ads` · `startup` · `founder` · `solopreneur` · `coaching` · `B2B SaaS` · `B2C` · `ecommerce` · `local business` · `small business` · `Jobs to Be Done` · `Grand Slam Offer` · `content strategy` · `marketing plugin` · `marketing skill`
 
-<sub>BetterCallClaudeGrowth · v0.3.0 · il gemello go-to-market di BetterCallClaude · made by Uppify Agency</sub>
+<sub>BetterCallClaudeGrowth · v0.3.0 · the go-to-market twin of BetterCallClaude · made by Uppify Agency</sub>

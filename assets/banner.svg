@@ -44,7 +44,7 @@
   <rect x="84" y="222" width="120" height="5" rx="2.5" fill="url(#accent)"/>
 
   <!-- tagline -->
-  <text x="84" y="268" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="23" font-weight="500" fill="#CBD5E1">Dal Job-to-Be-Done alla misura: il go-to-market per <tspan fill="#F0ABFC" font-weight="700">ogni business</tspan>.</text>
+  <text x="84" y="268" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="23" font-weight="500" fill="#CBD5E1">From Jobs-to-Be-Done to measurement: go-to-market for <tspan fill="#F0ABFC" font-weight="700">every business</tspan>.</text>
 
   <!-- chips -->
   <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600">
