@@ -4,6 +4,15 @@ All notable changes to this project are documented here.
 Format based on [Keep a Changelog](https://keepachangelog.com/it/1.1.0/);
 this project adheres to [Semantic Versioning](https://semver.org/lang/it/).
 
+## [0.3.1] - 2026-06-09
+
+### Fixed
+- **Agents can now actually load skills.** Added the `Skill` tool to `gtm-orchestrator` and `gtm-critic`. Their "invoke the skill by name" instructions were inert: a subagent's `tools` allowlist gates the `Skill` tool (per the Claude Code sub-agents docs — a `tools` list without `Skill` is the documented way to *disable* skill invocation). `gtm-critic` previously could not load any skill content at all (no `Skill`, no `Bash`, and the `Read` tool does not expand `${CLAUDE_PLUGIN_ROOT}`), so its red-team ran on internalized knowledge only; it now consults the actual frameworks. `gtm-buddy` is unchanged (router: reads playbooks via Bash, loads no domain skills — already correct).
+
+### Changed
+- All three agents now use `model: inherit` instead of `model: sonnet`: they track the user's session model (an Opus user gets Opus on the orchestrator's synthesis) without forcing Opus cost on every installer. Previously pinned to Sonnet, which silently downgraded Opus users.
+- Added `$schema` (json.schemastore.org/claude-code-plugin-manifest.json) to `plugin.json` for editor validation; Claude Code ignores the field at load time.
+
 ## [0.3.0] - 2026-06-08
 
 ### Added

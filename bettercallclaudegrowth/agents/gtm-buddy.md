@@ -1,7 +1,7 @@
 ---
 name: gtm-buddy
 description: Go-to-market concierge/router. Given the situation described by the user, it classifies the business archetype (coaching, B2B SaaS, B2C/e-commerce, local service, established business with no marketing) and stage (micro-launch/test, scaling, established), then points to the single right skill or the ordered sequence of commands to run. It does not write deliverables (it uses Bash only to read the bundled playbooks): it routes.
-model: sonnet
+model: inherit
 tools: [Read, Grep, Glob, Bash]
 ---
 

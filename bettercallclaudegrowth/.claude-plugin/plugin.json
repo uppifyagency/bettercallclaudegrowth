@@ -1,6 +1,7 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "bettercallclaudegrowth",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Go-To-Market consultant for Claude Code: gtm-buddy router + adaptive pipeline jobs -> positioning -> offer -> leads -> content/copy -> channels -> email -> measurement, calibrated by business archetype (coaching, B2B SaaS, B2C/e-commerce, local service, established company without marketing) and stage (micro-launch/test vs scaling). Built on 9 marketing frameworks (Christensen Jobs to Be Done, Hormozi Offers & Leads, Drew SUCKS, Butcher Productize, Frangioni AEMA, SEO/GEO 2026, Instagram Performance, Doing Content Right), with a GTM readiness score and adversarial review.",
   "author": {
     "name": "Uppify Agency",

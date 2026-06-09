@@ -5,7 +5,7 @@
 # BetterCallClaudeGrowth — Go-To-Market (GTM) & Marketing Plugin for Claude Code
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-22c55e.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.3.0-6366f1.svg)](https://github.com/uppifyagency/bettercallclaudegrowth/releases)
+[![Version](https://img.shields.io/badge/version-0.3.1-6366f1.svg)](https://github.com/uppifyagency/bettercallclaudegrowth/releases)
 [![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-plugin-8b5cf6.svg)](https://docs.anthropic.com/en/docs/claude-code)
 [![Category: marketing](https://img.shields.io/badge/category-marketing-ff5c8a.svg)](#)
 [![Made for go-to-market](https://img.shields.io/badge/made%20for-go--to--market-0ea5e9.svg)](#)
@@ -268,7 +268,7 @@ The 9 skills in BetterCallClaudeGrowth are **knowledge bases** with frameworks a
 
 Acknowledgements to the authors whose frameworks inspired this plugin: Clayton Christensen, Jack Butcher (Visualize Value), Alex Hormozi, Steph Smith, Kieran Drew, Alessandro Frangioni (AEMA / ROADS®), Robert Thomas, and the authors of the SEO/GEO 2026 series.
 
-Built by **Uppify Agency** · Repo: **github.com/uppifyagency/bettercallclaudegrowth** · version **0.3.0** · category **marketing**.
+Built by **Uppify Agency** · Repo: **github.com/uppifyagency/bettercallclaudegrowth** · version **0.3.1** · category **marketing**.
 
 ---
 
@@ -282,4 +282,4 @@ Released under the **MIT** license. See the [`LICENSE`](LICENSE) file. Use it, m
 
 `go-to-market` · `GTM` · `GTM strategy` · `marketing` · `AI marketing` · `Claude Code plugin` · `Claude Code skill` · `Anthropic` · `product launch` · `positioning` · `offer` · `lead generation` · `copywriting` · `SEO` · `GEO` · `email marketing` · `Instagram ads` · `Meta ads` · `startup` · `founder` · `solopreneur` · `coaching` · `B2B SaaS` · `B2C` · `ecommerce` · `local business` · `small business` · `Jobs to Be Done` · `Grand Slam Offer` · `content strategy` · `marketing plugin` · `marketing skill`
 
-<sub>BetterCallClaudeGrowth · v0.3.0 · the go-to-market twin of BetterCallClaude · made by Uppify Agency</sub>
+<sub>BetterCallClaudeGrowth · v0.3.1 · the go-to-market twin of BetterCallClaude · made by Uppify Agency</sub>

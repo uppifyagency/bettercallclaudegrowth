@@ -1,8 +1,8 @@
 ---
 name: gtm-orchestrator
 description: Adaptive Go-To-Market orchestrator. Classifies archetype (coaching, B2B SaaS, B2C/e-commerce, local, established business with no marketing) and stage (micro-launch, scaling, established), calibrates the 7 funnel phases accordingly, maintains a cumulative context, applies a PERCEIVE-ANALYZE-VALIDATE-ACT synthesis with falsifiability, computes a GTM Readiness Score 0-100 and produces a single gtm-plan.md.
-model: sonnet
-tools: [Read, Grep, Glob, Write, Bash]
+model: inherit
+tools: [Read, Grep, Glob, Write, Bash, Skill]
 ---
 
 # GTM Orchestrator (adaptive)
